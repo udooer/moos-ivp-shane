@@ -1,0 +1,30 @@
+//------------------------------------------------
+// pOdometry config block
+SeverHost = localhost
+SeverPort = 9000
+Community = handsomeshane
+
+ProcessConfig = ANTLER
+{
+   MSBetweenLaunches = 200
+   Run = MOOSDB         @NewConsole = false
+   Run = uXMS           @NewConsole = true
+   Run = pOdometry      @NewConsole = false
+// Run = uTimerScript   @NewConsole = true
+}
+
+ProcessConfig = uXMS
+{
+   AppTick = 4
+   CommsTick = 4
+
+   var = ODOMETRY_DIST
+   history_var = ODOMETRY_DIST
+}
+
+ProcessConfig = pOdometry
+{
+   AppTick   = 20
+   CommsTick = 20
+}
+

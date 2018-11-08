@@ -1,0 +1,37 @@
+//------------------------------------------------
+// pTest config block
+SeverHost = localhost
+SeverPort = 9000
+Community = handsomeshane
+
+ProcessConfig = ANTLER
+{
+   MSBetweenLaunches = 200
+   Run = MOOSDB		@NewConsole = false
+   Run = uXMS 		@NewConsole = true
+   Run = pTest		@NewConsole = false
+// Run = uTimerScript	@NewConsole = true	 
+}
+
+ProcessConfig = uXMS
+{
+   AppTick = 4
+   CommsTick = 4
+   
+   var = PUB_TEST,PUB_TEST_2,TESTING,TESTING_2
+}
+
+ProcessConfig = pTest
+{
+   AppTick = 1
+   CommsTick = 4
+}
+
+//ProcessConfig = uTimerScript
+//{
+//   AppTick = 4
+//   CommsTick = 4
+//   rand_var =varname=VALUE,min=0,max=10,key=at_post
+//   event = var = TESTING, val =$[VALUE],time=5:24,amt=20
+//   event = var = TESTING_2, val =$[VALUE],time=5:24,amt=20
+//}
