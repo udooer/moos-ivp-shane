@@ -181,6 +181,7 @@ ProcessConfig = pMarineViewer
   // left_context[survey-point] = DEPLOY=true
   // left_context[survey-point] = MOOS_MANUAL_OVERRIDE=false
   left_context[return-point] = RETURN_UPDATE=points = $(XPOS),$(YPOS) #speed = 1.5
+  left_context[return-point] = RETURN=true
 
   right_context[return] = DEPLOY=true
   right_context[return] = MOOS_MANUAL_OVERRIDE=false
