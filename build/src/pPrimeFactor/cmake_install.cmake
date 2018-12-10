@@ -1,4 +1,4 @@
-# Install script for directory: /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor
+# Install script for directory: /home/shane/moos-ivp-shane/src/pPrimeFactor
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

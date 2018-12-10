@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/MyData.cpp
+/home/shane/moos-ivp-shane/src/pPrimeFactor/MyData.cpp
 MyData.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/MyData.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/MyData.h
 cmath
 -
 sstream
 -
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/MyData.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/MyData.h
 iostream
 -
 stdint.h
@@ -22,49 +22,49 @@ stdint.h
 vector
 -
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/PrimeFactor.cpp
+/home/shane/moos-ivp-shane/src/pPrimeFactor/PrimeFactor.cpp
 iterator
 -
 MBUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/MBUtils.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/MBUtils.h
 ACTable.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/ACTable.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/ACTable.h
 PrimeFactor.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/PrimeFactor.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/PrimeFactor.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/PrimeFactor.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/PrimeFactor.h
 MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h
 list
 -
 MyData.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/MyData.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/MyData.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/PrimeFactor_Info.cpp
+/home/shane/moos-ivp-shane/src/pPrimeFactor/PrimeFactor_Info.cpp
 cstdlib
 -
 iostream
 -
 PrimeFactor_Info.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/PrimeFactor_Info.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/PrimeFactor_Info.h
 ColorParse.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/ColorParse.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/ColorParse.h
 ReleaseInfo.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/ReleaseInfo.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/ReleaseInfo.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/PrimeFactor_Info.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/PrimeFactor_Info.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/main.cpp
+/home/shane/moos-ivp-shane/src/pPrimeFactor/main.cpp
 string
 -
 MBUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/MBUtils.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/MBUtils.h
 ColorParse.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/ColorParse.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/ColorParse.h
 PrimeFactor.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/PrimeFactor.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/PrimeFactor.h
 PrimeFactor_Info.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pPrimeFactor/PrimeFactor_Info.h
+/home/shane/moos-ivp-shane/src/pPrimeFactor/PrimeFactor_Info.h
 
 /home/shane/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/ClientDefines.h
 

@@ -6,51 +6,51 @@
 
 #IncludeRegexTransform: 
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/AOF_SimpleWaypoint.cpp
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/AOF_SimpleWaypoint.cpp
 math.h
 -
 AOF_SimpleWaypoint.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/AOF_SimpleWaypoint.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/AOF_SimpleWaypoint.h
 AngleUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/AngleUtils.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/AngleUtils.h
 GeomUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/GeomUtils.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/GeomUtils.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/AOF_SimpleWaypoint.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/AOF_SimpleWaypoint.h
 AOF.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/AOF.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/AOF.h
 IvPDomain.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/IvPDomain.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/IvPDomain.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/BHV_SimpleWaypoint.cpp
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/BHV_SimpleWaypoint.cpp
 cstdlib
 -
 math.h
 -
 BHV_SimpleWaypoint.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/BHV_SimpleWaypoint.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/BHV_SimpleWaypoint.h
 MBUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/MBUtils.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/MBUtils.h
 AngleUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/AngleUtils.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/AngleUtils.h
 BuildUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/BuildUtils.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/BuildUtils.h
 ZAIC_PEAK.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/ZAIC_PEAK.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/ZAIC_PEAK.h
 OF_Coupler.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/OF_Coupler.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/OF_Coupler.h
 OF_Reflector.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/OF_Reflector.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/OF_Reflector.h
 AOF_SimpleWaypoint.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/AOF_SimpleWaypoint.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/AOF_SimpleWaypoint.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/BHV_SimpleWaypoint.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/BHV_SimpleWaypoint.h
 string
 -
 IvPBehavior.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/IvPBehavior.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/IvPBehavior.h
 XYPoint.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/lib_behaviors-test/XYPoint.h
+/home/shane/moos-ivp-shane/src/lib_behaviors-test/XYPoint.h
 
 /home/shane/moos-ivp/ivp/src/lib_behaviors/IvPBehavior.h
 map

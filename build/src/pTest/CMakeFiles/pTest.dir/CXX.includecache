@@ -6,43 +6,43 @@
 
 #IncludeRegexTransform: 
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test.cpp
+/home/shane/moos-ivp-shane/src/pTest/Test.cpp
 iterator
 -
 MBUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/MBUtils.h
+/home/shane/moos-ivp-shane/src/pTest/MBUtils.h
 Test.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test.h
+/home/shane/moos-ivp-shane/src/pTest/Test.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test.h
+/home/shane/moos-ivp-shane/src/pTest/Test.h
 MOOS/libMOOS/MOOSLib.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/MOOS/libMOOS/MOOSLib.h
+/home/shane/moos-ivp-shane/src/pTest/MOOS/libMOOS/MOOSLib.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test_Info.cpp
+/home/shane/moos-ivp-shane/src/pTest/Test_Info.cpp
 cstdlib
 -
 iostream
 -
 Test_Info.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test_Info.h
+/home/shane/moos-ivp-shane/src/pTest/Test_Info.h
 ColorParse.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/ColorParse.h
+/home/shane/moos-ivp-shane/src/pTest/ColorParse.h
 ReleaseInfo.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/ReleaseInfo.h
+/home/shane/moos-ivp-shane/src/pTest/ReleaseInfo.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test_Info.h
+/home/shane/moos-ivp-shane/src/pTest/Test_Info.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/main.cpp
+/home/shane/moos-ivp-shane/src/pTest/main.cpp
 string
 -
 MBUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/MBUtils.h
+/home/shane/moos-ivp-shane/src/pTest/MBUtils.h
 ColorParse.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/ColorParse.h
+/home/shane/moos-ivp-shane/src/pTest/ColorParse.h
 Test.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test.h
+/home/shane/moos-ivp-shane/src/pTest/Test.h
 Test_Info.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test_Info.h
+/home/shane/moos-ivp-shane/src/pTest/Test_Info.h
 
 /home/shane/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/ClientDefines.h
 

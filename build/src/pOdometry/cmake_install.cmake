@@ -1,4 +1,4 @@
-# Install script for directory: /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry
+# Install script for directory: /home/shane/moos-ivp-shane/src/pOdometry
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

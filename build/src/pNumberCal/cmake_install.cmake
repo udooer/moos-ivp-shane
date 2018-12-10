@@ -1,4 +1,4 @@
-# Install script for directory: /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal
+# Install script for directory: /home/shane/moos-ivp-shane/src/pNumberCal
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

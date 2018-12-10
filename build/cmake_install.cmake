@@ -1,4 +1,4 @@
-# Install script for directory: /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane
+# Install script for directory: /home/shane/moos-ivp-shane
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/cmake_install.cmake")
+  include("/home/shane/moos-ivp-shane/build/src/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/shane/moos-ivp-shane/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

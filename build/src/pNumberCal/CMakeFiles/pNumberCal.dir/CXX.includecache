@@ -6,63 +6,63 @@
 
 #IncludeRegexTransform: 
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/MyData.cpp
+/home/shane/moos-ivp-shane/src/pNumberCal/MyData.cpp
 MyData.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/MyData.h
+/home/shane/moos-ivp-shane/src/pNumberCal/MyData.h
 iostream
 -
 sstream
 -
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/MyData.h
+/home/shane/moos-ivp-shane/src/pNumberCal/MyData.h
 iostream
 -
 stdint.h
 -
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/NumberCal.cpp
+/home/shane/moos-ivp-shane/src/pNumberCal/NumberCal.cpp
 iterator
 -
 MBUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/MBUtils.h
+/home/shane/moos-ivp-shane/src/pNumberCal/MBUtils.h
 ACTable.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/ACTable.h
+/home/shane/moos-ivp-shane/src/pNumberCal/ACTable.h
 NumberCal.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/NumberCal.h
+/home/shane/moos-ivp-shane/src/pNumberCal/NumberCal.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/NumberCal.h
+/home/shane/moos-ivp-shane/src/pNumberCal/NumberCal.h
 MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h
+/home/shane/moos-ivp-shane/src/pNumberCal/MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h
 list
 -
 MyData.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/MyData.h
+/home/shane/moos-ivp-shane/src/pNumberCal/MyData.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/NumberCal_Info.cpp
+/home/shane/moos-ivp-shane/src/pNumberCal/NumberCal_Info.cpp
 cstdlib
 -
 iostream
 -
 NumberCal_Info.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/NumberCal_Info.h
+/home/shane/moos-ivp-shane/src/pNumberCal/NumberCal_Info.h
 ColorParse.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/ColorParse.h
+/home/shane/moos-ivp-shane/src/pNumberCal/ColorParse.h
 ReleaseInfo.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/ReleaseInfo.h
+/home/shane/moos-ivp-shane/src/pNumberCal/ReleaseInfo.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/NumberCal_Info.h
+/home/shane/moos-ivp-shane/src/pNumberCal/NumberCal_Info.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/main.cpp
+/home/shane/moos-ivp-shane/src/pNumberCal/main.cpp
 string
 -
 MBUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/MBUtils.h
+/home/shane/moos-ivp-shane/src/pNumberCal/MBUtils.h
 ColorParse.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/ColorParse.h
+/home/shane/moos-ivp-shane/src/pNumberCal/ColorParse.h
 NumberCal.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/NumberCal.h
+/home/shane/moos-ivp-shane/src/pNumberCal/NumberCal.h
 NumberCal_Info.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pNumberCal/NumberCal_Info.h
+/home/shane/moos-ivp-shane/src/pNumberCal/NumberCal_Info.h
 
 /home/shane/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/ClientDefines.h
 

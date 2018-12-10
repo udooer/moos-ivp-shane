@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pExampleApp/ExampleApp.h
+/home/shane/moos-ivp-shane/src/pExampleApp/ExampleApp.h
 MOOS/libMOOS/App/MOOSApp.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pExampleApp/MOOS/libMOOS/App/MOOSApp.h
+/home/shane/moos-ivp-shane/src/pExampleApp/MOOS/libMOOS/App/MOOSApp.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pExampleApp/main.cpp
+/home/shane/moos-ivp-shane/src/pExampleApp/main.cpp
 MOOS/libMOOS/App/MOOSApp.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pExampleApp/MOOS/libMOOS/App/MOOSApp.h
+/home/shane/moos-ivp-shane/src/pExampleApp/MOOS/libMOOS/App/MOOSApp.h
 ExampleApp.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pExampleApp/ExampleApp.h
+/home/shane/moos-ivp-shane/src/pExampleApp/ExampleApp.h
 
 /home/shane/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/ClientDefines.h
 

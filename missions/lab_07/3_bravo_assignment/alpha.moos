@@ -180,7 +180,7 @@ ProcessConfig = pMarineViewer
 
   // left_context[survey-point] = DEPLOY=true
   // left_context[survey-point] = MOOS_MANUAL_OVERRIDE=false
-  left_context[return-point] = RETURN_UPDATE=points = $(XPOS),$(YPOS) #speed = 1.5
+  // left_context[survey-point] = RETURN=false
 
   right_context[return] = DEPLOY=true
   right_context[return] = MOOS_MANUAL_OVERRIDE=false
@@ -193,7 +193,6 @@ ProcessConfig = pMarineViewer
   scope  = VIEW_POLYGON
   scope  = MVIEWER_LCLICK
   scope  = MVIEWER_RCLICK
-  scope  = RETURN_UPDATE
 
   button_one = DEPLOY # DEPLOY=true
   button_one = MOOS_MANUAL_OVERRIDE=false # RETURN=false

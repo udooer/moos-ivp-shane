@@ -6,43 +6,43 @@
 
 #IncludeRegexTransform: 
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/Odometry.cpp
+/home/shane/moos-ivp-shane/src/pOdometry/Odometry.cpp
 iterator
 -
 MBUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/MBUtils.h
+/home/shane/moos-ivp-shane/src/pOdometry/MBUtils.h
 Odometry.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/Odometry.h
+/home/shane/moos-ivp-shane/src/pOdometry/Odometry.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/Odometry.h
+/home/shane/moos-ivp-shane/src/pOdometry/Odometry.h
 MOOS/libMOOS/MOOSLib.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/MOOS/libMOOS/MOOSLib.h
+/home/shane/moos-ivp-shane/src/pOdometry/MOOS/libMOOS/MOOSLib.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/Odometry_Info.cpp
+/home/shane/moos-ivp-shane/src/pOdometry/Odometry_Info.cpp
 cstdlib
 -
 iostream
 -
 Odometry_Info.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/Odometry_Info.h
+/home/shane/moos-ivp-shane/src/pOdometry/Odometry_Info.h
 ColorParse.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/ColorParse.h
+/home/shane/moos-ivp-shane/src/pOdometry/ColorParse.h
 ReleaseInfo.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/ReleaseInfo.h
+/home/shane/moos-ivp-shane/src/pOdometry/ReleaseInfo.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/Odometry_Info.h
+/home/shane/moos-ivp-shane/src/pOdometry/Odometry_Info.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/main.cpp
+/home/shane/moos-ivp-shane/src/pOdometry/main.cpp
 string
 -
 MBUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/MBUtils.h
+/home/shane/moos-ivp-shane/src/pOdometry/MBUtils.h
 ColorParse.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/ColorParse.h
+/home/shane/moos-ivp-shane/src/pOdometry/ColorParse.h
 Odometry.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/Odometry.h
+/home/shane/moos-ivp-shane/src/pOdometry/Odometry.h
 Odometry_Info.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pOdometry/Odometry_Info.h
+/home/shane/moos-ivp-shane/src/pOdometry/Odometry_Info.h
 
 /home/shane/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/ClientDefines.h
 

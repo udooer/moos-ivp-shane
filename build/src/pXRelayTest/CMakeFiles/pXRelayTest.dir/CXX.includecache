@@ -6,43 +6,43 @@
 
 #IncludeRegexTransform: 
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/Relayer.cpp
+/home/shane/moos-ivp-shane/src/pXRelayTest/Relayer.cpp
 iterator
 -
 Relayer.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/Relayer.h
+/home/shane/moos-ivp-shane/src/pXRelayTest/Relayer.h
 MBUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/MBUtils.h
+/home/shane/moos-ivp-shane/src/pXRelayTest/MBUtils.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/Relayer.h
+/home/shane/moos-ivp-shane/src/pXRelayTest/Relayer.h
 MOOS/libMOOS/MOOSLib.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/MOOS/libMOOS/MOOSLib.h
+/home/shane/moos-ivp-shane/src/pXRelayTest/MOOS/libMOOS/MOOSLib.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/Relayer_Info.cpp
+/home/shane/moos-ivp-shane/src/pXRelayTest/Relayer_Info.cpp
 cstdlib
 -
 iostream
 -
 Relayer_Info.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/Relayer_Info.h
+/home/shane/moos-ivp-shane/src/pXRelayTest/Relayer_Info.h
 ColorParse.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/ColorParse.h
+/home/shane/moos-ivp-shane/src/pXRelayTest/ColorParse.h
 ReleaseInfo.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/ReleaseInfo.h
+/home/shane/moos-ivp-shane/src/pXRelayTest/ReleaseInfo.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/Relayer_Info.h
+/home/shane/moos-ivp-shane/src/pXRelayTest/Relayer_Info.h
 
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/main.cpp
+/home/shane/moos-ivp-shane/src/pXRelayTest/main.cpp
 string
 -
 list
 -
 Relayer.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/Relayer.h
+/home/shane/moos-ivp-shane/src/pXRelayTest/Relayer.h
 Relayer_Info.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/Relayer_Info.h
+/home/shane/moos-ivp-shane/src/pXRelayTest/Relayer_Info.h
 MBUtils.h
-/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pXRelayTest/MBUtils.h
+/home/shane/moos-ivp-shane/src/pXRelayTest/MBUtils.h
 
 /home/shane/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/ClientDefines.h
 

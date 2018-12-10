@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane
+CMAKE_SOURCE_DIR = /home/shane/moos-ivp-shane
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build
+CMAKE_BINARY_DIR = /home/shane/moos-ivp-shane/build
 
 # Include any dependencies generated for this target.
 include src/pTest/CMakeFiles/pTest.dir/depend.make
@@ -59,16 +59,16 @@ include src/pTest/CMakeFiles/pTest.dir/flags.make
 
 src/pTest/CMakeFiles/pTest.dir/Test.cpp.o: src/pTest/CMakeFiles/pTest.dir/flags.make
 src/pTest/CMakeFiles/pTest.dir/Test.cpp.o: ../src/pTest/Test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/pTest/CMakeFiles/pTest.dir/Test.cpp.o"
-	cd /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/pTest && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pTest.dir/Test.cpp.o -c /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/moos-ivp-shane/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/pTest/CMakeFiles/pTest.dir/Test.cpp.o"
+	cd /home/shane/moos-ivp-shane/build/src/pTest && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pTest.dir/Test.cpp.o -c /home/shane/moos-ivp-shane/src/pTest/Test.cpp
 
 src/pTest/CMakeFiles/pTest.dir/Test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pTest.dir/Test.cpp.i"
-	cd /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/pTest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test.cpp > CMakeFiles/pTest.dir/Test.cpp.i
+	cd /home/shane/moos-ivp-shane/build/src/pTest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shane/moos-ivp-shane/src/pTest/Test.cpp > CMakeFiles/pTest.dir/Test.cpp.i
 
 src/pTest/CMakeFiles/pTest.dir/Test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pTest.dir/Test.cpp.s"
-	cd /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/pTest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test.cpp -o CMakeFiles/pTest.dir/Test.cpp.s
+	cd /home/shane/moos-ivp-shane/build/src/pTest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/moos-ivp-shane/src/pTest/Test.cpp -o CMakeFiles/pTest.dir/Test.cpp.s
 
 src/pTest/CMakeFiles/pTest.dir/Test.cpp.o.requires:
 
@@ -83,16 +83,16 @@ src/pTest/CMakeFiles/pTest.dir/Test.cpp.o.provides.build: src/pTest/CMakeFiles/p
 
 src/pTest/CMakeFiles/pTest.dir/Test_Info.cpp.o: src/pTest/CMakeFiles/pTest.dir/flags.make
 src/pTest/CMakeFiles/pTest.dir/Test_Info.cpp.o: ../src/pTest/Test_Info.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/pTest/CMakeFiles/pTest.dir/Test_Info.cpp.o"
-	cd /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/pTest && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pTest.dir/Test_Info.cpp.o -c /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test_Info.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/moos-ivp-shane/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/pTest/CMakeFiles/pTest.dir/Test_Info.cpp.o"
+	cd /home/shane/moos-ivp-shane/build/src/pTest && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pTest.dir/Test_Info.cpp.o -c /home/shane/moos-ivp-shane/src/pTest/Test_Info.cpp
 
 src/pTest/CMakeFiles/pTest.dir/Test_Info.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pTest.dir/Test_Info.cpp.i"
-	cd /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/pTest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test_Info.cpp > CMakeFiles/pTest.dir/Test_Info.cpp.i
+	cd /home/shane/moos-ivp-shane/build/src/pTest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shane/moos-ivp-shane/src/pTest/Test_Info.cpp > CMakeFiles/pTest.dir/Test_Info.cpp.i
 
 src/pTest/CMakeFiles/pTest.dir/Test_Info.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pTest.dir/Test_Info.cpp.s"
-	cd /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/pTest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/Test_Info.cpp -o CMakeFiles/pTest.dir/Test_Info.cpp.s
+	cd /home/shane/moos-ivp-shane/build/src/pTest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/moos-ivp-shane/src/pTest/Test_Info.cpp -o CMakeFiles/pTest.dir/Test_Info.cpp.s
 
 src/pTest/CMakeFiles/pTest.dir/Test_Info.cpp.o.requires:
 
@@ -107,16 +107,16 @@ src/pTest/CMakeFiles/pTest.dir/Test_Info.cpp.o.provides.build: src/pTest/CMakeFi
 
 src/pTest/CMakeFiles/pTest.dir/main.cpp.o: src/pTest/CMakeFiles/pTest.dir/flags.make
 src/pTest/CMakeFiles/pTest.dir/main.cpp.o: ../src/pTest/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/pTest/CMakeFiles/pTest.dir/main.cpp.o"
-	cd /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/pTest && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pTest.dir/main.cpp.o -c /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/moos-ivp-shane/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/pTest/CMakeFiles/pTest.dir/main.cpp.o"
+	cd /home/shane/moos-ivp-shane/build/src/pTest && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pTest.dir/main.cpp.o -c /home/shane/moos-ivp-shane/src/pTest/main.cpp
 
 src/pTest/CMakeFiles/pTest.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pTest.dir/main.cpp.i"
-	cd /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/pTest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/main.cpp > CMakeFiles/pTest.dir/main.cpp.i
+	cd /home/shane/moos-ivp-shane/build/src/pTest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shane/moos-ivp-shane/src/pTest/main.cpp > CMakeFiles/pTest.dir/main.cpp.i
 
 src/pTest/CMakeFiles/pTest.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pTest.dir/main.cpp.s"
-	cd /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/pTest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest/main.cpp -o CMakeFiles/pTest.dir/main.cpp.s
+	cd /home/shane/moos-ivp-shane/build/src/pTest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/moos-ivp-shane/src/pTest/main.cpp -o CMakeFiles/pTest.dir/main.cpp.s
 
 src/pTest/CMakeFiles/pTest.dir/main.cpp.o.requires:
 
@@ -144,8 +144,8 @@ pTest_EXTERNAL_OBJECTS =
 ../bin/pTest: src/pTest/CMakeFiles/pTest.dir/build.make
 ../bin/pTest: /home/shane/moos-ivp/build/MOOS/MOOSCore/lib/libMOOS.a
 ../bin/pTest: src/pTest/CMakeFiles/pTest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../../../bin/pTest"
-	cd /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/pTest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pTest.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/moos-ivp-shane/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../../../bin/pTest"
+	cd /home/shane/moos-ivp-shane/build/src/pTest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pTest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/pTest/CMakeFiles/pTest.dir/build: ../bin/pTest
@@ -159,10 +159,10 @@ src/pTest/CMakeFiles/pTest.dir/requires: src/pTest/CMakeFiles/pTest.dir/main.cpp
 .PHONY : src/pTest/CMakeFiles/pTest.dir/requires
 
 src/pTest/CMakeFiles/pTest.dir/clean:
-	cd /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/pTest && $(CMAKE_COMMAND) -P CMakeFiles/pTest.dir/cmake_clean.cmake
+	cd /home/shane/moos-ivp-shane/build/src/pTest && $(CMAKE_COMMAND) -P CMakeFiles/pTest.dir/cmake_clean.cmake
 .PHONY : src/pTest/CMakeFiles/pTest.dir/clean
 
 src/pTest/CMakeFiles/pTest.dir/depend:
-	cd /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/src/pTest /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/pTest /home/shane/moos-ivp-shane/trunk/moos-ivp-hhshane/build/src/pTest/CMakeFiles/pTest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/shane/moos-ivp-shane/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shane/moos-ivp-shane /home/shane/moos-ivp-shane/src/pTest /home/shane/moos-ivp-shane/build /home/shane/moos-ivp-shane/build/src/pTest /home/shane/moos-ivp-shane/build/src/pTest/CMakeFiles/pTest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/pTest/CMakeFiles/pTest.dir/depend
 
