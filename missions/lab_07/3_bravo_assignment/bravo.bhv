@@ -25,10 +25,10 @@ Behavior = BHV_Loiter
      center_activate = false            // default
            clockwise = true             // default
          slip_radius = 15               // default
-               speed = 3                // default
+               speed = 2.5                // default
        spiral_factor = -2               // default
 
-             polygon = radial:: x=100,y=-100,radius=40,pts=8  // example
+             polygon = radial:: x=100,y=-75,radius=30,pts=8  // example
          post_suffix = HENRY                             // example
 
 //       center_assign = 40,50           // example
@@ -61,6 +61,6 @@ Behavior=BHV_Waypoint
              speed = 2.0
     capture_radius = 2.0
        slip_radius = 8.0
-            points = 0,-20
+            points = 0,0
 }
 

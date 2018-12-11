@@ -2,7 +2,7 @@
 
 initialize      DEPLOY = false
 initialize      RETURN = false
-initialize      LOITER_REGION=park
+initialize      LOITER_REGION=PARK
 
 //-----------------------------------------
 Behavior = BHV_Loiter
@@ -11,8 +11,9 @@ Behavior = BHV_Loiter
    // ---------------------------
    name         = west_transit               // example
    pwt          = 100                   // default
-   condition    = LOITER_REGION=west        // example
+   condition    = LOITER_REGION=WEST        // example
    condition    = DEPLOY=true
+   condition    = RETURN=false
    updates      = LOITER_UPDATES        // example
    duration     = 150
    duration_status = WEST_DTIME
@@ -20,7 +21,7 @@ Behavior = BHV_Loiter
    duration_idle_decay = false
    endflag      = RETURN=false
    endflag      = DEPLOY=true
-   endflag      = LOITER_REGION=east
+   endflag      = LOITER_REGION=EAST
    // Parameters specific to this behavior
    // ------------------------------------
         acquire_dist = 10               // default
@@ -31,7 +32,7 @@ Behavior = BHV_Loiter
                speed = 2.5                // default
        spiral_factor = -2               // default
 
-             polygon = radial:: x=80,y=-100,radius=40,pts=8  // example
+             polygon = radial:: x=100,y=-75,radius=30,pts=8  // example
          post_suffix = HENRY                             // example
 
 //       center_assign = 40,50           // example
@@ -55,8 +56,9 @@ Behavior = BHV_Loiter
    // ---------------------------
    name         = east_transit               // example
    pwt          = 100                   // default
-   condition    = LOITER_REGION=east        // example
+   condition    = LOITER_REGION=EAST        // example
    condition    = DEPLOY=true
+   condition    = RETURN=false
    updates      = LOITER_UPDATES        // example
    duration     = 150
    duration_status = EAST_DTIME
@@ -64,7 +66,7 @@ Behavior = BHV_Loiter
    duration_idle_decay = false
    endflag      = RETURN=false
    endflag      = DEPLOY=true
-   endflag      = LOITER_REGION=west
+   endflag      = LOITER_REGION=WEST
    // Parameters specific to this behavior
    // ------------------------------------
         acquire_dist = 10               // default
@@ -108,6 +110,6 @@ Behavior=BHV_Waypoint
              speed = 2.0
     capture_radius = 2.0
        slip_radius = 8.0
-            points = 0,-20
+            points = 0,0
 }
 

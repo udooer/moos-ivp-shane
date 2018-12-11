@@ -196,7 +196,8 @@ ProcessConfig = pMarineViewer
   scope  = LOITER_REGION  
   scope  = WEST_DTIME
   scope  = EAST_DTIME
-  button_one = DEPLOY # DEPLOY=true # LOITER_REGION=west
+
+  button_one = DEPLOY # DEPLOY=true # LOITER_REGION=WEST
   button_one = MOOS_MANUAL_OVERRIDE=false # RETURN=false
   button_two = RETURN # RETURN=true 
 
