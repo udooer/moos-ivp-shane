@@ -1,5 +1,5 @@
 #--------------------------------------------------------
-# The CMakeLists.txt for:                       pPrimeFactor
+# The CMakeLists.txt for:                 pPrimeFactor
 # Author(s):                              handsomeshane
 #--------------------------------------------------------
 
