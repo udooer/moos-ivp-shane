@@ -63,11 +63,11 @@ bool PrimeFactor::OnNewMail(MOOSMSG_LIST &NewMail)
          m_rece_count++;
          m_input_buf.push_back(prime_cls);
      }
-     if(key == "FOO") 
-       cout << "great!";
+//     if(key == "FOO") 
+//       cout << "great!";
 
-     else if(key != "APPCAST_REQ") // handled by AppCastingMOOSApp
-       reportRunWarning("Unhandled Mail: " + key);
+//     else if(key != "APPCAST_REQ") // handled by AppCastingMOOSApp
+//       reportRunWarning("Unhandled Mail: " + key);
   }
   return(true);
 }
