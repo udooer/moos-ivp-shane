@@ -1,5 +1,5 @@
 #!/bin/bash -e
-COMMUNITY="alpha"
+COMMUNITY="bravo"
 
 #-------------------------------------------------------
 #  Part 1: Check for and handle command-line arguments

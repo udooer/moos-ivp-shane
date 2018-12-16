@@ -224,12 +224,13 @@ ProcessConfig = pMarineViewer
 
   button_one = DEPLOY # DEPLOY=true # LOITER_REGION=WEST #MODE=SURVEYING
   button_one = MOOS_MANUAL_OVERRIDE=false # RETURN=false
+  
   button_two = RETURN # RETURN=true #MODE=UP #LOITER_REGION=PARK
 
   action  = MENU_KEY=deploy # DEPLOY = true # RETURN = false
   action+ = MENU_KEY=deploy # MOOS_MANUAL_OVERRIDE=false
-  action  = RETURN=true
-  action  = UPDATES_RETURN=speed=1.4
+  action+ = RETURN=true
+//  action  = UPDATES_RETURN=speed=1.4
 }
 
 //------------------------------------------

@@ -1,11 +1,11 @@
 //-------------------------------------------------
-// NAME: M. Benjamin, MIT CSAIL
+// NAME: M. hs, NTU
 // FILE: bravo.moos
 //-------------------------------------------------
 
 ServerHost   = localhost
 ServerPort   = 9002
-Community    = vehicle_bravo
+Community    = bravo_vehicle
 MOOSTimeWarp = 1
 
 // Forest Lake

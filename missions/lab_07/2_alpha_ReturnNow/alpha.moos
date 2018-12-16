@@ -180,12 +180,12 @@ ProcessConfig = pMarineViewer
 
   // left_context[survey-point] = DEPLOY=true
   // left_context[survey-point] = MOOS_MANUAL_OVERRIDE=false
-  left_context[return-point] = RETURN_UPDATE=points = $(XPOS),$(YPOS) #speed = 1.5
-  left_context[return-point] = RETURN=true
+  left_context[return-rightnow] = RETURN_UPDATE=points=$(XPOS),$(YPOS) # speed=1
+  left_context[return-rightnow] = RETURN=true
 
-  right_context[return] = DEPLOY=true
-  right_context[return] = MOOS_MANUAL_OVERRIDE=false
-  right_context[return] = RETURN=false
+  right_context[deploy] = DEPLOY=true
+  right_context[deploy] = MOOS_MANUAL_OVERRIDE=false
+  right_context[deploy] = RETURN=false
 
   scope  = RETURN
   scope  = WPT_STAT
@@ -202,8 +202,8 @@ ProcessConfig = pMarineViewer
 
   action  = MENU_KEY=deploy # DEPLOY = true # RETURN = false
   action+ = MENU_KEY=deploy # MOOS_MANUAL_OVERRIDE=false
-  action  = RETURN=true
-  action  = UPDATES_RETURN=speed=1.4
+  action+ = MENU_KEY=return # RETURN=true
+  action+ = MENU_KEY=return_update #RETURN_UPDATE=speed=2.5
 }
 
 //------------------------------------------

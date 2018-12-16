@@ -5,7 +5,7 @@
 
 ServerHost   = localhost
 ServerPort   = 9001
-Community    = vehicle_alpha
+Community    = alpha_vehicle
 MOOSTimeWarp = 1
 
 // Forest Lake
