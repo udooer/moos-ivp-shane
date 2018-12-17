@@ -23,3 +23,6 @@
 /home/shane/moos-ivp-shane/build/src/pNumberCal/CMakeFiles/rebuild_cache.dir
 /home/shane/moos-ivp-shane/build/src/pNumberCal/CMakeFiles/pNumberCal.dir
 /home/shane/moos-ivp-shane/build/src/pNumberCal/CMakeFiles/edit_cache.dir
+/home/shane/moos-ivp-shane/build/src/pChirp/CMakeFiles/rebuild_cache.dir
+/home/shane/moos-ivp-shane/build/src/pChirp/CMakeFiles/pChirp.dir
+/home/shane/moos-ivp-shane/build/src/pChirp/CMakeFiles/edit_cache.dir

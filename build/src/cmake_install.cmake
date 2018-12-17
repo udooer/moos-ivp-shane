@@ -46,6 +46,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/shane/moos-ivp-shane/build/src/pTest/cmake_install.cmake")
   include("/home/shane/moos-ivp-shane/build/src/pPrimeFactor/cmake_install.cmake")
   include("/home/shane/moos-ivp-shane/build/src/pNumberCal/cmake_install.cmake")
+  include("/home/shane/moos-ivp-shane/build/src/pChirp/cmake_install.cmake")
 
 endif()
 

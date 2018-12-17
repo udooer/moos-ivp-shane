@@ -1,0 +1,25 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       ./LOG_NTU_HANDSOMEST_17_12_2018_____23_45_14/LOG_NTU_HANDSOMEST_17_12_2018_____23_45_14.ylog
+%% FILE OPENED ON  Thu Jan  1 08:00:00 1970
+%% LOGSTART               15450615141.4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+1.62793    MOOS_DEBUG           pMarinePID           ** NEW CONTROLLER GAINS ARE ** 
+1.628031   MOOS_DEBUG           pMarinePID           YAW_PID_KP             = 0.400 
+1.628071   MOOS_DEBUG           pMarinePID           YAW_PID_KD             = 0.100 
+1.628101   MOOS_DEBUG           pMarinePID           YAW_PID_KI             = 0.000 
+1.62813    MOOS_DEBUG           pMarinePID           YAW_PID_INTEGRAL_LIMIT = 0.070 
+1.62817    MOOS_DEBUG           pMarinePID           MAXRUDDER              = 100.000 
+1.635071   MOOS_DEBUG           pMarinePID           SPEED_PID_KP           = 1.000 
+1.635111   MOOS_DEBUG           pMarinePID           SPEED_PID_KD           = 0.000 
+1.63512    MOOS_DEBUG           pMarinePID           SPEED_PID_KI           = 0.000 
+1.635139   MOOS_DEBUG           pMarinePID           SPEED_PID_INTEGRAL_LIMIT = 0.070 
+1.635221   MOOS_DEBUG           pMarinePID           MAXTHRUST              = 100.000 
+1.73975    MOOS_DEBUG           pMarinePID           Paused Due To Tardy HELM Input: THRUST=0 
+2.431532   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: ManualOverride 
+4.597002   MOOS_DEBUG           pMarinePID           Paused Due To Tardy HELM Input: THRUST=0 
+24.95224   MOOS_DEBUG           pMarinePID           pMarinePID Control Is On 
+25.06241   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+107.4903   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+107.745    MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+258.6197   MOOS_DEBUG           pMarinePID           pMarinePID Control Is On 
+459.8808   MOOS_DEBUG           pMarinePID           pMarinePID Control Is On 

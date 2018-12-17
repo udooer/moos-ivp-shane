@@ -1,4 +1,4 @@
-##############################################################################
+#############################################################################
 # FILE:        moos-ivp-extend/src/CMakeLists.txt
 # DATE:        2010/09/07
 # DESCRIPTION: CMakeLists.txt file for the moos-ivp-extend source directory
@@ -21,6 +21,7 @@ ADD_SUBDIRECTORY(pOdometry)
 ADD_SUBDIRECTORY(pTest)
 ADD_SUBDIRECTORY(pPrimeFactor)
 ADD_SUBDIRECTORY(pNumberCal)
+ADD_SUBDIRECTORY(pChirp)
 #ADD_SUBDIRECTORY(pFoobar)
 #ADD_SUBDIRECTORY(pOdometry)
 

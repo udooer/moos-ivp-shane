@@ -1,0 +1,27 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       ./LOG_NTU_HANDSOMEST_17_12_2018_____23_39_53/LOG_NTU_HANDSOMEST_17_12_2018_____23_39_53.ylog
+%% FILE OPENED ON  Thu Jan  1 08:00:00 1970
+%% LOGSTART                 15450611937
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+1.643269   MOOS_DEBUG           pMarinePID           ** NEW CONTROLLER GAINS ARE ** 
+1.643419   MOOS_DEBUG           pMarinePID           YAW_PID_KP             = 0.400 
+1.64345    MOOS_DEBUG           pMarinePID           YAW_PID_KD             = 0.100 
+1.643469   MOOS_DEBUG           pMarinePID           YAW_PID_KI             = 0.000 
+1.643499   MOOS_DEBUG           pMarinePID           YAW_PID_INTEGRAL_LIMIT = 0.070 
+1.64353    MOOS_DEBUG           pMarinePID           MAXRUDDER              = 100.000 
+1.651098   MOOS_DEBUG           pMarinePID           SPEED_PID_KP           = 1.000 
+1.651129   MOOS_DEBUG           pMarinePID           SPEED_PID_KD           = 0.000 
+1.651148   MOOS_DEBUG           pMarinePID           SPEED_PID_KI           = 0.000 
+1.65118    MOOS_DEBUG           pMarinePID           SPEED_PID_INTEGRAL_LIMIT = 0.070 
+1.651239   MOOS_DEBUG           pMarinePID           MAXTHRUST              = 100.000 
+1.75708    MOOS_DEBUG           pMarinePID           Paused Due To Tardy HELM Input: THRUST=0 
+2.43227    MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: ManualOverride 
+4.693821   MOOS_DEBUG           pMarinePID           Paused Due To Tardy HELM Input: THRUST=0 
+36.70135   MOOS_DEBUG           pMarinePID           pMarinePID Control Is On 
+36.86847   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+119.0658   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+119.3146   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+354.7384   MOOS_DEBUG           pMarinePID           pMarinePID Control Is On 
+530.4767   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+530.7283   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+562.5302   MOOS_DEBUG           pMarinePID           pMarinePID Control Is On 

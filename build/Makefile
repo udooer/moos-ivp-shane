@@ -201,6 +201,19 @@ pNumberCal/fast:
 	$(MAKE) -f src/pNumberCal/CMakeFiles/pNumberCal.dir/build.make src/pNumberCal/CMakeFiles/pNumberCal.dir/build
 .PHONY : pNumberCal/fast
 
+#=============================================================================
+# Target rules for targets named pChirp
+
+# Build rule for target.
+pChirp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pChirp
+.PHONY : pChirp
+
+# fast build rule for target.
+pChirp/fast:
+	$(MAKE) -f src/pChirp/CMakeFiles/pChirp.dir/build.make src/pChirp/CMakeFiles/pChirp.dir/build
+.PHONY : pChirp/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,6 +229,7 @@ help:
 	@echo "... pTest"
 	@echo "... pPrimeFactor"
 	@echo "... pNumberCal"
+	@echo "... pChirp"
 .PHONY : help
 
 
