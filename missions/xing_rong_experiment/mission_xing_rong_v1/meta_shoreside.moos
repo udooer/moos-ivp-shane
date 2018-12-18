@@ -49,7 +49,7 @@ ProcessConfig = pMarineViewer
   TIFF_FILE            = xing_rong.tif
   set_pan_x            = -90
   set_pan_y            = -280
-  zoom                 = 0.2
+  zoom                 = 0.25
   vehicles_shape_scale = 1.5
   vehicles_name_mode   = names+shortmode
 
@@ -68,7 +68,7 @@ ProcessConfig = pMarineViewer
   BUTTON_ONE   = RETURN_ALL=false # STATION_KEEP_ALL=false # CHIRP_ALL=true 
 
   BUTTON_TWO   = RETURN  # RETURN_ALL=true
-  BUTTON_TWO   = STATION_KEEP_ALL=false # SURVEY_ALL = false # CHIRP_ALL=false
+  BUTTON_TWO   = STATION_KEEP_ALL=false # SURVEY_ALL=false # CHIRP_ALL=false
 
   BUTTON_THREE = STATION  # STATION_KEEP_ALL=true # CHIRP_ALL=false
 }

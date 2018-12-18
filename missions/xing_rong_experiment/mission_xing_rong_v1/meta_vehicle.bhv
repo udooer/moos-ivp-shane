@@ -6,6 +6,7 @@ initialize   RETURN  = false
 initialize   SURVEY  = true
 initialize   STATION_KEEP = false
 initialize   LOITER  = false
+initialize   CHIRP = false
 
 set MODE = ACTIVE {
   DEPLOY = true
@@ -15,14 +16,19 @@ set MODE = ACTIVE {
 //  DEPLOY = true
 //  SURVEY = true
 //}
+
 set MODE = STATION-KEEPING {
   MODE = ACTIVE
   STATION_KEEP = true
-}                       
- set MODE = POINT-SURVEYING {
+}
+                       
+set MODE = POINT-SURVEYING {
   DEPLOY = true
   SURVEY = true
+  STATION_KEEP = false
+  RETURN = false
 }
+
 set MODE = RETURNING {
   MODE = ACTIVE
   RETURN = true
@@ -31,41 +37,41 @@ set MODE = RETURNING {
 set MODE = LOITERING {
   MODE = ACTIVE
   LOITER = true
+  RETURN = false
 } 
-
 
 //-----------------------------------------------
 Behavior = BHV_Waypoint
- {
-   name      = waypt_survey
-   pwt       = 100
-   condition = MODE==POINT-SURVEYING
-   endflag   = SURVEY=false
-   endflag   = CHIRP=true 
-   endflag   = LOITER=true
-   updates    = WPT_UPDATE
-   perpetual  = true
- 
-                 lead = 8
-          lead_damper = 1
-        lead_to_start = true
-                speed = 2   // meters per second
-         capture_line = true
-       capture_radius = 5.0
-          slip_radius = 15.0
-     efficiency_measure = all
- 
-              polygon = 99.17,-0.73 : 150,43.25
- 
-                order = normal
-              repeat  = 0
- 
-     visual_hints = nextpt_color=yellow
-     visual_hints = nextpt_vertex_size=8
-     visual_hints = nextpt_lcolor=gray70
-     visual_hints = vertex_color=dodger_blue, edge_color=white
-     visual_hints = vertex_size=5, edge_size=1
- }
+{
+  name      = waypt_survey
+  pwt       = 100
+  condition = MODE==POINT-SURVEYING
+  endflag   = SURVEY=false
+  endflag   = CHIRP=true 
+  endflag   = LOITER=true
+  updates    = WPT_UPDATE
+  perpetual  = true
+
+                lead = 8
+         lead_damper = 1
+       lead_to_start = true
+               speed = 2   // meters per second
+        capture_line = true
+      capture_radius = 5.0
+         slip_radius = 15.0
+    efficiency_measure = all
+
+             polygon = 99.17,-0.73 : 150,43.25
+
+               order = normal
+             repeat  = 0
+
+    visual_hints = nextpt_color=yellow
+    visual_hints = nextpt_vertex_size=8
+    visual_hints = nextpt_lcolor=gray70
+    visual_hints = vertex_color=dodger_blue, edge_color=white
+    visual_hints = vertex_size=5, edge_size=1
+}
 
 //----------------------------------------------
 Behavior = BHV_Loiter
@@ -93,8 +99,9 @@ Behavior = BHV_Waypoint
   name      = waypt_return
   pwt       = 100
   condition = MODE==RETURNING
-  endflag   = STATION_KEEP=true
   endflag   = SURVEY=true
+  endflag   = STATION_KEEP=true
+//  endflag   = SURVEY=true
   endflag   = LOITER=false
   perpetual = true
 
