@@ -12,11 +12,6 @@ set MODE = ACTIVE {
   DEPLOY = true
 } INACTIVE
 
-//set MODE = POINT-SURVEYING {
-//  DEPLOY = true
-//  SURVEY = true
-//}
-
 set MODE = STATION-KEEPING {
   MODE = ACTIVE
   STATION_KEEP = true
