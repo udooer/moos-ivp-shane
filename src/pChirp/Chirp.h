@@ -27,10 +27,10 @@ class Chirp : public AppCastingMOOSApp
 
  protected:
    void registerVariables();
-   void sleeptime(int);
+//   void sleeptime(int);
  private: // Configuration variables
    std::string m_loiter;
-   std::string m_signal;
+   std::string m_chirp;
  private: // State variables
 };
 

@@ -1,4 +1,4 @@
-/-------------------------------------------------
+/------------------------------------------------
 // NAME: M. handsomeshane, NTU gratuated
 // FILE: bravo.moos
 //-------------------------------------------------
@@ -173,7 +173,7 @@ ProcessConfig = pMarineViewer
   set_pan_y            = -280
   zoom                 = 0.65
   vehicle_shape_scale  = 1.5
-  vehicle_name_mode = names+depth
+  vehicles_name_mode = names+depth
   hash_delta           = 50
   hash_shade           = 0.22
   hash_viewable        = true

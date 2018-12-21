@@ -19,8 +19,8 @@ using namespace std;
 
 Chirp::Chirp()
 {
-    m_signal = "false";
     m_loiter = "false";
+    m_chirp  = "false";
 }
 
 //---------------------------------------------------------
@@ -51,15 +51,21 @@ bool Chirp::OnNewMail(MOOSMSG_LIST &NewMail)
     bool   mdbl  = msg.IsDouble();
     bool   mstr  = msg.IsString();
 #endif
-
+    bool handled;
      if(key == "FOO") 
        cout << "great!";
      else if(key == "LOITER")
+     {
          m_loiter = msg.GetString();
+         handled = true;
+     }
      else if(key == "CHIRP")
-         m_signal = msg.GetString();
-//     else if(key != "APPCAST_REQ") // handled by AppCastingMOOSApp
-//       reportRunWarning("Unhandled Mail: " + key);
+     {
+         m_chirp = msg.GetString();
+         handled = true;
+     }
+     else if(!handled) // handled by AppCastingMOOSApp
+       reportRunWarning("Unhandled Mail: " + key);
    }
 	
    return(true);
@@ -82,12 +88,12 @@ bool Chirp::Iterate()
 {
   AppCastingMOOSApp::Iterate();
   // Do your thing here!
-  string str= "aplay Chirp_4000_8000.wav";
+  string str= "aplay Chirp.wav";
   const char *filename = str.c_str();
 
-  if(m_loiter=="true" && m_signal=="true"){
+  if(m_loiter=="true" && m_chirp=="true"){
       system(filename);
-      sleeptime(1900);
+//      sleeptime(1900);
   }
   AppCastingMOOSApp::PostReport();
   return(true);
@@ -160,15 +166,15 @@ bool Chirp::buildReport()
   return(true);
 }
 
-void Chirp::sleeptime(int msec)
-{
-    clock_t time_end;
-    time_end = clock() + CLOCKS_PER_SEC/1000*msec;
-    reportEvent("sleep!!\n");
-    while(clock() < time_end)
-    {
-    }
-}
+//void Chirp::sleeptime(int msec)
+//{
+//    clock_t time_end;
+//    time_end = clock() + CLOCKS_PER_SEC/1000*msec;
+//    reportEvent("sleep!!\n");
+//    while(clock() < time_end)
+//    {
+//    }
+//}
 
 
 
