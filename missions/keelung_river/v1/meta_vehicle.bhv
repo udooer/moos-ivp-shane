@@ -32,7 +32,6 @@ set MODE = RETURNING {
 set MODE = LOITERING {
   MODE = ACTIVE
   LOITER = true
-  RETURN = false
 } 
 
 //-----------------------------------------------
@@ -96,7 +95,6 @@ Behavior = BHV_Waypoint
   condition = MODE==RETURNING
   endflag   = SURVEY=true
   endflag   = STATION_KEEP=true
-//  endflag   = SURVEY=true
   endflag   = LOITER=false
   perpetual = true
 
@@ -113,7 +111,6 @@ Behavior = BHV_StationKeep
   name      = station-keep
   pwt       = 100
   condition = MODE==STATION-KEEPING
-
    center_activate = true
       inner_radius = 5
       outer_radius = 10 

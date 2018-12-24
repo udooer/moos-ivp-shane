@@ -31,6 +31,7 @@ class Chirp : public AppCastingMOOSApp
  private: // Configuration variables
    std::string m_loiter;
    std::string m_chirp;
+   std::string m_station;
  private: // State variables
 };
 

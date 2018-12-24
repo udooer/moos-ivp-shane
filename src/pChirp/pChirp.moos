@@ -22,17 +22,13 @@ ProcessConfig = uXMS
    var = LOITER, CHIRP
 }
 
-ProcessConfig = pOdometry
-{
-   AppTick   = 20
-   CommsTick = 20
-}
 
+//-----------------------------------
 // pChirp config block
 
 ProcessConfig = pChirp
 {
-   AppTick   = 4
-   CommsTick = 4
+   AppTick   = 0.8
+   CommsTick = 0.8
 }
 

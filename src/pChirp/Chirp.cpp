@@ -19,8 +19,9 @@ using namespace std;
 
 Chirp::Chirp()
 {
-    m_loiter = "false";
-    m_chirp  = "false";
+    m_loiter = "";
+    m_chirp  = "";
+    m_station = "";
 }
 
 //---------------------------------------------------------
@@ -64,6 +65,11 @@ bool Chirp::OnNewMail(MOOSMSG_LIST &NewMail)
          m_chirp = msg.GetString();
          handled = true;
      }
+     else if(key =="STATION_KEEP")
+     {
+         m_station = msg.GetString();
+         handled = true;
+     }
      else if(!handled) // handled by AppCastingMOOSApp
        reportRunWarning("Unhandled Mail: " + key);
    }
@@ -91,7 +97,7 @@ bool Chirp::Iterate()
   string str= "aplay Chirp.wav";
   const char *filename = str.c_str();
 
-  if(m_loiter=="true" && m_chirp=="true"){
+  if(m_loiter=="true" && m_chirp=="true" && m_station=="false"){
       system(filename);
 //      sleeptime(1900);
   }
@@ -144,6 +150,7 @@ void Chirp::registerVariables()
   AppCastingMOOSApp::RegisterVariables();
   Register("CHIRP", 0);
   Register("LOITER", 0);
+  Register("STATION_KEEP", 0);
   // Register("FOOBAR", 0);
 }
 

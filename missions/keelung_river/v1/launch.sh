@@ -2,9 +2,9 @@
 #-----------------------------------------------------------
 #  Part 1: Check for and handle command-line arguments
 #-----------------------------------------------------------
-python3 gen_chirp.py
 TIME_WARP=1
 JUST_MAKE="no"
+MAKE_CHIRP="no"
 for ARGI; do
     if [ "${ARGI}" = "--help" -o "${ARGI}" = "-h" ] ; then
 	printf "%s [SWITCHES] [time_warp]   \n" $0
@@ -14,22 +14,24 @@ for ARGI; do
     elif [ "${ARGI//[^0-9]/}" = "$ARGI" -a "$TIME_WARP" = 1 ]; then 
         TIME_WARP=$ARGI
     elif [ "${ARGI}" = "--just_build" -o "${ARGI}" = "-j" ] ; then
-	JUST_MAKE="yes"
+	    JUST_MAKE="yes"
+    elif [ "$ARGI" = "-c" ]; then
+        MAKE_CHIRP="yes"
     else 
 	printf "Bad Argument: %s \n" $ARGI
 	exit 0
-    fi
+fi
 done
 
 #-----------------------------------------------------------
 #  Part 2: Create the .moos and .bhv files. 
 #-----------------------------------------------------------
 VNAME1="NTU_handsomest"  
-//VNAME2="henry"  
+#VNAME2="henry"  
 START_POS1="0,0"    
-//START_POS2="80,0"   
+#START_POS2="80,0"   
 LOITER_POS1="x=150,y=43.25"
-//LOITER_POS2="x=125,y=-50"
+#LOITER_POS2="x=125,y=-50"
 
 SHORE_LISTEN="9300"
 
@@ -38,22 +40,26 @@ nsplug meta_vehicle.moos targ_$VNAME1.moos -f WARP=$TIME_WARP \
     VPORT="9001"       SHARE_LISTEN="9301"                    \
     VTYPE="kayak"      SHORE_LISTEN=$SHORE_LISTEN           
 
-//nsplug meta_vehicle.moos targ_$VNAME2.moos -f WARP=$TIME_WARP \
-//    VNAME=$VNAME2      START_POS=$START_POS2                  \
-//    VPORT="9002"       SHARE_LISTEN="9302"                    \
-//    VTYPE="kayak"      SHORE_LISTEN=$SHORE_LISTEN            
+#nsplug meta_vehicle.moos targ_$VNAME2.moos -f WARP=$TIME_WARP \
+#    VNAME=$VNAME2      START_POS=$START_POS2                  \
+#    VPORT="9002"       SHARE_LISTEN="9302"                    \
+#    VTYPE="kayak"      SHORE_LISTEN=$SHORE_LISTEN            
 
 nsplug meta_vehicle.bhv targ_$VNAME1.bhv -f VNAME=$VNAME1     \
     START_POS=$START_POS1 LOITER_POS=$LOITER_POS1       
 
-//nsplug meta_vehicle.bhv targ_$VNAME2.bhv -f VNAME=$VNAME2     \
-//    START_POS=$START_POS2 LOITER_POS=$LOITER_POS2       
+#nsplug meta_vehicle.bhv targ_$VNAME2.bhv -f VNAME=$VNAME2     \
+#    START_POS=$START_POS2 LOITER_POS=$LOITER_POS2       
 
 nsplug meta_shoreside.moos targ_shoreside.moos -f WARP=$TIME_WARP \
    VNAME="shoreside"  SHARE_LISTEN=$SHORE_LISTEN  VPORT="9000"     
         
 if [ ${JUST_MAKE} = "yes" ] ; then
     exit 0
+fi
+
+if [ $MAKE_CHIRP = "yes" ];then
+    python3 gen_chirp.py
 fi
 
 #-----------------------------------------------------------
@@ -63,8 +69,8 @@ printf "Launching $SNAME MOOS Community (WARP=%s) \n"  $TIME_WARP
 pAntler targ_shoreside.moos >& /dev/null &
 printf "Launching $VNAME1 MOOS Community (WARP=%s) \n" $TIME_WARP
 pAntler targ_$VNAME1.moos >& /dev/null &
-//printf "Launching $VNAME2 MOOS Community (WARP=%s) \n" $TIME_WARP
-//pAntler targ_$VNAME2.moos >& /dev/null &
+#printf "Launching $VNAME2 MOOS Community (WARP=%s) \n" $TIME_WARP
+#pAntler targ_$VNAME2.moos >& /dev/null &
 printf "Done \n"
 
 #-----------------------------------------------------------

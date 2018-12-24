@@ -27,8 +27,8 @@ Processconfig = ANTLER
 //---------------------
 Processconfig = pChirp
 {
-    AppTick = 1
-    CommsTick = 1
+    AppTick = 0.5
+    CommsTick = 0.5
 }
 //----------------------------
 
