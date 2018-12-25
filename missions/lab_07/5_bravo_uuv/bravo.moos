@@ -173,7 +173,7 @@ ProcessConfig = pMarineViewer
   set_pan_y            = -280
   zoom                 = 0.65
   vehicle_shape_scale  = 1.5
-  //vehicle_name_mode = names + depth
+  vehicles_name_mode = names+depth
   hash_delta           = 50
   hash_shade           = 0.22
   hash_viewable        = true
@@ -222,10 +222,10 @@ ProcessConfig = pMarineViewer
   scope  = WEST_DEPTH_DIFF
   scope  = EAST_DEPTH_DIFF
 
-  button_one = DEPLOY # DEPLOY=true # LOITER_REGION=WEST #MODE=SURVEYING
+  button_one = DEPLOY # DEPLOY=true # LOITER_REGION=WEST 
   button_one = MOOS_MANUAL_OVERRIDE=false # RETURN=false
   
-  button_two = RETURN # RETURN=true #MODE=UP #LOITER_REGION=PARK
+  button_two = RETURN # RETURN=true 
 
   action  = MENU_KEY=deploy # DEPLOY = true # RETURN = false
   action+ = MENU_KEY=deploy # MOOS_MANUAL_OVERRIDE=false

@@ -2,8 +2,33 @@
 
 initialize      DEPLOY = false
 initialize      RETURN = false
-initialize      LOITER_REGION=PARK
-initialize      MODE=UP
+initialize      LOITER_REGION = WEST
+initialize      GPS_TAKE = false
+
+set MODE = ACTIVE {
+    DEPLOY = true
+} INACTIVE
+
+set MODE = RETURNING {
+    MODE = ACTIVE
+    RETURN = true
+}
+
+set MODE = GPS-TAKING {
+    MODE = ACTIVE
+    GPS_TAKE = true
+}
+
+set MODE = WEST-LOITERING {
+    MODE = ACTIVE
+    LOITER_REGION = WEST
+}
+
+set MODE = EAST-LOITERING {
+    MODE = ACTIVE
+    LOITER_REGION = EAST
+}
+
 //-----------------------------------------
 Behavior = BHV_Loiter
 {
@@ -11,16 +36,12 @@ Behavior = BHV_Loiter
    // ---------------------------
    name         = west_transit               // example
    pwt          = 100                   // default
-   condition    = LOITER_REGION=WEST        // example
-   condition    = DEPLOY=true
-   condition    = MODE=SURVEYING
+   condition    = MODE==WEST-LOITERING
    updates      = LOITER_UPDATES        // example
    duration     = 150
    duration_status = WEST_DTIME
    perpetual    = true
    duration_idle_decay = false
-   endflag      = RETURN=false
-   endflag      = DEPLOY=true
    endflag      = LOITER_REGION=EAST
    // Parameters specific to this behavior
    // ------------------------------------
@@ -43,7 +64,7 @@ Behavior = BHV_Loiter
         visual_hints = vertex_size  = 1             // default
         visual_hints = edge_size    = 1             // default
         visual_hints = vertex_color = dodger_blue   // default
-        visual_hints = edge_color   = white         // default
+        visual_hints = edge_color   = orange         // default
         visual_hints = nextpt_color = yellow        // default
         visual_hints = nextpt_lcolor = aqua         // default
         visual_hints = nextpt_vertex_size = 5       // default
@@ -56,16 +77,12 @@ Behavior = BHV_Loiter
    // ---------------------------
    name         = east_transit               // example
    pwt          = 100                   // default
-   condition    = LOITER_REGION=EAST        // example
-   condition    = DEPLOY=true
-   condition    = MODE=SURVEYING
+   condition    = MODE==EAST-LOITERING
    updates      = LOITER_UPDATES        // example
    duration     = 150
    duration_status = EAST_DTIME
    perpetual    = true
    duration_idle_decay = false
-   endflag      = RETURN=false
-   endflag      = DEPLOY=true
    endflag      = LOITER_REGION=WEST
    // Parameters specific to this behavior
    // ------------------------------------
@@ -88,7 +105,7 @@ Behavior = BHV_Loiter
         visual_hints = vertex_size  = 1             // default
         visual_hints = edge_size    = 1             // default
         visual_hints = vertex_color = dodger_blue   // default
-        visual_hints = edge_color   = white         // default
+        visual_hints = edge_color   = orange         // default
         visual_hints = nextpt_color = yellow        // default
         visual_hints = nextpt_lcolor = aqua         // default
         visual_hints = nextpt_vertex_size = 5       // default
@@ -99,13 +116,13 @@ Behavior=BHV_Waypoint
 {
     name       = waypt_return
     pwt        = 100
-    condition  = RETURN = true
-    condition  = DEPLOY = true
+    condition  = MODE==RETURNING
     perpetual  = true
     updates    = RETURN_UPDATE
     endflag    = RETURN = false
     endflag    = DEPLOY = false
     endflag    = MISSION = complete
+    endflag    = GPS_TAKE = false
   
              speed = 2.0
     capture_radius = 2.0
@@ -119,17 +136,16 @@ Behavior = BHV_ConstantDepth
   // ---------------------------
   name         = west_const_dep_survey   // example
   pwt          = 100                // default
-  condition    = MODE=SURVEYING    // example
-  condition    = RETURN=false
+  condition    = (MODE==WEST-LOITERING) or (MODE==EAST-LOITERING)
+  endflag      = GPS_TAKE=true
   updates      = CONST_DEP_UPDATES  // example
   perpetual    = true
-  endflag      = MODE=UP
   // Parameters specific to this behavior
   // ------------------------------------
            basewidth = 100          // default
                depth = 30            // default
-  depth_mismatch_var = SURVEYING_DEPTH_DIFF   // example
             duration = 200            // default
+     duration_status = LOITER_TIME
  duration_idle_decay = false
            peakwidth = 3            // default
          summitdelta = 50           // default
@@ -141,9 +157,7 @@ Behavior = BHV_ConstantDepth
   // ---------------------------
   name         = UpForGPS_const_dep_survey   // example
   pwt          = 100                // default
-  condition    = MODE=UP    // example
-  condition    = RETURN=false
-  condition    = UpForGPS_DEPTH_DIFF != 0
+  condition    = MODE==GPS-TAKING
   updates      = CONST_DEP_UPDATES  // example
   perpetual    = true
   // Parameters specific to this behavior
@@ -160,21 +174,36 @@ Behavior = BHV_Timer
 {
   // General Behavior Parameters
   // ---------------------------
-  name         = bhv_timer            // default
-  condition    = MODE=UP
+  name         = bhv_timer_to_GPS            // default
   condition    = UpForGPS_DEPTH_DIFF=0    // example
-  condition    = RETURN=false
+  condition    = GPS_TAKE=true
   duration     = 60                  // example
+  duration_status = WAITING_FOR_GPS
   duration_idle_decay = false
   perpetual = true
-  idleflag     = WAITING=false        // example
-  runflag      = WAITING=true         // example
-  runflag      = WAITED=false         // example
-//  endflag      = WAIT_REQUEST=false          // example
-  endflag      = MODE=SURVEYING
+  endflag      = GPS_TAKE=false
   updates      = TIMER_UPDATES        // example
 
   // Parameters specific to this behavior
   // ------------------------------------
   // None
-} 
+}
+
+Behavior = BHV_ConstantDepth
+{
+  // General Behavior Parameters
+  // ---------------------------
+  name         = return_const_dep_survey   // example
+  pwt          = 100                // default
+  condition    = MODE==RETURNING
+  updates      = CONST_DEP_UPDATES  // example
+  perpetual    = true
+  // Parameters specific to this behavior
+  // ------------------------------------
+           basewidth = 100          // default
+               depth = 0            // default
+            duration = no-time-limit            // default
+           peakwidth = 3            // default
+         summitdelta = 50           // default
+}
+

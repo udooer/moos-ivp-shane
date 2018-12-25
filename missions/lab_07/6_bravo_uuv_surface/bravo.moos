@@ -208,23 +208,13 @@ ProcessConfig = pMarineViewer
   right_context[return] = MOOS_MANUAL_OVERRIDE=false
   right_context[return] = RETURN=false
 
-  scope  = RETURN
-  scope  = WPT_STAT
-  scope  = VIEW_SEGLIST
-  scope  = VIEW_POINT
-  scope  = VIEW_POLYGON
-  scope  = MVIEWER_LCLICK
-  scope  = MVIEWER_RCLICK
-  scope  = LOITER_REGION  
-  scope  = WEST_DTIME
-  scope  = EAST_DTIME
   scope  = MODE
-  scope  = SURVEYING_DEPTH_DIFF
-  scope  = UpForGPS_DEPTH_DIFF
+  scope  = UpForGPS_DEPTH_DIFF, LOITER_TIME, WAITING_FOR_GPS
 
-  button_one = DEPLOY # DEPLOY=true # LOITER_REGION=WEST #MODE=SURVEYING
+  button_one = DEPLOY # DEPLOY=true 
   button_one = MOOS_MANUAL_OVERRIDE=false # RETURN=false
-  button_two = RETURN # RETURN=true #MODE=UP #LOITER_REGION=PARK
+
+  button_two = RETURN # RETURN=true 
 
   action  = MENU_KEY=deploy # DEPLOY = true # RETURN = false
   action+ = MENU_KEY=deploy # MOOS_MANUAL_OVERRIDE=false
