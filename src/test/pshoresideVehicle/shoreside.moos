@@ -5,11 +5,20 @@ Community = computer
 ProcessConfig = ANTLER
 {
    MSBetweenLaunches = 200
-   Run = MOOSDB     @NewConsole = false
-   Run = uXMS       @NewConsole = true
+   Run = MOOSDB         @NewConsole = false
+   Run = uXMS           @NewConsole = true
    Run = pshoresideVehicle      @NewConsole = false
-   Run = pShare     @NewConsole = false
+   Run = pShare         @NewConsole = false
+   Run = pHostInfo      @NewConsole = false
 // Run = uTimerScript   @NewConsole = true
+}
+
+
+ProcessConfig = pHostInfo
+{
+    AppTick = 1
+    CommsTick = 1
+//    DEFAULT_HOSTIP_FORCE = localhost
 }
 
 
@@ -18,9 +27,8 @@ ProcessConfig = pShare
   AppTick   = 4
   CommsTick = 4
   
-  input  = route=192.168.1.57:9201
-  output = src_name=RECEiVED, dest_name=RECEIVED_IN_SHORE, route=192.168.1.102:9200
-
+  input  = route=192.168.1.102:9001
+  output = src_name=RECEIVED, dest_name=RECEIVED_IN_SHORE, route=192.168.1.57:9101
 }
 
 
@@ -30,7 +38,7 @@ ProcessConfig = uXMS
    CommsTick = 4
    display_source = true
    display_community = true
-   var = RECEIVED,GPS,RECEIVED_IN_SHORE
+   var = RECEIVED,GPS,GPS_NUMBER
 }
 
 ProcessConfig = pshoresideVehicle

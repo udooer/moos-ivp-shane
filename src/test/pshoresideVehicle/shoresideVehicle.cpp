@@ -58,6 +58,8 @@ bool shoresideVehicle::OnNewMail(MOOSMSG_LIST &NewMail)
 	    m_gps_number = msg.GetDouble();
         m_received = m_received + 1;
         handled = true;
+        Notify("GPS_NUMBER",m_gps_number);
+        Notify("RECEIVED",m_received);
      }
      else if(handled = false) // handled by AppCastingMOOSApp
        reportRunWarning("Unhandled Mail: " + key);
@@ -83,9 +85,6 @@ bool shoresideVehicle::Iterate()
 {
   AppCastingMOOSApp::Iterate();
   // Do your thing here!
-  reportEvent("Iterate");
-  Notify("GPS_NUMBER",m_gps_number);
-  Notify("RECEIVED",m_received);
   AppCastingMOOSApp::PostReport();
   return(true);
 }
