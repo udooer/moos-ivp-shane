@@ -1,0 +1,57 @@
+SeverHost = localhost
+SeverPort = 9000
+Community = vehicle
+
+ProcessConfig = ANTLER
+{
+   MSBetweenLaunches = 200
+   Run = MOOSDB         @NewConsole = false
+   Run = uXMS           @NewConsole = true
+   Run = pvehicle       @NewConsole = false
+   Run = pShare         @NewConsole = false
+   Run = uTimerScript   @NewConsole = true
+}
+
+
+ProcessConfig = pShare
+{
+  AppTick   = 4
+  CommsTick = 4
+
+  input  = route=192.168.1.102:9200
+  output = src_name=GPS_NUMBER, dest_name=GPS, route=192.168.1.57:9201
+}
+
+
+ProcessConfig = uXMS
+{
+   AppTick = 4
+   CommsTick = 4
+   display_source   = true
+   display_community = true
+   var = RECEIVED,GPS,RECEIVED_IN_SCRIPT,RECEIVED_IN_SHORE
+}
+
+ProcessConfig = pvehicle
+{
+   AppTick = 4
+   CommsTick = 4
+}
+ProcessConfig = uTimerScript
+{  
+   AppTick = 4
+   CommsTick = 4
+   event = var = GPS, val =$(6),time=5 
+   event = var = GPS, val =$(8),time=6
+   event = var = GPS, val =$(6),time=7
+   event = var = GPS, val =$(8),time=8
+   event = var = GPS, val =$(6),time=9
+   event = var = GPS, val =$(8),time=10
+   event = var = GPS, val =$(6),time=11
+   event = var = GPS, val =$(8),time=12
+   event = var = GPS, val =$(6),time=13
+   event = var = GPS, val =$(8),time=14
+   event = var = GPS, val =$(6),time=15
+   reset_max = 0
+   reset_time = all-posted
+}

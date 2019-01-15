@@ -1,0 +1,1 @@
+/usr/bin/c++   -fPIC -g  -rdynamic CMakeFiles/pTest.dir/Test.cpp.o CMakeFiles/pTest.dir/Test_Info.cpp.o CMakeFiles/pTest.dir/main.cpp.o  -o ../../../../bin/pTest  -L/home/shane/moos-ivp/lib -Wl,-rpath,/home/shane/moos-ivp/lib /home/shane/moos-ivp/build/MOOS/MOOSCore/lib/libMOOS.a -lmbutil -lm -lpthread 

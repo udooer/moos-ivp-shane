@@ -62,7 +62,8 @@ ProcessConfig = pMarineViewer
   hash_shade           = 0.35
 
 //  SCOPE = PHI_HOST_INFO
-  SCOPE = CHIRP, LOITER
+//  SCOPE = CHIRP, LOITER
+
   BUTTON_ONE   = DEPLOY  # DEPLOY_ALL=true 
   BUTTON_ONE   = MOOS_MANUAL_OVERRIDE_ALL=false 
   BUTTON_ONE   = RETURN_ALL=false # STATION_KEEP_ALL=false # CHIRP_ALL=true

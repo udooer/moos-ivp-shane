@@ -1,0 +1,40 @@
+SeverHost = localhost
+SeverPort = 9000
+Community = computer
+
+ProcessConfig = ANTLER
+{
+   MSBetweenLaunches = 200
+   Run = MOOSDB     @NewConsole = false
+   Run = uXMS       @NewConsole = true
+   Run = pshoresideVehicle      @NewConsole = false
+   Run = pShare     @NewConsole = false
+// Run = uTimerScript   @NewConsole = true
+}
+
+
+ProcessConfig = pShare
+{
+  AppTick   = 4
+  CommsTick = 4
+  
+  input  = route=192.168.1.57:9201
+  output = src_name=RECEiVED, dest_name=RECEIVED_IN_SHORE, route=192.168.1.102:9200
+
+}
+
+
+ProcessConfig = uXMS
+{
+   AppTick = 4
+   CommsTick = 4
+   display_source = true
+   display_community = true
+   var = RECEIVED,GPS,RECEIVED_IN_SHORE
+}
+
+ProcessConfig = pshoresideVehicle
+{
+   AppTick = 4
+   CommsTick = 4
+}

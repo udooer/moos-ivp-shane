@@ -172,8 +172,34 @@ pTest: cmake_check_build_system
 
 # fast build rule for target.
 pTest/fast:
-	$(MAKE) -f src/pTest/CMakeFiles/pTest.dir/build.make src/pTest/CMakeFiles/pTest.dir/build
+	$(MAKE) -f src/test/pTest/CMakeFiles/pTest.dir/build.make src/test/pTest/CMakeFiles/pTest.dir/build
 .PHONY : pTest/fast
+
+#=============================================================================
+# Target rules for targets named pshoresideVehicle
+
+# Build rule for target.
+pshoresideVehicle: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pshoresideVehicle
+.PHONY : pshoresideVehicle
+
+# fast build rule for target.
+pshoresideVehicle/fast:
+	$(MAKE) -f src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/build.make src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/build
+.PHONY : pshoresideVehicle/fast
+
+#=============================================================================
+# Target rules for targets named pvehicle
+
+# Build rule for target.
+pvehicle: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pvehicle
+.PHONY : pvehicle
+
+# fast build rule for target.
+pvehicle/fast:
+	$(MAKE) -f src/test/pvehicle/CMakeFiles/pvehicle.dir/build.make src/test/pvehicle/CMakeFiles/pvehicle.dir/build
+.PHONY : pvehicle/fast
 
 #=============================================================================
 # Target rules for targets named pPrimeFactor
@@ -227,6 +253,8 @@ help:
 	@echo "... pExampleApp"
 	@echo "... pOdometry"
 	@echo "... pTest"
+	@echo "... pshoresideVehicle"
+	@echo "... pvehicle"
 	@echo "... pPrimeFactor"
 	@echo "... pNumberCal"
 	@echo "... pChirp"

@@ -11,6 +11,10 @@ initialize   CHIRP = false
 set MODE = ACTIVE {
   DEPLOY = true
 } INACTIVE
+set MODE = RETURNING {
+      MODE = ACTIVE
+   RETURN = true
+    }
 
 set MODE = STATION-KEEPING {
   MODE = ACTIVE
@@ -24,10 +28,10 @@ set MODE = POINT-SURVEYING {
   RETURN = false
 }
 
-set MODE = RETURNING {
-  MODE = ACTIVE
-  RETURN = true
-} 
+//set MODE = RETURNING {
+//  MODE = ACTIVE
+//  RETURN = true
+//} 
 
 set MODE = LOITERING {
   MODE = ACTIVE
@@ -91,7 +95,7 @@ Behavior = BHV_Loiter
 Behavior = BHV_Waypoint
 {
   name      = waypt_return
-  pwt       = 100
+  pwt       = 200
   condition = MODE==RETURNING
   endflag   = SURVEY=true
   endflag   = STATION_KEEP=true

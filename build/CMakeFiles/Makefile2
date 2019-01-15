@@ -67,7 +67,9 @@ src/all: src/lib_behaviors-test/all
 src/all: src/pXRelayTest/all
 src/all: src/pExampleApp/all
 src/all: src/pOdometry/all
-src/all: src/pTest/all
+src/all: src/test/pTest/all
+src/all: src/test/pshoresideVehicle/all
+src/all: src/test/pvehicle/all
 src/all: src/pPrimeFactor/all
 src/all: src/pNumberCal/all
 src/all: src/pChirp/all
@@ -79,7 +81,9 @@ src/clean: src/lib_behaviors-test/clean
 src/clean: src/pXRelayTest/clean
 src/clean: src/pExampleApp/clean
 src/clean: src/pOdometry/clean
-src/clean: src/pTest/clean
+src/clean: src/test/pTest/clean
+src/clean: src/test/pshoresideVehicle/clean
+src/clean: src/test/pvehicle/clean
 src/clean: src/pPrimeFactor/clean
 src/clean: src/pNumberCal/clean
 src/clean: src/pChirp/clean
@@ -91,7 +95,9 @@ src/preinstall: src/lib_behaviors-test/preinstall
 src/preinstall: src/pXRelayTest/preinstall
 src/preinstall: src/pExampleApp/preinstall
 src/preinstall: src/pOdometry/preinstall
-src/preinstall: src/pTest/preinstall
+src/preinstall: src/test/pTest/preinstall
+src/preinstall: src/test/pshoresideVehicle/preinstall
+src/preinstall: src/test/pvehicle/preinstall
 src/preinstall: src/pPrimeFactor/preinstall
 src/preinstall: src/pNumberCal/preinstall
 src/preinstall: src/pChirp/preinstall
@@ -319,57 +325,167 @@ clean: src/pOdometry/CMakeFiles/pOdometry.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory src/pTest
+# Directory level rules for directory src/test/pTest
 
 # Convenience name for "all" pass in the directory.
-src/pTest/all: src/pTest/CMakeFiles/pTest.dir/all
+src/test/pTest/all: src/test/pTest/CMakeFiles/pTest.dir/all
 
-.PHONY : src/pTest/all
+.PHONY : src/test/pTest/all
 
 # Convenience name for "clean" pass in the directory.
-src/pTest/clean: src/pTest/CMakeFiles/pTest.dir/clean
+src/test/pTest/clean: src/test/pTest/CMakeFiles/pTest.dir/clean
 
-.PHONY : src/pTest/clean
+.PHONY : src/test/pTest/clean
 
 # Convenience name for "preinstall" pass in the directory.
-src/pTest/preinstall:
+src/test/pTest/preinstall:
 
-.PHONY : src/pTest/preinstall
+.PHONY : src/test/pTest/preinstall
 
 #=============================================================================
-# Target rules for target src/pTest/CMakeFiles/pTest.dir
+# Target rules for target src/test/pTest/CMakeFiles/pTest.dir
 
 # All Build rule for target.
-src/pTest/CMakeFiles/pTest.dir/all:
-	$(MAKE) -f src/pTest/CMakeFiles/pTest.dir/build.make src/pTest/CMakeFiles/pTest.dir/depend
-	$(MAKE) -f src/pTest/CMakeFiles/pTest.dir/build.make src/pTest/CMakeFiles/pTest.dir/build
+src/test/pTest/CMakeFiles/pTest.dir/all:
+	$(MAKE) -f src/test/pTest/CMakeFiles/pTest.dir/build.make src/test/pTest/CMakeFiles/pTest.dir/depend
+	$(MAKE) -f src/test/pTest/CMakeFiles/pTest.dir/build.make src/test/pTest/CMakeFiles/pTest.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/moos-ivp-shane/build/CMakeFiles --progress-num=24,25,26,27 "Built target pTest"
-.PHONY : src/pTest/CMakeFiles/pTest.dir/all
+.PHONY : src/test/pTest/CMakeFiles/pTest.dir/all
 
 # Include target in all.
-all: src/pTest/CMakeFiles/pTest.dir/all
+all: src/test/pTest/CMakeFiles/pTest.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-src/pTest/CMakeFiles/pTest.dir/rule: cmake_check_build_system
+src/test/pTest/CMakeFiles/pTest.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/moos-ivp-shane/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 src/pTest/CMakeFiles/pTest.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 src/test/pTest/CMakeFiles/pTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/moos-ivp-shane/build/CMakeFiles 0
-.PHONY : src/pTest/CMakeFiles/pTest.dir/rule
+.PHONY : src/test/pTest/CMakeFiles/pTest.dir/rule
 
 # Convenience name for target.
-pTest: src/pTest/CMakeFiles/pTest.dir/rule
+pTest: src/test/pTest/CMakeFiles/pTest.dir/rule
 
 .PHONY : pTest
 
 # clean rule for target.
-src/pTest/CMakeFiles/pTest.dir/clean:
-	$(MAKE) -f src/pTest/CMakeFiles/pTest.dir/build.make src/pTest/CMakeFiles/pTest.dir/clean
-.PHONY : src/pTest/CMakeFiles/pTest.dir/clean
+src/test/pTest/CMakeFiles/pTest.dir/clean:
+	$(MAKE) -f src/test/pTest/CMakeFiles/pTest.dir/build.make src/test/pTest/CMakeFiles/pTest.dir/clean
+.PHONY : src/test/pTest/CMakeFiles/pTest.dir/clean
 
 # clean rule for target.
-clean: src/pTest/CMakeFiles/pTest.dir/clean
+clean: src/test/pTest/CMakeFiles/pTest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory src/test/pshoresideVehicle
+
+# Convenience name for "all" pass in the directory.
+src/test/pshoresideVehicle/all: src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/all
+
+.PHONY : src/test/pshoresideVehicle/all
+
+# Convenience name for "clean" pass in the directory.
+src/test/pshoresideVehicle/clean: src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/clean
+
+.PHONY : src/test/pshoresideVehicle/clean
+
+# Convenience name for "preinstall" pass in the directory.
+src/test/pshoresideVehicle/preinstall:
+
+.PHONY : src/test/pshoresideVehicle/preinstall
+
+#=============================================================================
+# Target rules for target src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir
+
+# All Build rule for target.
+src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/all:
+	$(MAKE) -f src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/build.make src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/depend
+	$(MAKE) -f src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/build.make src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/moos-ivp-shane/build/CMakeFiles --progress-num=32,33,34,35 "Built target pshoresideVehicle"
+.PHONY : src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/all
+
+# Include target in all.
+all: src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/moos-ivp-shane/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/moos-ivp-shane/build/CMakeFiles 0
+.PHONY : src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/rule
+
+# Convenience name for target.
+pshoresideVehicle: src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/rule
+
+.PHONY : pshoresideVehicle
+
+# clean rule for target.
+src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/clean:
+	$(MAKE) -f src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/build.make src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/clean
+.PHONY : src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/clean
+
+# clean rule for target.
+clean: src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory src/test/pvehicle
+
+# Convenience name for "all" pass in the directory.
+src/test/pvehicle/all: src/test/pvehicle/CMakeFiles/pvehicle.dir/all
+
+.PHONY : src/test/pvehicle/all
+
+# Convenience name for "clean" pass in the directory.
+src/test/pvehicle/clean: src/test/pvehicle/CMakeFiles/pvehicle.dir/clean
+
+.PHONY : src/test/pvehicle/clean
+
+# Convenience name for "preinstall" pass in the directory.
+src/test/pvehicle/preinstall:
+
+.PHONY : src/test/pvehicle/preinstall
+
+#=============================================================================
+# Target rules for target src/test/pvehicle/CMakeFiles/pvehicle.dir
+
+# All Build rule for target.
+src/test/pvehicle/CMakeFiles/pvehicle.dir/all:
+	$(MAKE) -f src/test/pvehicle/CMakeFiles/pvehicle.dir/build.make src/test/pvehicle/CMakeFiles/pvehicle.dir/depend
+	$(MAKE) -f src/test/pvehicle/CMakeFiles/pvehicle.dir/build.make src/test/pvehicle/CMakeFiles/pvehicle.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/moos-ivp-shane/build/CMakeFiles --progress-num=36,37,38,39 "Built target pvehicle"
+.PHONY : src/test/pvehicle/CMakeFiles/pvehicle.dir/all
+
+# Include target in all.
+all: src/test/pvehicle/CMakeFiles/pvehicle.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/test/pvehicle/CMakeFiles/pvehicle.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/moos-ivp-shane/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 src/test/pvehicle/CMakeFiles/pvehicle.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/moos-ivp-shane/build/CMakeFiles 0
+.PHONY : src/test/pvehicle/CMakeFiles/pvehicle.dir/rule
+
+# Convenience name for target.
+pvehicle: src/test/pvehicle/CMakeFiles/pvehicle.dir/rule
+
+.PHONY : pvehicle
+
+# clean rule for target.
+src/test/pvehicle/CMakeFiles/pvehicle.dir/clean:
+	$(MAKE) -f src/test/pvehicle/CMakeFiles/pvehicle.dir/build.make src/test/pvehicle/CMakeFiles/pvehicle.dir/clean
+.PHONY : src/test/pvehicle/CMakeFiles/pvehicle.dir/clean
+
+# clean rule for target.
+clean: src/test/pvehicle/CMakeFiles/pvehicle.dir/clean
 
 .PHONY : clean
 

@@ -1,0 +1,9 @@
+//------------------------------------------------
+// pvehicle config block
+
+ProcessConfig = pvehicle
+{
+   AppTick   = 4
+   CommsTick = 4
+}
+
