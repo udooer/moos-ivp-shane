@@ -1,5 +1,5 @@
 SeverHost = localhost
-SeverPort = 9000
+SeverPort = 9100
 Community = vehicle
 
 ProcessConfig = ANTLER
@@ -9,17 +9,24 @@ ProcessConfig = ANTLER
    Run = uXMS           @NewConsole = true
    Run = pvehicle       @NewConsole = false
    Run = pShare         @NewConsole = false
-   Run = uTimerScript   @NewConsole = true
+   Run = pHostInfo      @NewConsole = false
+   Run = uTimerScript   @NewConsole = false
 }
 
+ProcessConfig = pHostInfo
+{
+    AppTick = 1
+    CommsTick = 1
+//    DEFAULT_HOSTIP_FORCE = localhost
+}
 
 ProcessConfig = pShare
 {
   AppTick   = 4
   CommsTick = 4
 
-  input  = route=192.168.1.102:9200
-  output = src_name=GPS_NUMBER, dest_name=GPS, route=192.168.1.57:9201
+  input  = route=192.168.1.57:9101
+  output = src_name=GPS_NUMBER, dest_name=GPS, route=192.168.1.102:9001
 }
 
 
@@ -29,7 +36,7 @@ ProcessConfig = uXMS
    CommsTick = 4
    display_source   = true
    display_community = true
-   var = RECEIVED,GPS,RECEIVED_IN_SCRIPT,RECEIVED_IN_SHORE
+   var = GPS_NUMBER, RECEIVED_IN_SCRIPT, RECEIVED_IN_SHORE
 }
 
 ProcessConfig = pvehicle
@@ -52,6 +59,6 @@ ProcessConfig = uTimerScript
    event = var = GPS, val =$(6),time=13
    event = var = GPS, val =$(8),time=14
    event = var = GPS, val =$(6),time=15
-   reset_max = 0
+   reset_max = 100
    reset_time = all-posted
 }
