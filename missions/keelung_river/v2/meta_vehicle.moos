@@ -32,6 +32,23 @@ Processconfig = pChirp
 }
 //----------------------------
 
+//
+ProcessConfig = uFldNodeBroker
+{
+  AppTick   = 1
+  CommsTick = 1
+
+  TRY_SHORE_HOST = pshare_route=192.168.1.102:9300
+
+  BRIDGE = src=VIEW_POLYGON
+  BRIDGE = src=VIEW_POINT
+  BRIDGE = src=VIEW_SEGLIST
+  BRIDGE = src=APPCAST
+  BRIDGE = src=NODE_REPORT_LOCAL,  alias=NODE_REPORT
+  BRIDGE = src=NODE_MESSAGE_LOCAL, alias=NODE_MESSAGE
+}
+
+//
 #include plug_uSimMarine.moos
 #include plug_pLogger.moos
 #include plug_pNodeReporter.moos
@@ -40,4 +57,4 @@ Processconfig = pChirp
 #include plug_uProcessWatch.moos
 #include plug_pShare.moos
 #include plug_pHostInfo.moos
-#include plug_uFldNodeBroker.moos
+/#include plug_uFldNodeBroker.moos
