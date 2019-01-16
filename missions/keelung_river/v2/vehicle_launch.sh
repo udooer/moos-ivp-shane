@@ -31,11 +31,11 @@ done
 #-----------------------------------------------------------
 VNAME1="NTU_handsomest"  
 #VNAME2="henry"  
-START_POS1="-25,-36"    
+START_POS1="28,-33"    
 #START_POS2="80,0"
-WAYPOINT_1="-25,-36"
-WAYPOINT_2="53,34"
-LOITER_POS1="x=72,y=-21"
+WAYPOINT_1="46,-33"
+WAYPOINT_2="57,-21"
+LOITER_POS1="x=57,y=-21"
 #LOITER_POS2="x=125,y=-50"
 
 SHORE_LISTEN="9300"
@@ -52,8 +52,7 @@ nsplug meta_vehicle.moos targ_$VNAME1.moos -f WARP=$TIME_WARP \
 #    VTYPE="kayak"      SHORE_LISTEN=$SHORE_LISTEN            
 
 nsplug meta_vehicle.bhv targ_$VNAME1.bhv -f VNAME=$VNAME1     \
-    WAYPOINT_1=$WAYPOINT_1 WAYPOINT_2=$WAYPOINT_2             \ 
-    START_POS=$START_POS1 LOITER_POS=$LOITER_POS1       
+    WAYPOINT_1=$WAYPOINT_1  WAYPOINT_2=$WAYPOINT_2  START_POS=$START_POS1 LOITER_POS=$LOITER_POS1       
 
 #nsplug meta_vehicle.bhv targ_$VNAME2.bhv -f VNAME=$VNAME2     \
 #    START_POS=$START_POS2 LOITER_POS=$LOITER_POS2       

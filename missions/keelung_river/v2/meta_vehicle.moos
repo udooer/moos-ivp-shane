@@ -62,7 +62,7 @@ ProcessConfig = pShare
 
 
 //
-#ifdef SIM="yes"
+#ifdef SIM
 #include plug_uSimMarine.moos
 #else
 #include plug_iM200.moos
