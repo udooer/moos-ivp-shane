@@ -59,7 +59,7 @@ Behavior = BHV_Waypoint
          slip_radius = 15.0
     efficiency_measure = all
 
-             polygon = 99.17,-0.73 : 150,43.25
+             polygon = $(WAYPOINT_1) : $(WAYPOINT_2)
 
                order = normal
              repeat  = 0

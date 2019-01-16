@@ -12,7 +12,11 @@ Processconfig = ANTLER
   MSBetweenLaunches = 50
    
   Run = MOOSDB             @ NewConsole = false
+#ifdef SIM  
   Run = uSimMarine         @ NewConsole = false
+#else
+  Run = iM200              @ NewConsole = false
+#endif
   Run = pLogger            @ NewConsole = false
   Run = pNodeReporter      @ NewConsole = false
   Run = pMarinePID         @ NewConsole = false
@@ -22,7 +26,6 @@ Processconfig = ANTLER
   Run = pHostInfo          @ NewConsole = false
   Run = uFldNodeBroker     @ NewConsole = false
   Run = pChirp             @ NewConsole = false
-  Run = iM200              @ NewConsole = false
 }
 
 //---------------------
@@ -65,7 +68,6 @@ ProcessConfig = pShare
 #include plug_iM200.moos
 #endif
 
-#include plug_iM200.moos
 #include plug_pLogger.moos
 #include plug_pNodeReporter.moos
 #include plug_pMarinePID.moos
