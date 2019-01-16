@@ -1,0 +1,6 @@
+ProcessConfig = iM200
+{
+  AppTick    = 10
+  CommsTick  = 10
+}
+

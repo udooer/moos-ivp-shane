@@ -5,6 +5,8 @@
 TIME_WARP=1
 JUST_MAKE="no"
 MAKE_CHIRP="no"
+SIM="no"
+
 for ARGI; do
     if [ "${ARGI}" = "--help" -o "${ARGI}" = "-h" ] ; then
 	printf "%s [SWITCHES] [time_warp]   \n" $0
@@ -17,6 +19,8 @@ for ARGI; do
 	    JUST_MAKE="yes"
     elif [ "$ARGI" = "-c" ]; then
         MAKE_CHIRP="yes"
+    elif [ "$ARGI" = "-c" ]; then
+        SIM="yes"
     else 
 	printf "Bad Argument: %s \n" $ARGI
 	exit 0
@@ -68,7 +72,7 @@ fi
 #printf "Launching $SNAME MOOS Community (WARP=%s) \n"  $TIME_WARP
 #pAntler targ_shoreside.moos >& /dev/null &
 printf "Launching $VNAME1 MOOS Community (WARP=%s) \n" $TIME_WARP
-pAntler targ_$VNAME1.moos >& /dev/null &
+pAntler targ_$VNAME1.moos 
 #printf "Launching $VNAME2 MOOS Community (WARP=%s) \n" $TIME_WARP
 #pAntler targ_$VNAME2.moos >& /dev/null &
 printf "Done \n"
@@ -77,7 +81,6 @@ printf "Done \n"
 #  Part 4: Launch uMAC and kill everything upon exiting uMAC
 #-----------------------------------------------------------
 #uMAC targ_shoreside.moos
-pause
-printf "Killing all processes ... \n"
-kill %1
-printf "Done killing processes.   \n"
+#printf "Killing all processes ... \n"
+#kill %1
+#printf "Done killing processes.   \n"
