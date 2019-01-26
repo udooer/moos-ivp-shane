@@ -32,3 +32,6 @@
 /home/shane/moos-ivp-shane/build/src/pChirp/CMakeFiles/rebuild_cache.dir
 /home/shane/moos-ivp-shane/build/src/pChirp/CMakeFiles/pChirp.dir
 /home/shane/moos-ivp-shane/build/src/pChirp/CMakeFiles/edit_cache.dir
+/home/shane/moos-ivp-shane/build/src/pPointAssign/CMakeFiles/rebuild_cache.dir
+/home/shane/moos-ivp-shane/build/src/pPointAssign/CMakeFiles/pPointAssign.dir
+/home/shane/moos-ivp-shane/build/src/pPointAssign/CMakeFiles/edit_cache.dir

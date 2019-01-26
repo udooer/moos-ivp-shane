@@ -17,6 +17,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../src/pExampleApp/CMakeLists.txt"
   "../src/pNumberCal/CMakeLists.txt"
   "../src/pOdometry/CMakeLists.txt"
+  "../src/pPointAssign/CMakeLists.txt"
   "../src/pPrimeFactor/CMakeLists.txt"
   "../src/pXRelayTest/CMakeLists.txt"
   "../src/test/pTest/CMakeLists.txt"
@@ -65,6 +66,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/pPrimeFactor/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/pNumberCal/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/pChirp/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/pPointAssign/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -79,4 +81,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/pPrimeFactor/CMakeFiles/pPrimeFactor.dir/DependInfo.cmake"
   "src/pNumberCal/CMakeFiles/pNumberCal.dir/DependInfo.cmake"
   "src/pChirp/CMakeFiles/pChirp.dir/DependInfo.cmake"
+  "src/pPointAssign/CMakeFiles/pPointAssign.dir/DependInfo.cmake"
   )

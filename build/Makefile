@@ -240,6 +240,19 @@ pChirp/fast:
 	$(MAKE) -f src/pChirp/CMakeFiles/pChirp.dir/build.make src/pChirp/CMakeFiles/pChirp.dir/build
 .PHONY : pChirp/fast
 
+#=============================================================================
+# Target rules for targets named pPointAssign
+
+# Build rule for target.
+pPointAssign: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pPointAssign
+.PHONY : pPointAssign
+
+# fast build rule for target.
+pPointAssign/fast:
+	$(MAKE) -f src/pPointAssign/CMakeFiles/pPointAssign.dir/build.make src/pPointAssign/CMakeFiles/pPointAssign.dir/build
+.PHONY : pPointAssign/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -258,6 +271,7 @@ help:
 	@echo "... pPrimeFactor"
 	@echo "... pNumberCal"
 	@echo "... pChirp"
+	@echo "... pPointAssign"
 .PHONY : help
 
 

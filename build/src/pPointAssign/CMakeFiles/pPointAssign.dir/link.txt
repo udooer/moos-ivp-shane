@@ -1,0 +1,1 @@
+/usr/bin/c++   -fPIC -g  -rdynamic CMakeFiles/pPointAssign.dir/PointAssign.cpp.o CMakeFiles/pPointAssign.dir/PointAssign_Info.cpp.o CMakeFiles/pPointAssign.dir/main.cpp.o  -o ../../../bin/pPointAssign  -L/home/shane/moos-ivp/lib -Wl,-rpath,/home/shane/moos-ivp/lib /home/shane/moos-ivp/build/MOOS/MOOSCore/lib/libMOOS.a -lapputil -lmbutil -lm -lpthread 
