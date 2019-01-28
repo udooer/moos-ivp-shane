@@ -1,0 +1,108 @@
+//-----------------------------------------
+//author :      hhyung
+//date :        2019/01/26
+//information : moos-ivp lab09 TSP
+//--------------------------------------
+
+ServerHost = localhost
+ServerPort = 9000
+Community  = TSP
+
+//#include plug_origin_warp.moos
+
+//---------------------------------------
+ProcessConfig = ANTLER
+{
+    MSBetweenLaunches = 100
+    
+    Run = MOOSDB            @NewConsole = false
+//    Run = pMarineViewer     @NewConsole = false
+//    Run = pLogger           @NewConsole = false
+    Run = pHostInfo         @NewConsole = false
+    Run = pShare            @NewConsole = false
+    Run = uFldShoreBroker   @NewConsole = false
+    Run = uTimerScript      @NewConsole = false
+    Run = pPointAssign      @NewConsole = false
+    Run = uXMS              @NewConsole = true
+}
+
+#include plug_pLogger.moos
+#include plug_pHostInfo.moos
+
+ProcessConfig = pHostInfo 
+{
+    AppTick   = 1
+    CommsTick = 1
+}
+
+ProcessConfig = uXMS
+{
+    AppTick   = 4;
+    CommsTick = 4;
+
+    display_all = true 
+    history_var = VISIT_POINT_SHANE
+}
+
+ProcessConfig = uFldShoreBroker
+{
+    AppTick     = 1
+    CommsTick   = 1
+
+    QBRIDGE = DEPLOY,NODE_REPORT, RETURN
+    QBRIDGE = MOOS_MANUAL_OVERRIDE
+    
+    BRIDGE = src=VISIT_POINT_$V, alias=VISIT_POINT
+}
+
+ProcessConfig = pShare
+{
+    AppTick     = 2
+    CommsTick   = 2
+
+    input = route=localhost:9020
+}
+
+ProcessConfig = pPointAssign
+{
+    AppTick     = 4
+    CommsTick   = 4
+
+    vname = SHANE,HENRY
+    assign_by_region = true
+}
+
+ProcessConfig = uTimerScript
+{
+    AppTick   = 4
+    CommsTick = 4
+    script_name = genCoordinate
+    rand_var = varname=RND_VAL_X, min=-25, max=200, key=at_post
+    rand_var = varname=RND_VAL_Y, min=-175, max=-25, key=at_post
+    paused = true
+    pause_var = SCRIPT_COORDINATE
+    event=var=VISIT_POINT, val="firstpoint", time=0
+    event=var=VISIT_POINT, val="x=$[RND_VAL_X], y=$[RND_VAL_Y], id=$[TCOUNT]", time=0, amt=100
+    event=var=VISIT_POINT, val="lastpoint", time=0 
+}  
+
+ProcessConfig = pMarineViewer
+{
+    AppTick   = 4
+    CommsTick = 4
+    TIFF_FILE            = forrest19.tif
+    set_pan_x            = -90
+    set_pan_y            = -280
+    zoom                 = 0.65
+
+    appcast_viewable = true
+    point_viewable_all = true
+    point_viewable_labels = true
+    
+    BUTTON_ONE   = DEPLOY  # DEPLOY_ALL=true 
+    BUTTON_ONE   = MOOS_MANUAL_OVERRIDE_ALL=false 
+    BUTTON_ONE   = RETURN_ALL=false
+
+    BUTTON_TWO   = RETURN  # RETURN_ALL=true
+}
+

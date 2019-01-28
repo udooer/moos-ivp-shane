@@ -1,0 +1,50 @@
+ServerHost  = localhost
+ServerPort  = $(VPORT)
+Community   = $(VNAME)
+
+#include plug_origin_warp.moos
+
+ProcessConfig = ANTLER
+{
+    Run = MOOSDB            @NewConsole = false
+    Run = uSimMarine        @NewConsole = false
+    Run = pLogger           @NewConsole = false
+    Run = pNodeReporter     @NewConsole = false
+    Run = pMarinePID        @NewConsole = false
+    Run = pHelmIvP           @ NewConsole = false
+    Run = uProcessWatch      @ NewConsole = false
+    Run = pShare             @ NewConsole = false
+    Run = pHostInfo          @ NewConsole = false
+    Run = uFldNodeBroker     @ NewConsole = false
+}
+
+#include plug_pLogger.moos 
+#include plug_pNodeReporter.moos
+#include plug_pMarinePID.moos
+#include plug_pHelmIvp.moos
+#include plug_uProcessWatch.moos
+#include plug_pHostInfo.moos
+
+ProcessConfig = uFldNodeBroker
+{
+  AppTick   = 1
+  CommsTick = 1
+
+  TRY_SHORE_HOST = pshare_route=localhost:$(SHORE_LISTEN)
+
+  BRIDGE = src=VIEW_POLYGON
+  BRIDGE = src=VIEW_POINT
+  BRIDGE = src=VIEW_SEGLIST
+  BRIDGE = src=APPCAST
+  BRIDGE = src=NODE_REPORT_LOCAL,  alias=NODE_REPORT
+  BRIDGE = src=NODE_MESSAGE_LOCAL, alias=NODE_MESSAGE
+}
+
+ProcessConfig = pShare
+{
+  AppTick    = 2
+  CommsTick  = 2
+
+  input = route =  localhost:$(SHARE_LISTEN)
+}
+

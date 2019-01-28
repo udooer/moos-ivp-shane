@@ -7,6 +7,7 @@
 
 #include <iterator>
 #include "MBUtils.h"
+#include "XYPoint.h"
 #include "ACTable.h"
 #include "PointAssign.h"
 
@@ -20,8 +21,14 @@ PointAssign::PointAssign()
     m_vname = "";
     m_v_vector.clear();
     m_assign_by_region = "false";
+    
     m_coordinate_list.clear();
-    m_done = 0;
+    m_x.clear();
+    m_y.clear();
+    m_id.clear();
+
+    m_done = false;
+
     m_left_index.clear();
     m_right_index.clear();
 }
@@ -84,50 +91,80 @@ bool PointAssign::Iterate()
   AppCastingMOOSApp::Iterate();
   // Do your thing here!
   if(m_done == false && m_coordinate_list.size() == 102 && (m_assign_by_region == "false" || m_assign_by_region == "FALSE")){
+    decode();
     list<string>::iterator plist;
     plist = m_coordinate_list.begin();
 
     for(int i=0;i<102;i++)
-    {   
+    {
+        double x = m_x.at(i);
+        double y = m_y.at(i);
+        string id = m_id.at(i);
         if(i<50){
-            Notify("VISIT_POINT_"+m_v_vector.at(0),*plist);    
+            Notify("VISIT_POINT_"+m_v_vector.at(0),*plist);
+            postViewPoint(x,y,id,"red");    
         }
         else if(i==50){
             Notify("VISIT_POINT_"+m_v_vector.at(0),*plist);
             Notify("VISIT_POINT_"+m_v_vector.at(0),"lastpoint");
+            postViewPoint(x,y,id,"red");
         }
         else if(i==51){
             Notify("VISIT_POINT_"+m_v_vector.at(1),"firstpoint");
             Notify("VISIT_POINT_"+m_v_vector.at(1),*plist);
+            postViewPoint(x,y,id,"yellow");
         }
         else{
             Notify("VISIT_POINT_"+m_v_vector.at(1),*plist);
-        
+            postViewPoint(x,y,id,"yellow");
         }
         plist++;
     }
   }
   else if(m_done == false && m_coordinate_list.size() == 102 && (m_assign_by_region == "true" || m_assign_by_region == "TRUE")){
-      separate_points_by_half_x();
+      decode();
+      separatePointsByHalfX();
+      
+      int index;
+      double x;
+      double y;
+      string id;
+
       list<string>::iterator plist=m_coordinate_list.begin();
       for(int i=0;i<m_left_index.size();i++){
+          
+          index = m_left_index.at(i);
           if(i==0)
               Notify("VISIT_POINT_"+m_v_vector.at(0),"firstpoint");
-          Notify("VISIT_POINT_"+m_v_vector.at(0), *( next(plist, m_left_index.at(i)) ));
+          
+          Notify("VISIT_POINT_"+m_v_vector.at(0), *( next(plist, index) ));
+          x = m_x.at(index);
+          y = m_y.at(index);
+          id = m_id.at(index);
+          postViewPoint(x,y,id,"red");
+          
           if(i==m_left_index.size()-1)
               Notify("VISIT_POINT_"+m_v_vector.at(0),"lastpoint");
         
       }
       for(int i=0;i<m_right_index.size();i++){
+          
+          index = m_right_index.at(i);
           if(i==0)
               Notify("VISIT_POINT_"+m_v_vector.at(1),"firstpoint");
-          Notify("VISIT_POINT_"+m_v_vector.at(1), *( next(plist, m_right_index.at(i) )));
-          if(i==m_right_index.size()-1)
-              Notify("VISIT_POINT_"+m_v_vector.at(1),"lastpoint");
           
+          Notify("VISIT_POINT_"+m_v_vector.at(1), *( next(plist, index)));
+          x = m_x.at(index);
+          y = m_y.at(index);
+          id = m_id.at(index);
+          postViewPoint(x,y,id,"yellow");
+
+          if(i==m_right_index.size()-1)
+              Notify("VISIT_POINT_"+m_v_vector.at(1),"lastpoint");          
       }
   }
   m_done = true;
+  Notify("SCRIPT_COORDINATE","true");
 //  if(!m_coordinate_list.empty() && m_assign_by_region == "false"){
 //      m_count++;
 //      list<string>::iterator plist;
@@ -238,22 +275,70 @@ void PointAssign::cutString()
     }
 }
 
-void PointAssign::separate_points_by_half_x()
+void PointAssign::separatePointsByHalfX()
 {
-    string x;
-    stringstream ss;
-    double x_point;
-    list<string>::iterator plist = m_coordinate_list.begin();
-    for(int i=0;i<102;i++){
-        x = tokStringParse(*( next(plist,i) ), "x", ',', '=');
-        ss<<x;
-        ss>>x_point;
-        if(x!="" && x_point>=-25 && x_point<87.5){
+    int empty = 9999;
+    for(int i=0;i<m_x.size();i++){
+        double x = m_x.at(i);
+        if(x!=empty && x>=-25 && x<87.5){
             m_left_index.push_back(i);
         }
-        else if(x!="" && x_point>=87.5 && x_point<=200) 
+        else if(x!=empty && x>=87.5 && x<=200) 
             m_right_index.push_back(i);
-        ss.clear();
     }    
 }
 
+//void PointAssign::postViewPoint(double x, double y, string label, string color)
+//{
+//    XYPoint point(x, y);
+//    point.set_label(label);
+//    point.set_color("vertex", color);
+//    point.set_param("vertex_size", "2");
+//
+//    string spec = point.get_spec();
+//    Notify("VIEW_POINT", spec);
+//}
+void PointAssign::postViewPoint(double x, double y, string label, string color){
+    string s;
+    stringstream ss; 
+    ss<<"x="<<x<<",y="<<y<<",label="<<label<<",vertex_size=2,vertex_color="<<color;
+    ss>>s;
+    Notify("VIEW_POINT",s);
+    
+}
+
+void PointAssign::decode(){
+    string x;
+    string y;
+    string id;
+    stringstream ss;
+    double x_point;
+    double y_point;
+    string empty="9999";
+
+    list<string>::iterator plist = m_coordinate_list.begin();
+    
+    for(int i=0;i<m_coordinate_list.size();i++){
+        x = tokStringParse(*plist, "x", ',', '=');
+        if(x=="")
+            x=empty;
+        ss<<x;
+        ss>>x_point;
+        ss.clear();
+        m_x.push_back(x_point);
+        
+        y = tokStringParse(*plist, "y", ',', '=');
+        if(y=="")
+            y=empty;
+        ss<<y;
+        ss>>y_point;
+        ss.clear();
+        m_y.push_back(y_point);
+        
+        id = tokStringParse(*plist, "id", ',', '=');
+        if(id=="")
+            id=empty;
+        m_id.push_back(id);
+        plist++;        
+    }
+}

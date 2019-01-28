@@ -1,12 +1,45 @@
 //------------------------------------------------
 // pPointAssign config block
+ServerHost = localhost
+ServerPort = 9000
+Community  = PointAssign 
+
+MOOSTimeWarp = 1
+LatOrigin  = 43.825300
+LongOrigin = -70.330400
+
 ProcessConfig = ANTLER
 {
+    MSBetweemlaunches = 200
     Run = MOOSDB        @NewConsole = false
-    Run = uTimerScript  @NewConsole = true
-    Run = uXMS          @NewConsole = true  ~uXMS_vehiche1
-    Run = uXMS          @NewConsole = true  ~uXMS_vehiche2
+    Run = pMarineViewer @NewConsole = false
+    Run = uTimerScript  @NewConsole = false
+    Run = uXMS          @NewConsole = false  ~uXMS_vehiche1
+    Run = uXMS          @NewConsole = false  ~uXMS_vehiche2
+    Run = uXMS          @NewConsole = true   ~uXMS_VEIW_POINT
     Run = pPointAssign  @NewConsole = false    
+}
+
+ProcessConfig = pMarineViewer
+{
+    AppTick   = 4
+    CommsTick = 4
+    TIFF_FILE            = forrest19.tif
+    set_pan_x            = -90
+    set_pan_y            = -280
+    zoom                 = 0.65
+
+    appcast_viewable = true
+    point_viewable_all = true
+    point_viewable_labels = true
+}
+
+ProcessConfig = uXMS_VEIW_POINT
+{   
+    AppTick   = 4
+    CommsTick = 4
+    source = pPointAssign
+    history_var = VIEW_POINT
 }
 
 ProcessConfig = uXMS_vehiche1
@@ -40,8 +73,9 @@ ProcessConfig = uTimerScript
     script_name = genCoordinate
     rand_var = varname=RND_VAL_X, min=-25, max=200, key=at_post
     rand_var = varname=RND_VAL_Y, min=-175, max=-25, key=at_post
-    paused = true
-    pause_var = SCRIPT_COORDINATE
+    //paused = true
+    //pause_var = SCRIPT_COORDINATE
+    condition = SCRIPT_COORDINATE = false
     event=var=VISIT_POINT, val="firstpoint", time=0
     event=var=VISIT_POINT, val="x=$[RND_VAL_X], y=$[RND_VAL_Y], id=$[TCOUNT]", time=0, amt=100
     event=var=VISIT_POINT, val="lastpoint", time=0 

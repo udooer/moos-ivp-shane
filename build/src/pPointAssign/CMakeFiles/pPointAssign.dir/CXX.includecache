@@ -11,6 +11,8 @@ iterator
 -
 MBUtils.h
 /home/shane/moos-ivp-shane/src/pPointAssign/MBUtils.h
+XYPoint.h
+/home/shane/moos-ivp-shane/src/pPointAssign/XYPoint.h
 ACTable.h
 /home/shane/moos-ivp-shane/src/pPointAssign/ACTable.h
 PointAssign.h
@@ -45,6 +47,8 @@ PointAssign.h
 /home/shane/moos-ivp-shane/src/pPointAssign/PointAssign.h
 PointAssign_Info.h
 /home/shane/moos-ivp-shane/src/pPointAssign/PointAssign_Info.h
+XYPoint.h
+/home/shane/moos-ivp-shane/src/pPointAssign/XYPoint.h
 
 /home/shane/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/ClientDefines.h
 
@@ -441,6 +445,30 @@ vector
 -
 list
 -
+
+/home/shane/moos-ivp/ivp/src/lib_geometry/XYObject.h
+string
+-
+map
+-
+ColorPack.h
+/home/shane/moos-ivp/ivp/src/lib_geometry/ColorPack.h
+
+/home/shane/moos-ivp/ivp/src/lib_geometry/XYPoint.h
+string
+-
+XYObject.h
+/home/shane/moos-ivp/ivp/src/lib_geometry/XYObject.h
+
+/home/shane/moos-ivp/ivp/src/lib_mbutil/ColorPack.h
+vector
+-
+string
+-
+MBUtils.h
+/home/shane/moos-ivp/ivp/src/lib_mbutil/MBUtils.h
+ColorParse.h
+/home/shane/moos-ivp/ivp/src/lib_mbutil/ColorParse.h
 
 /home/shane/moos-ivp/ivp/src/lib_mbutil/ColorParse.h
 vector

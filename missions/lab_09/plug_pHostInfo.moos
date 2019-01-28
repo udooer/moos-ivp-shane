@@ -1,0 +1,5 @@
+ProcessConfig = pHostInfo
+{
+    Apptick     = 1
+    Commstick   = 1
+}

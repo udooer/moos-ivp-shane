@@ -10,6 +10,7 @@
 #include "ColorParse.h"
 #include "PointAssign.h"
 #include "PointAssign_Info.h"
+#include "XYPoint.h"
 
 using namespace std;
 

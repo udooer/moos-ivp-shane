@@ -30,13 +30,21 @@ class PointAssign : public AppCastingMOOSApp
  
  protected:
     void cutString();
-    void separate_points_by_half_x();   
+    void decode();
+    void separatePointsByHalfX();
+    void postViewPoint(double, double, std::string, std::string);   
  private: // Configuration variables
     std::string m_vname;
     std::vector<std::string> m_v_vector;
     std::string m_assign_by_region;
     std::list<std::string> m_coordinate_list;
+    
+    std::vector<double> m_x;
+    std::vector<double> m_y;
+    std::vector<std::string> m_id;
+   
     bool m_done;
+
     std::vector<int> m_left_index;
     std::vector<int> m_right_index;
  private: // State variables
