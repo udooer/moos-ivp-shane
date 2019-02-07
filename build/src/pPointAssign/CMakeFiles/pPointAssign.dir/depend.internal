@@ -52,10 +52,6 @@ src/pPointAssign/CMakeFiles/pPointAssign.dir/PointAssign.cpp.o
  /home/shane/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/ProcessConfigReader.h
  /home/shane/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/SafeList.h
  /home/shane/moos-ivp/ivp/src/lib_apputil/ACTable.h
- /home/shane/moos-ivp/ivp/src/lib_geometry/XYObject.h
- /home/shane/moos-ivp/ivp/src/lib_geometry/XYPoint.h
- /home/shane/moos-ivp/ivp/src/lib_mbutil/ColorPack.h
- /home/shane/moos-ivp/ivp/src/lib_mbutil/ColorParse.h
  /home/shane/moos-ivp/ivp/src/lib_mbutil/MBUtils.h
 src/pPointAssign/CMakeFiles/pPointAssign.dir/PointAssign_Info.cpp.o
  /home/shane/moos-ivp-shane/src/pPointAssign/PointAssign_Info.cpp

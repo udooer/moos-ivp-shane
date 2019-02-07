@@ -7,6 +7,7 @@ SET(SRC
   GenPath.cpp
   GenPath_Info.cpp
   main.cpp
+  MyData.cpp
 )
 
 ADD_EXECUTABLE(pGenPath ${SRC})

@@ -51,10 +51,6 @@ src/pPointAssign/CMakeFiles/pPointAssign.dir/PointAssign.cpp.o: /home/shane/moos
 src/pPointAssign/CMakeFiles/pPointAssign.dir/PointAssign.cpp.o: /home/shane/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/ProcessConfigReader.h
 src/pPointAssign/CMakeFiles/pPointAssign.dir/PointAssign.cpp.o: /home/shane/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/SafeList.h
 src/pPointAssign/CMakeFiles/pPointAssign.dir/PointAssign.cpp.o: /home/shane/moos-ivp/ivp/src/lib_apputil/ACTable.h
-src/pPointAssign/CMakeFiles/pPointAssign.dir/PointAssign.cpp.o: /home/shane/moos-ivp/ivp/src/lib_geometry/XYObject.h
-src/pPointAssign/CMakeFiles/pPointAssign.dir/PointAssign.cpp.o: /home/shane/moos-ivp/ivp/src/lib_geometry/XYPoint.h
-src/pPointAssign/CMakeFiles/pPointAssign.dir/PointAssign.cpp.o: /home/shane/moos-ivp/ivp/src/lib_mbutil/ColorPack.h
-src/pPointAssign/CMakeFiles/pPointAssign.dir/PointAssign.cpp.o: /home/shane/moos-ivp/ivp/src/lib_mbutil/ColorParse.h
 src/pPointAssign/CMakeFiles/pPointAssign.dir/PointAssign.cpp.o: /home/shane/moos-ivp/ivp/src/lib_mbutil/MBUtils.h
 
 src/pPointAssign/CMakeFiles/pPointAssign.dir/PointAssign_Info.cpp.o: ../src/pPointAssign/PointAssign_Info.cpp

@@ -7,7 +7,7 @@
 
 #include <iterator>
 #include "MBUtils.h"
-#include "XYPoint.h"
+//#include "XYPoint.h"
 #include "ACTable.h"
 #include "PointAssign.h"
 
@@ -64,8 +64,10 @@ bool PointAssign::OnNewMail(MOOSMSG_LIST &NewMail)
 
      if(key == "FOO") 
        cout << "great!";
-     else if(key == "VISIT_POINT")
-       m_coordinate_list.push_back(msg.GetString());  
+     else if(key == "VISIT_POINT"){
+       m_coordinate_list.push_back(msg.GetString());
+       Notify("GET",1);
+     }  
      else if(key != "APPCAST_REQ") // handled by AppCastingMOOSApp
        reportRunWarning("Unhandled Mail: " + key);
    }
@@ -120,6 +122,8 @@ bool PointAssign::Iterate()
         }
         plist++;
     }
+    m_done = true;
+
   }
   else if(m_done == false && m_coordinate_list.size() == 102 && (m_assign_by_region == "true" || m_assign_by_region == "TRUE")){
       decode();
@@ -162,9 +166,9 @@ bool PointAssign::Iterate()
           if(i==m_right_index.size()-1)
               Notify("VISIT_POINT_"+m_v_vector.at(1),"lastpoint");          
       }
+      m_done = true;
+
   }
-  m_done = true;
-  Notify("SCRIPT_COORDINATE","true");
 //  if(!m_coordinate_list.empty() && m_assign_by_region == "false"){
 //      m_count++;
 //      list<string>::iterator plist;
@@ -208,7 +212,7 @@ bool PointAssign::OnStartUp()
     string param = tolower(biteStringX(line, '='));
     string value = line;
 
-    Notify("SCRIPT_COORDINATE","false");
+    Notify("POINT_ASSIGN","true");
     bool handled = false;
     
     if(param == "foo") {

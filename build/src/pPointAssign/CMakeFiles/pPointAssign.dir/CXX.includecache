@@ -11,8 +11,6 @@ iterator
 -
 MBUtils.h
 /home/shane/moos-ivp-shane/src/pPointAssign/MBUtils.h
-XYPoint.h
-/home/shane/moos-ivp-shane/src/pPointAssign/XYPoint.h
 ACTable.h
 /home/shane/moos-ivp-shane/src/pPointAssign/ACTable.h
 PointAssign.h

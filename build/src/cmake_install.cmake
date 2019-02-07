@@ -50,6 +50,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/shane/moos-ivp-shane/build/src/pNumberCal/cmake_install.cmake")
   include("/home/shane/moos-ivp-shane/build/src/pChirp/cmake_install.cmake")
   include("/home/shane/moos-ivp-shane/build/src/pPointAssign/cmake_install.cmake")
+  include("/home/shane/moos-ivp-shane/build/src/pGenPath/cmake_install.cmake")
 
 endif()
 

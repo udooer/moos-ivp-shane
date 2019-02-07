@@ -6,11 +6,13 @@
 
 ServerHost = localhost
 ServerPort = 9000
-Community  = shoreside
+Community  = TSP
 
+//----  Next Line was commented and replaced with a command line overload ---- //
+//MOOSTimeWarp = 1    (default)
 MOOSTimeWarp = 1
-LatOrigin  = 43.825300 
-LongOrigin = -70.330400 
+LatOrigin  = 43.825300
+LongOrigin = -70.330400
 
 
 //---------------------------------------
@@ -20,40 +22,29 @@ ProcessConfig = ANTLER
     
     Run = MOOSDB            @NewConsole = false
     Run = pMarineViewer     @NewConsole = false
-    Run = pLogger           @NewConsole = false
+//  Run = pLogger           @NewConsole = false
     Run = pHostInfo         @NewConsole = false
     Run = pShare            @NewConsole = false
     Run = uFldShoreBroker   @NewConsole = false
     Run = uTimerScript      @NewConsole = false
     Run = pPointAssign      @NewConsole = false
+    Run = uXMS              @NewConsole = true
 }
 
-ProcessConfig = pLogger
+ProcessConfig = pHostInfo 
 {
-    AppTick     = 10
-    CommsTick   = 10
-    
-    File = LOG_SHORESIDE
-    PATH = ./
-      
-    AsyncLog 	= true
-    FileTimeStamp = true
-
-    // Log it all!!!!!
-    LogAuxSrc       = true
-    WildCardLogging = true 
-
-    WildCardOmitPattern = *_STATUS
-
-    CompressAlogs = false
+    AppTick   = 1
+    CommsTick = 1
 }
 
-ProcessConfig = pHostInfo
+ProcessConfig = uXMS
 {
-    Apptick     = 1
-    Commstick   = 1
-}
+    AppTick   = 4;
+    CommsTick = 4;
 
+    display_all = true 
+    history_var = VISIT_POINT_SHANE
+}
 
 ProcessConfig = uFldShoreBroker
 {
@@ -61,10 +52,9 @@ ProcessConfig = uFldShoreBroker
     CommsTick   = 1
 
     QBRIDGE = DEPLOY,NODE_REPORT, RETURN
-    QBRIDGE = MOOS_MANUAL_OVERRIDE
+    QBRIDGE = MOOS_MANUAL_OVERRIDE, STATION
     
-    BRIDGE = src=VISIT_POINT_SHANE, alias=VISIT_POINT
-    BRIDGE = src=VISIT_POINT_HENRY, alias=VISIT_POINT
+    BRIDGE = src=VISIT_POINT_$V, alias=VISIT_POINT
 }
 
 ProcessConfig = pShare
@@ -72,7 +62,7 @@ ProcessConfig = pShare
     AppTick     = 2
     CommsTick   = 2
 
-    input = route=localhost:9300
+    input = route=localhost:9200
 }
 
 ProcessConfig = pPointAssign
@@ -91,11 +81,12 @@ ProcessConfig = uTimerScript
     script_name = genCoordinate
     rand_var = varname=RND_VAL_X, min=-25, max=200, key=at_post
     rand_var = varname=RND_VAL_Y, min=-175, max=-25, key=at_post
-    paused = true
-    pause_var = SCRIPT_COORDINATE
-    event=var=VISIT_POINT, val="firstpoint", time=0
-    event=var=VISIT_POINT, val="x=$[RND_VAL_X], y=$[RND_VAL_Y], id=$[TCOUNT]", time=0, amt=100
-    event=var=VISIT_POINT, val="lastpoint", time=0 
+    
+    condition = GENPATH = true  
+    condition = POINT_ASSIGN = true
+    event=var=VISIT_POINT, val="firstpoint", time=10
+    event=var=VISIT_POINT, val="x=$[RND_VAL_X], y=$[RND_VAL_Y], id=$[TCOUNT]", time=10, amt=100
+    event=var=VISIT_POINT, val="lastpoint", time=10
 }  
 
 ProcessConfig = pMarineViewer
@@ -116,6 +107,10 @@ ProcessConfig = pMarineViewer
     BUTTON_ONE   = RETURN_ALL=false
 
     BUTTON_TWO   = RETURN  # RETURN_ALL=true
+    BUTTON_TWO   = DEPLOY = false
+    
+    BUTTON_THREE = STATION:T    #STATION_ALL=true
+    BUTTON_FOUR  = STATION:F    #STATION_All=false
 }
 
 

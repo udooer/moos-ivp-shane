@@ -1,9 +1,60 @@
-//------------------------------------------------
-// pGenPath config block
+ServerHost = localhost
+ServerPort = 9000
+Community = GenPath 
+
+ProcessConfig = ANTLER
+{
+    MSBetweenLaunches = 200
+
+    Run = MOOSDB        @NewConsole = false
+    Run = uXMS          @NewConsole = true  ~uXMS_VISIT_POINT
+    Run = uXMS          @NewConsole = true  ~uXMS_UPDATE_POINTS
+    Run = uXMS          @NewConsole = true  ~uXMS_START
+    Run = uTimerScript  @NewConsole = false
+    Run = pGenPath      @NewConsole = false
+}
+
+ProcessConfig = uTimerScript
+{
+    AppTick   = 4
+    CommsTick = 4
+    script_name = genCoordinate
+    rand_var = varname=RND_VAL_X, min=-25, max=200, key=at_post
+    rand_var = varname=RND_VAL_Y, min=-175, max=-25, key=at_post
+    event=var=VISIT_POINT, val="firstpoint", time=0
+    event=var=VISIT_POINT, val="x=$[RND_VAL_X], y=$[RND_VAL_Y], id=$[TCOUNT]", time=0, amt=25
+    event=var=VISIT_POINT, val="lastpoint", time=0
+} 
 
 ProcessConfig = pGenPath
 {
-   AppTick   = 4
-   CommsTick = 4
+    AppTick   = 4
+    CommsTick = 4
+    
+    start_position = 10, 5 
 }
+
+ProcessConfig = uXMS_VISIT_POINT
+{
+    AppTick   = 4
+    CommsTick = 4
+    source = pGenPath
+    history_var = VISIT_POINT
+}
+
+ProcessConfig = uXMS_UPDATE_POINTS
+{   
+    AppTick   = 4
+    CommsTick = 4
+    source = pGenPath
+    history_var = UPDATE_POINTS
+}
+
+ProcessConfig = uXMS_START
+{   
+    AppTick   = 4
+    CommsTick = 4
+    source = pGenPath
+    history_var = REPORT
+}   
 

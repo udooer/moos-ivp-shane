@@ -8,7 +8,7 @@ ProcessConfig = ANTLER
 {
     Run = MOOSDB            @NewConsole = false
 //    Run = uSimMarine        @NewConsole = false
-//    Run = pLogger           @NewConsole = false
+    Run = pLogger           @NewConsole = false
 //    Run = pNodeReporter     @NewConsole = false
 //    Run = pMarinePID        @NewConsole = false
 //    Run = pHelmIvP           @ NewConsole = false
@@ -17,6 +17,7 @@ ProcessConfig = ANTLER
     Run = pShare             @ NewConsole = false
     Run = pHostInfo          @ NewConsole = false
     Run = uFldNodeBroker     @ NewConsole = false
+    Run = pGenPath              @NewConsole = false
 }
 
 #include plug_pLogger.moos 
@@ -26,11 +27,17 @@ ProcessConfig = ANTLER
 #include plug_uProcessWatch.moos
 #include plug_pHostInfo.moos
 
+ProcessConfig = pGenPath
+{
+    AppTick   = 4
+    CommsTick = 4
+}
+
 ProcessConfig = uXMS
 {
     AppTick   = 4
     CommsTick = 4
-    display_all = true
+    var = UPDATES_POINTS
     history_var = VISIT_POINT
     display_source = true
 }

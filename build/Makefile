@@ -253,6 +253,19 @@ pPointAssign/fast:
 	$(MAKE) -f src/pPointAssign/CMakeFiles/pPointAssign.dir/build.make src/pPointAssign/CMakeFiles/pPointAssign.dir/build
 .PHONY : pPointAssign/fast
 
+#=============================================================================
+# Target rules for targets named pGenPath
+
+# Build rule for target.
+pGenPath: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pGenPath
+.PHONY : pGenPath
+
+# fast build rule for target.
+pGenPath/fast:
+	$(MAKE) -f src/pGenPath/CMakeFiles/pGenPath.dir/build.make src/pGenPath/CMakeFiles/pGenPath.dir/build
+.PHONY : pGenPath/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -272,6 +285,7 @@ help:
 	@echo "... pNumberCal"
 	@echo "... pChirp"
 	@echo "... pPointAssign"
+	@echo "... pGenPath"
 .PHONY : help
 
 
