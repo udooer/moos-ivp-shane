@@ -20,6 +20,16 @@ ProcessConfig = ANTLER
     Run = uFldNodeBroker    @ NewConsole = false
     Run = pGenPath          @ NewConsole = false
 }
+
+ProcessConfig = pNodeReporter
+{
+  AppTick     = 2
+  CommsTick   = 2
+
+  VESSEL_TYPE = KAYAK
+}
+
+
 ProcessConfig = pGenPath
 {
     AppTick   = 4

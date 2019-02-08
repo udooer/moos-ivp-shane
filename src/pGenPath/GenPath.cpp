@@ -252,7 +252,7 @@ list<MyData>::iterator GenPath::GetMinDistance()
     list<MyData>::iterator ppost;
     double distance;
     double min=1000;
-    for(p=m_input_list.begin();p<m_input_list.end();p++){
+    for(p=m_input_list.begin();p!=m_input_list.end();p++){
         distance = sqrt( pow( (m_start_x-p->GetX()), 2) + pow( (m_start_y-p->GetY()), 2) );
         if(min > distance){
             min = distance;
@@ -274,9 +274,9 @@ void GenPath::EraseNearbyPoint()
     stringstream ss;
     string str;
     string report;
-    for(p=m_input_list.begin();p<m_input_list.end();p++){
+    for(p=m_input_list.begin();p!=m_input_list.end();p++){
         distance = sqrt( pow( (m_start_x-p->GetX()), 2) + pow( (m_start_y-p->GetY()), 2) );
-        if( distance < 10){
+        if( distance < 0.5){
             ss<<"beside:"<<distance;
             ss>>str;
             ss.clear();

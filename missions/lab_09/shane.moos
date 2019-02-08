@@ -107,6 +107,15 @@ ProcessConfig = pMarinePID
   SPEED_FACTOR = 20
 }
 
+ProcessConfig = pNodeReporter
+{
+  AppTick     = 2
+  CommsTick   = 2
+
+  VESSEL_TYPE = KAYAK
+}
+
+
 ProcessConfig = uProcessWatch
 {
   AppTick   = 2

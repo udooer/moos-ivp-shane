@@ -82,9 +82,9 @@ ProcessConfig = uTimerScript
     
     condition = GENPATH = true  
     condition = POINT_ASSIGN = true
-    event=var=VISIT_POINT, val="firstpoint", time=10
-    event=var=VISIT_POINT, val="x=$[RND_VAL_X], y=$[RND_VAL_Y], id=$[TCOUNT]", time=10, amt=100
-    event=var=VISIT_POINT, val="lastpoint", time=10
+    event=var=VISIT_POINT, val="firstpoint", time=5
+    event=var=VISIT_POINT, val="x=$[RND_VAL_X], y=$[RND_VAL_Y], id=$[TCOUNT]", time=5, amt=100
+    event=var=VISIT_POINT, val="lastpoint", time=5
 }  
 
 ProcessConfig = pMarineViewer
