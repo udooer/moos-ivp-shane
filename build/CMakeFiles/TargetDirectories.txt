@@ -20,6 +20,9 @@
 /home/shane/moos-ivp-shane/build/src/test/pshoresideVehicle/CMakeFiles/rebuild_cache.dir
 /home/shane/moos-ivp-shane/build/src/test/pshoresideVehicle/CMakeFiles/pshoresideVehicle.dir
 /home/shane/moos-ivp-shane/build/src/test/pshoresideVehicle/CMakeFiles/edit_cache.dir
+/home/shane/moos-ivp-shane/build/src/test/pNewmailIterate/CMakeFiles/rebuild_cache.dir
+/home/shane/moos-ivp-shane/build/src/test/pNewmailIterate/CMakeFiles/pNewmailIterate.dir
+/home/shane/moos-ivp-shane/build/src/test/pNewmailIterate/CMakeFiles/edit_cache.dir
 /home/shane/moos-ivp-shane/build/src/test/pvehicle/CMakeFiles/rebuild_cache.dir
 /home/shane/moos-ivp-shane/build/src/test/pvehicle/CMakeFiles/pvehicle.dir
 /home/shane/moos-ivp-shane/build/src/test/pvehicle/CMakeFiles/edit_cache.dir

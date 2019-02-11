@@ -1,0 +1,34 @@
+//------------------------------------------------
+// pNewmailIterate config block
+ServerHost = localhost
+ServerPort = 9000
+Community = NewmailIterate
+ProcessConfig = ANTLER
+{
+    MSBetweenLaunches = 500
+    Run = MOOSDB            @NewConsole = false
+    Run = uXMS              @NewConsole = true  ~uXMS_I
+    Run = uXMS              @NewConsole = true  ~uXMS_O
+    Run = pNewmailIterate   @NewConsole = false
+    Run = uTimerScript      @NewConsole = false
+}
+ProcessConfig = pNewmailIterate
+{
+   AppTick   = 10
+   CommsTick = 2
+}
+ProcessConfig = uXMS_I
+{
+    AppTick = 20
+    CommsTick = 10
+
+    history_var = I_COUNT
+}
+ProcessConfig = uXMS_O
+{
+    AppTick = 20
+    CommsTick = 10
+
+    history_var = O_COUNT
+}
+

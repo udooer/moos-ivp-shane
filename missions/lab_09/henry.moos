@@ -8,6 +8,7 @@ LongOrigin = -70.330400
 
 ProcessConfig = ANTLER
 {
+    MSBetweenLaunches = 100
     Run = MOOSDB            @ NewConsole = false
     Run = uSimMarine        @ NewConsole = false
 //    Run = pLogger         @ NewConsole = false
@@ -19,21 +20,26 @@ ProcessConfig = ANTLER
     Run = pHostInfo         @ NewConsole = false
     Run = uFldNodeBroker    @ NewConsole = false
     Run = pGenPath          @ NewConsole = false
+    Run = uXMS              @ NewConsole = true
 }
 
-ProcessConfig = pNodeReporter
+ProcessConfig = uXMS
 {
-  AppTick     = 2
-  CommsTick   = 2
-
-  VESSEL_TYPE = KAYAK
+    AppTick   = 50
+    CommsTick = 50
+    
+    var = RETURN_DONE, DEPLOY, RETURN, STATION, GENPATH, GET_RETURN_DONE, GET_X, GET_Y, NAV_X, NAV_Y, lastpoint, GET_POINT, COUNT, M_X_LIST
+    
+    var = REPORT, VISIT_POINT, UPDATE_POINTS, STATE, GET_STATE
+    history_var = VISIT_POINT
 }
-
-
 ProcessConfig = pGenPath
 {
     AppTick   = 4
     CommsTick = 4
+    
+    start_position = 30,0
+    visit_radius = 5
 }
 ProcessConfig = uFldNodeBroker
 {
@@ -48,7 +54,8 @@ ProcessConfig = uFldNodeBroker
   BRIDGE = src=APPCAST
   BRIDGE = src=NODE_REPORT_LOCAL,  alias=NODE_REPORT
   BRIDGE = src=NODE_MESSAGE_LOCAL, alias=NODE_MESSAGE
-    BRIDGE = src=GENPATH
+    BRIDGE = src=GENPATH , alias=GENPATH_HENRY
+    BRIDGE = src=REPORT, alias=REPORT_HENRY
 }
 
 ProcessConfig = pShare
@@ -117,17 +124,26 @@ ProcessConfig = pMarinePID
   SPEED_FACTOR = 20
 }
 
+ProcessConfig = pNodeReporter
+{
+  AppTick     = 2
+  CommsTick   = 2
+
+  VESSEL_TYPE = KAYAK
+}
+
+
 ProcessConfig = uProcessWatch
 {
   AppTick   = 2
   CommsTick = 2
   
   WATCH  = uSimMarine
-  WATCH  = pLogger
+//  WATCH  = pLogger
   WATCH  = pNodeReporter
   WATCH  = pMarinePID
   WATCH  = pHelmIvP
-
+  WATCH  = pGenPath
   NOWATCH=uXMS*
   NOWATCH=uMAC*
 }
@@ -137,7 +153,7 @@ ProcessConfig = uSimMarine
   AppTick   = 10
   CommsTick = 10
 
-  START_POS = x=10, y=0, heading=180, speed=0, depth=0
+  START_POS = x=30, y=0, heading=180, speed=0, depth=0
   PREFIX    = NAV
 }
 

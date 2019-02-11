@@ -44,6 +44,7 @@ class PointAssign : public AppCastingMOOSApp
     std::vector<std::string> m_id;
    
     bool m_done;
+    bool m_received;
 
     std::vector<int> m_left_index;
     std::vector<int> m_right_index;

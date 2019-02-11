@@ -15,6 +15,10 @@ MBUtils.h
 /home/shane/moos-ivp-shane/src/pGenPath/MBUtils.h
 ACTable.h
 /home/shane/moos-ivp-shane/src/pGenPath/ACTable.h
+string
+-
+sstream
+-
 
 /home/shane/moos-ivp-shane/src/pGenPath/GenPath.h
 MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h

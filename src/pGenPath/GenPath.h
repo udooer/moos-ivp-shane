@@ -34,26 +34,41 @@ class GenPath : public AppCastingMOOSApp
 	void getStartPos(); 
     std::list<MyData>::iterator GetMinDistance();
     void EraseNearbyPoint();
+    void CheckIfArrived();
+    void GenVisitPoint();
  private: // Configuration variables
     std::list<MyData> m_input_list;
     
     std::string m_start_position;
     double m_start_x;
     double m_start_y;
+    double m_origin_x;
+    double m_origin_y;
     
-    std::vector<double> m_x_vector;
-    std::vector<double> m_y_vector;
     std::string m_update_str;    
+    std::string m_return_done;
+
+    std::list<double> m_x_list;
+    std::list<double> m_y_list;
+    std::list<std::string> m_id_list;
+    double m_visit_radius;
+    double m_nav_x;
+    double m_nav_y;
     
+    std::string m_state;
+    
+    bool m_lastpoint_received;
+    bool m_firstpoint_received;
     bool m_done;
-    bool m_received;
-    double m_total_distance;
+    bool m_gen;
     
+    double m_total_distance;
     int m_total_number;
     int m_visited_number;
     int m_beside_number;
-    
-    double m_count;    
+    double m_count;  
+    int c; 
+    int a; 
  private: // State variables
 };
 

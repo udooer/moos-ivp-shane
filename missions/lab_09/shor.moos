@@ -26,7 +26,7 @@ ProcessConfig = ANTLER
     Run = uFldShoreBroker   @NewConsole = false
     Run = uTimerScript      @NewConsole = false
     Run = pPointAssign      @NewConsole = false
-    Run = uXMS              @NewConsole = true
+//    Run = uXMS              @NewConsole = true
 }
 
 ProcessConfig = pHostInfo 
@@ -40,8 +40,11 @@ ProcessConfig = uXMS
     AppTick   = 4;
     CommsTick = 4;
 
-    display_all = true 
-    history_var = VISIT_POINT_SHANE
+    display_all = false
+    source = pPointAssign
+    source = pShare
+    source = pMarineViewer
+
 }
 
 ProcessConfig = uFldShoreBroker
@@ -80,8 +83,9 @@ ProcessConfig = uTimerScript
     rand_var = varname=RND_VAL_X, min=-25, max=200, key=at_post
     rand_var = varname=RND_VAL_Y, min=-175, max=-25, key=at_post
     
-    condition = GENPATH = true  
-    condition = POINT_ASSIGN = true
+    condition = GENPATH_SHANE = start  
+    condition = GENPATH_HENRY = start
+    condition = POINT_ASSIGN = start
     event=var=VISIT_POINT, val="firstpoint", time=5
     event=var=VISIT_POINT, val="x=$[RND_VAL_X], y=$[RND_VAL_Y], id=$[TCOUNT]", time=5, amt=100
     event=var=VISIT_POINT, val="lastpoint", time=5
@@ -95,19 +99,18 @@ ProcessConfig = pMarineViewer
     set_pan_x            = -90
     set_pan_y            = -280
     zoom                 = 0.65
-
+    scope = NAV_X, NAV_Y
     appcast_viewable = true
     point_viewable_all = true
     point_viewable_labels = true
     
     BUTTON_ONE   = DEPLOY  # DEPLOY_ALL=true 
     BUTTON_ONE   = MOOS_MANUAL_OVERRIDE_ALL=false 
-    BUTTON_ONE   = RETURN_ALL=false
+    BUTTON_ONE   = RETURN_ALL=false # STATION_ALL=false 
 
     BUTTON_TWO   = RETURN  # RETURN_ALL=true
-    BUTTON_TWO   = DEPLOY = false
     
     BUTTON_THREE = STATION:T    #STATION_ALL=true
-    BUTTON_FOUR  = STATION:F    #STATION_All=false
+    BUTTON_FOUR  = STATION:F    #STATION_ALL=false
 }
 

@@ -189,6 +189,19 @@ pshoresideVehicle/fast:
 .PHONY : pshoresideVehicle/fast
 
 #=============================================================================
+# Target rules for targets named pNewmailIterate
+
+# Build rule for target.
+pNewmailIterate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pNewmailIterate
+.PHONY : pNewmailIterate
+
+# fast build rule for target.
+pNewmailIterate/fast:
+	$(MAKE) -f src/test/pNewmailIterate/CMakeFiles/pNewmailIterate.dir/build.make src/test/pNewmailIterate/CMakeFiles/pNewmailIterate.dir/build
+.PHONY : pNewmailIterate/fast
+
+#=============================================================================
 # Target rules for targets named pvehicle
 
 # Build rule for target.
@@ -280,6 +293,7 @@ help:
 	@echo "... pOdometry"
 	@echo "... pTest"
 	@echo "... pshoresideVehicle"
+	@echo "... pNewmailIterate"
 	@echo "... pvehicle"
 	@echo "... pPrimeFactor"
 	@echo "... pNumberCal"

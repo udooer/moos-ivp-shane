@@ -8,6 +8,7 @@ LongOrigin = -70.330400
 
 ProcessConfig = ANTLER
 {
+    MSBetweenLaunches = 100
     Run = MOOSDB            @ NewConsole = false
     Run = uSimMarine        @ NewConsole = false
 //    Run = pLogger         @ NewConsole = false
@@ -19,11 +20,26 @@ ProcessConfig = ANTLER
     Run = pHostInfo         @ NewConsole = false
     Run = uFldNodeBroker    @ NewConsole = false
     Run = pGenPath          @ NewConsole = false
+    Run = uXMS              @ NewConsole = true
+}
+
+ProcessConfig = uXMS
+{
+    AppTick   = 50
+    CommsTick = 50
+    
+    var = RETURN_DONE, DEPLOY, RETURN, STATION, GENPATH, GET_RETURN_DONE, GET_X, GET_Y, NAV_X, NAV_Y, lastpoint, GET_POINT, COUNT, M_X_LIST
+    
+    var = REPORT, VISIT_POINT, UPDATE_POINTS, STATE, GET_STATE
+    history_var = VISIT_POINT
 }
 ProcessConfig = pGenPath
 {
     AppTick   = 4
     CommsTick = 4
+    
+    start_position = 0,0
+    visit_radius = 5
 }
 ProcessConfig = uFldNodeBroker
 {
@@ -38,7 +54,8 @@ ProcessConfig = uFldNodeBroker
   BRIDGE = src=APPCAST
   BRIDGE = src=NODE_REPORT_LOCAL,  alias=NODE_REPORT
   BRIDGE = src=NODE_MESSAGE_LOCAL, alias=NODE_MESSAGE
-    BRIDGE = src=GENPATH
+    BRIDGE = src=GENPATH , alias=GENPATH_SHANE
+    BRIDGE = src=REPORT, alias=REPORT_SHANE
 }
 
 ProcessConfig = pShare
@@ -122,11 +139,11 @@ ProcessConfig = uProcessWatch
   CommsTick = 2
   
   WATCH  = uSimMarine
-  WATCH  = pLogger
+//  WATCH  = pLogger
   WATCH  = pNodeReporter
   WATCH  = pMarinePID
   WATCH  = pHelmIvP
-
+  WATCH  = pGenPath
   NOWATCH=uXMS*
   NOWATCH=uMAC*
 }

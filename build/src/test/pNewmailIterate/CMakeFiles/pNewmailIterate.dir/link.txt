@@ -1,0 +1,1 @@
+/usr/bin/c++   -fPIC -g  -rdynamic CMakeFiles/pNewmailIterate.dir/NewmailIterate.cpp.o CMakeFiles/pNewmailIterate.dir/NewmailIterate_Info.cpp.o CMakeFiles/pNewmailIterate.dir/main.cpp.o  -o ../../../../bin/pNewmailIterate  -L/home/shane/moos-ivp/lib -Wl,-rpath,/home/shane/moos-ivp/lib /home/shane/moos-ivp/build/MOOS/MOOSCore/lib/libMOOS.a -lapputil -lmbutil -lm -lpthread 

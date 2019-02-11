@@ -28,6 +28,7 @@ PointAssign::PointAssign()
     m_id.clear();
 
     m_done = false;
+    m_received = false;
 
     m_left_index.clear();
     m_right_index.clear();
@@ -61,16 +62,19 @@ bool PointAssign::OnNewMail(MOOSMSG_LIST &NewMail)
     bool   mdbl  = msg.IsDouble();
     bool   mstr  = msg.IsString();
 #endif
-
-     if(key == "FOO") 
-       cout << "great!";
-     else if(key == "VISIT_POINT"){
-       m_coordinate_list.push_back(msg.GetString());
-       Notify("GET",1);
-     }  
-     else if(key != "APPCAST_REQ") // handled by AppCastingMOOSApp
-       reportRunWarning("Unhandled Mail: " + key);
-   }
+    string str;
+    if(key == "FOO") 
+        cout << "great!";
+    else if(key == "VISIT_POINT"){
+        str = msg.GetString();
+        if(str != "firstpoint" && str != "lastpoint")
+            m_coordinate_list.push_back(msg.GetString());
+        else if(str == "lastpoint")
+            m_received = true;
+    }  
+    else if(key != "APPCAST_REQ") // handled by AppCastingMOOSApp
+        reportRunWarning("Unhandled Mail: " + key);
+    }
 	
    return(true);
 }
@@ -90,106 +94,95 @@ bool PointAssign::OnConnectToServer()
 
 bool PointAssign::Iterate()
 {
-  AppCastingMOOSApp::Iterate();
-  // Do your thing here!
-  if(m_done == false && m_coordinate_list.size() == 102 && (m_assign_by_region == "false" || m_assign_by_region == "FALSE")){
-    decode();
-    list<string>::iterator plist;
-    plist = m_coordinate_list.begin();
-
-    for(int i=0;i<102;i++)
-    {
-        double x = m_x.at(i);
-        double y = m_y.at(i);
-        string id = m_id.at(i);
-        if(i<50){
-            Notify("VISIT_POINT_"+m_v_vector.at(0),*plist);
-            postViewPoint(x,y,id,"red");    
+    AppCastingMOOSApp::Iterate();
+    // Do your thing here!
+    if(m_done == false && m_received == true && (m_assign_by_region == "false" || m_assign_by_region == "FALSE")){
+        decode();
+        list<string>::iterator plist;
+        plist = m_coordinate_list.begin();
+        int n = m_x.size()/2;
+        for(int i=0;i<m_x.size();i++){
+            double x = m_x.at(i);
+            double y = m_y.at(i);
+            string id = m_id.at(i);
+            if(i==0){
+                Notify("VISIT_POINT_"+m_v_vector.at(0),"firstpoint");
+                Notify("VISIT_POINT_"+m_v_vector.at(0),*plist);
+                postViewPoint(x,y,id,"red");
+            }
+            else if(i>0 && i<n){
+                Notify("VISIT_POINT_"+m_v_vector.at(0),*plist);
+                postViewPoint(x,y,id,"red");
+            }
+            else if(i==n){
+                Notify("VISIT_POINT_"+m_v_vector.at(0),*plist);
+                postViewPoint(x,y,id,"red");
+                Notify("VISIT_POINT_"+m_v_vector.at(0),"lastpoint");    
+            }
+            else if(i==n+1){
+                Notify("VISIT_POINT_"+m_v_vector.at(1),"firstpoint");
+                Notify("VISIT_POINT_"+m_v_vector.at(1),*plist);
+                postViewPoint(x,y,id,"yellow");
+            }
+            else if(i>n+2 && i<m_x.size()-2){
+                Notify("VISIT_POINT_"+m_v_vector.at(1),*plist);
+                postViewPoint(x,y,id,"yellow");
+            }
+            else{
+                Notify("VISIT_POINT_"+m_v_vector.at(1),*plist);
+                postViewPoint(x,y,id,"yellow");
+                Notify("VISIT_POINT_"+m_v_vector.at(1),"lastpoint");
+            }
+            plist++;
         }
-        else if(i==50){
-            Notify("VISIT_POINT_"+m_v_vector.at(0),*plist);
-            Notify("VISIT_POINT_"+m_v_vector.at(0),"lastpoint");
-            postViewPoint(x,y,id,"red");
-        }
-        else if(i==51){
-            Notify("VISIT_POINT_"+m_v_vector.at(1),"firstpoint");
-            Notify("VISIT_POINT_"+m_v_vector.at(1),*plist);
-            postViewPoint(x,y,id,"yellow");
-        }
-        else{
-            Notify("VISIT_POINT_"+m_v_vector.at(1),*plist);
-            postViewPoint(x,y,id,"yellow");
-        }
-        plist++;
-    }
-    m_done = true;
-
-  }
-  else if(m_done == false && m_coordinate_list.size() == 102 && (m_assign_by_region == "true" || m_assign_by_region == "TRUE")){
-      decode();
-      separatePointsByHalfX();
-      
-      int index;
-      double x;
-      double y;
-      string id;
-
-      list<string>::iterator plist=m_coordinate_list.begin();
-      for(int i=0;i<m_left_index.size();i++){
-          
-          index = m_left_index.at(i);
-          if(i==0)
-              Notify("VISIT_POINT_"+m_v_vector.at(0),"firstpoint");
-          
-          Notify("VISIT_POINT_"+m_v_vector.at(0), *( next(plist, index) ));
-          x = m_x.at(index);
-          y = m_y.at(index);
-          id = m_id.at(index);
-          postViewPoint(x,y,id,"red");
-          
-          if(i==m_left_index.size()-1)
-              Notify("VISIT_POINT_"+m_v_vector.at(0),"lastpoint");
+        m_done = true;
+    }   
+    else if(m_done == false && m_received == true && (m_assign_by_region == "true" || m_assign_by_region == "TRUE")){
+        decode();
+        separatePointsByHalfX();
+                
+        int index;
+        double x;
+        double y;
+        string id;
         
-      }
-      for(int i=0;i<m_right_index.size();i++){
+        list<string>::iterator plist=m_coordinate_list.begin();
+        for(int i=0;i<m_left_index.size();i++){
+            
+            index = m_left_index.at(i);
+            if(i==0)
+                Notify("VISIT_POINT_"+m_v_vector.at(0),"firstpoint");
+            
+            Notify("VISIT_POINT_"+m_v_vector.at(0), *( next(plist, index) ));
+            x = m_x.at(index);
+            y = m_y.at(index);
+            id = m_id.at(index);
+            postViewPoint(x,y,id,"red");
+            
+            if(i==m_left_index.size()-1)
+                Notify("VISIT_POINT_"+m_v_vector.at(0),"lastpoint");
           
-          index = m_right_index.at(i);
-          if(i==0)
-              Notify("VISIT_POINT_"+m_v_vector.at(1),"firstpoint");
-          
-          Notify("VISIT_POINT_"+m_v_vector.at(1), *( next(plist, index)));
-          x = m_x.at(index);
-          y = m_y.at(index);
-          id = m_id.at(index);
-          postViewPoint(x,y,id,"yellow");
+        }
+        for(int i=0;i<m_right_index.size();i++){
+            
+            index = m_right_index.at(i);
+            if(i==0)
+                Notify("VISIT_POINT_"+m_v_vector.at(1),"firstpoint");
+            
+            Notify("VISIT_POINT_"+m_v_vector.at(1), *( next(plist, index)));
+            x = m_x.at(index);
+            y = m_y.at(index);
+            id = m_id.at(index);
+            postViewPoint(x,y,id,"yellow");
 
-          if(i==m_right_index.size()-1)
-              Notify("VISIT_POINT_"+m_v_vector.at(1),"lastpoint");          
-      }
-      m_done = true;
+            if(i==m_right_index.size()-1)
+                Notify("VISIT_POINT_"+m_v_vector.at(1),"lastpoint");          
+        }
+        m_done = true;
 
-  }
-//  if(!m_coordinate_list.empty() && m_assign_by_region == "false"){
-//      m_count++;
-//      list<string>::iterator plist;
-//      plist = m_coordinate_list.begin();
-//
-//      if(m_count<=50)     
-//        Notify("VISIT_POINT_"+m_v_vector.at(0),m_coordinate_list.front());
-//      else if(m_count==51){
-//          Notify("VISIT_POINT_"+m_v_vector.at(0),m_coordinate_list.front());
-//          Notify("VISIT_POINT_"+m_v_vector.at(0),"lastpoint");
-//      }
-//      else if(m_count==52){
-//          Notify("VISIT_POINT_"+m_v_vector.at(1),"firstpoint");
-//          Notify("VISIT_POINT_"+m_v_vector.at(1),m_coordinate_list.front());
-//      }
-//      else
-//          Notify("VISIT_POINT_"+m_v_vector.at(1),m_coordinate_list.front());
-//      m_coordinate_list.erase(plist);
-//  }
-  AppCastingMOOSApp::PostReport();
-  return(true);
+    }
+    AppCastingMOOSApp::PostReport();
+    return(true);
 }
 
 //---------------------------------------------------------
@@ -212,7 +205,7 @@ bool PointAssign::OnStartUp()
     string param = tolower(biteStringX(line, '='));
     string value = line;
 
-    Notify("POINT_ASSIGN","true");
+    Notify("POINT_ASSIGN","start");
     bool handled = false;
     
     if(param == "foo") {
@@ -281,13 +274,12 @@ void PointAssign::cutString()
 
 void PointAssign::separatePointsByHalfX()
 {
-    int empty = 9999;
     for(int i=0;i<m_x.size();i++){
         double x = m_x.at(i);
-        if(x!=empty && x>=-25 && x<87.5){
+        if(x>=-25 && x<87.5){
             m_left_index.push_back(i);
         }
-        else if(x!=empty && x>=87.5 && x<=200) 
+        else if(x>=87.5 && x<=200) 
             m_right_index.push_back(i);
     }    
 }
