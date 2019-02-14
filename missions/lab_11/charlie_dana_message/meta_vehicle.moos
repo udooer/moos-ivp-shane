@@ -1,0 +1,70 @@
+ServerHost = localhost
+ServerPort = $(VPORT)
+Simulator  = true
+
+// Community name IS the vehicle name
+Community  = $(VNAME)
+
+#include plug_origin_warp.moos
+  
+//------------------------------------------------------------
+Processconfig = ANTLER
+{
+    MSBetweenLaunches = 100
+     
+    Run = MOOSDB                @ NewConsole = false
+    Run = uProcessWatch         @ NewConsole = false
+    Run = pShare                @ NewConsole = false
+    Run = uSimMarine            @ NewConsole = false
+    Run = pLogger               @ NewConsole = false
+    Run = pNodeReporter         @ NewConsole = false
+    Run = pMarinePID            @ NewConsole = false
+    Run = pHelmIvP              @ NewConsole = false
+    Run = pHostInfo             @ NewConsole = false
+    Run = uFldNodeBroker        @ NewConsole = false
+    Run = uFldMessageHandler    @ NewConsole = false
+//    Run = uTimerScript          @ NewConsole = false
+}
+
+Processconfig = uTimerScript
+{
+    AppTick    = 2
+    CommsTick  = 2
+
+    condition  = DEPLOY=true
+    randvar    = varname=YPOS, min=-125, max=0, key=at_reset
+
+   // THE BELOW EVENT ALL ON ONE LINE IN THE ACTUAL MOOS FILE
+
+    event      = var=NODE_MESSAGE_LOCAL, val="src_node=$(VNAME),dest_node=all,var_name=UP_LOITER,string_val=ycenter_assign=$[YPOS]", time=60
+    event      = var=NODE_MESSAGE_LOCAL, val="src_node=$(VNAME),dest_node=all,var_name=UP_LOITER,string_val=ycenter_assign=$[YPOS]", time=70
+    event      = var=NODE_MESSAGE_LOCAL, val="src_node=$(VNAME),dest_node=all,var_name=UP_LOITER,string_val=ycenter_assign=$[YPOS]", time=80
+    event      = var=NODE_MESSAGE_LOCAL, val="src_node=$(VNAME),dest_node=all,var_name=UP_LOITER,string_val=ycenter_assign=$[YPOS]", time=90
+    event      = var=NODE_MESSAGE_LOCAL, val="src_node=$(VNAME),dest_node=all,var_name=UP_LOITER,string_val=ycenter_assign=$[YPOS]", time=100
+
+
+
+
+    reset_max = nolimit
+    reset_time = all-posted
+}
+
+
+Processconfig = uFldMessageHandler
+{
+    AppTick = 2
+    CommsTick = 2
+
+    strict_addressing = false
+}
+
+#include plug_uFldNodeBroker.moos
+#include plug_pShare.moos
+#include plug_pHostInfo.moos
+#include plug_uSimMarine.moos
+#include plug_pHelmIvP.moos
+#include plug_pMarinePID.moos
+#include plug_pLogger.moos
+#include plug_pNodeReporter.moos
+#include plug_uProcessWatch.moos
+
