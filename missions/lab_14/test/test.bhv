@@ -1,0 +1,6 @@
+//-------------     FILE: test.bhv
+Behavior = BHV_example
+{
+    name = test
+    pwt  = 100
+}

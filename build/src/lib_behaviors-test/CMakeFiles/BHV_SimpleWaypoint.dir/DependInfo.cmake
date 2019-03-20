@@ -43,6 +43,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/shane/moos-ivp/ivp/src/lib_ufield"
   "/home/shane/moos-ivp/ivp/src/lib_ufld_hazards"
   "/home/shane/moos-ivp/ivp/src/lib_zaicview"
+  "../src/./lib_behaviors-shane"
   "../src/./lib_behaviors-test"
   )
 

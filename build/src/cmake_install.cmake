@@ -40,6 +40,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/shane/moos-ivp-shane/build/src/lib_behaviors-test/cmake_install.cmake")
+  include("/home/shane/moos-ivp-shane/build/src/lib_behaviors-shane/cmake_install.cmake")
   include("/home/shane/moos-ivp-shane/build/src/pXRelayTest/cmake_install.cmake")
   include("/home/shane/moos-ivp-shane/build/src/pExampleApp/cmake_install.cmake")
   include("/home/shane/moos-ivp-shane/build/src/pOdometry/cmake_install.cmake")
