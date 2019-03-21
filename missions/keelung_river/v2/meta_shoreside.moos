@@ -29,7 +29,8 @@ ProcessConfig = pShare
   AppTick    = 2
   CommsTick  = 2
 
-  input = route =  192.168.1.57:9300
+  //input = route =  192.168.1.57:9300
+    input = route = localhost:9300
 }
 
 

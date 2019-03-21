@@ -207,13 +207,18 @@ bool GenPath::Iterate()
         EraseNearbyPoint();
     }    
     else if(!m_x_list.empty() && m_state == "returning" && m_gen == false){
+        if(m_x_list.size()==1){
+            m_x_list.push_back(m_origin_x);
+            m_y_list.push_back(m_origin_y);
+            m_id_list.push_back("0");
+        }
         GenVisitPoint();
         Notify("GENPATH","new visit point posted");
         m_gen = true;
     }
     else if(m_x_list.empty() && m_input_list.empty() && m_state == "waiting" && m_done == false){
         Notify("GENPATH","all points arrived");
-        Notify("UPDATE_POINTS","points =0,0:");
+        Notify("UPDATE_POINTS","points =0,0");
         m_done = true;
     }
     if(!m_x_list.empty() && m_state == "point surveying"){
