@@ -124,6 +124,45 @@ BHV_SimpleWaypoint/fast:
 .PHONY : BHV_SimpleWaypoint/fast
 
 #=============================================================================
+# Target rules for targets named BHV_ZigLeg
+
+# Build rule for target.
+BHV_ZigLeg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BHV_ZigLeg
+.PHONY : BHV_ZigLeg
+
+# fast build rule for target.
+BHV_ZigLeg/fast:
+	$(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/build
+.PHONY : BHV_ZigLeg/fast
+
+#=============================================================================
+# Target rules for targets named BHV_example
+
+# Build rule for target.
+BHV_example: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BHV_example
+.PHONY : BHV_example
+
+# fast build rule for target.
+BHV_example/fast:
+	$(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_example.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_example.dir/build
+.PHONY : BHV_example/fast
+
+#=============================================================================
+# Target rules for targets named BHV_Pulse
+
+# Build rule for target.
+BHV_Pulse: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BHV_Pulse
+.PHONY : BHV_Pulse
+
+# fast build rule for target.
+BHV_Pulse/fast:
+	$(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/build
+.PHONY : BHV_Pulse/fast
+
+#=============================================================================
 # Target rules for targets named pXRelayTest
 
 # Build rule for target.
@@ -288,6 +327,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... BHV_SimpleWaypoint"
+	@echo "... BHV_ZigLeg"
+	@echo "... BHV_example"
+	@echo "... BHV_Pulse"
 	@echo "... pXRelayTest"
 	@echo "... pExampleApp"
 	@echo "... pOdometry"
