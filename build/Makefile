@@ -124,6 +124,19 @@ BHV_SimpleWaypoint/fast:
 .PHONY : BHV_SimpleWaypoint/fast
 
 #=============================================================================
+# Target rules for targets named BHV_Polygon
+
+# Build rule for target.
+BHV_Polygon: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BHV_Polygon
+.PHONY : BHV_Polygon
+
+# fast build rule for target.
+BHV_Polygon/fast:
+	$(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build
+.PHONY : BHV_Polygon/fast
+
+#=============================================================================
 # Target rules for targets named BHV_ZigLeg
 
 # Build rule for target.
@@ -327,6 +340,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... BHV_SimpleWaypoint"
+	@echo "... BHV_Polygon"
 	@echo "... BHV_ZigLeg"
 	@echo "... BHV_example"
 	@echo "... BHV_Pulse"

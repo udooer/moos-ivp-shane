@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -fPIC -g  -shared -Wl,-soname,libBHV_Polygon.so -o ../../../lib/libBHV_Polygon.so CMakeFiles/BHV_Polygon.dir/BHV_Polygon.cpp.o  -L/home/shane/moos-ivp/lib -Wl,-rpath,/home/shane/moos-ivp/lib -lhelmivp -lbehaviors -livpbuild -llogic -livpcore -lbhvutil -lmbutil -lgeometry -lm 
