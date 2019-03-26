@@ -31,6 +31,7 @@ BHV_ZigLeg::BHV_ZigLeg(IvPDomain domain) :
   m_zig_duration = 10;
   m_priority_wt = 2000;
   m_case = 0;
+  m_count = 0;
 
   // Defult values for behavior state variables
   m_osx = 0;
@@ -139,12 +140,14 @@ void BHV_ZigLeg::onRunToIdleState()
 // --------------------------------------------------------------
 IvPFunction* BHV_ZigLeg::buildFunctionWithZAIC()
 {
-    double heading;
     bool headok;
-    heading = getBufferDoubleVal("DESIRED_HEADING", headok) + m_zig_angle;
+    if(m_count == 0){
+        m_heading = getBufferDoubleVal("DESIRED_HEADING", headok) + m_zig_angle;
+        m_count++;
+    }
     postMessage("STOP", 1);
     ZAIC_PEAK crs_zaic(m_domain, "course");
-    crs_zaic.setSummit(heading);
+    crs_zaic.setSummit(m_heading);
     crs_zaic.setPeakWidth(0);
     crs_zaic.setBaseWidth(180);
     crs_zaic.setSummitDelta(0);
@@ -200,6 +203,7 @@ IvPFunction* BHV_ZigLeg::onRunState()
         if(m_local_time > (m_zig_time + m_zig_duration)){
             ipf = 0;
             m_case = 1;
+            m_count = 0;
         }
         break;
     }

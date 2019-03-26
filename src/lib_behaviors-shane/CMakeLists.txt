@@ -70,6 +70,22 @@ ENDMACRO(ADD_BHV)
     mbutil 
     geometry 
     ${SYSTEM_LIBS} )
+
+##--------------------------------------------------------
+## BHV_Polygon
+##--------------------------------------------------------
+  ADD_LIBRARY(BHV_Polygon SHARED BHV_Polygon.cpp)
+  TARGET_LINK_LIBRARIES(BHV_Polygon 
+    helmivp
+    behaviors 
+    ivpbuild 
+    logic 
+    ivpcore 
+    bhvutil 
+    mbutil 
+    geometry 
+    ${SYSTEM_LIBS} )
+
 ##--------------------------------------------------------
 ##                                      BHV_SimpleWaypoint
 ##--------------------------------------------------------

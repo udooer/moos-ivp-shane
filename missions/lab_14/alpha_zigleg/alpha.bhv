@@ -79,5 +79,5 @@ Behavior=BHV_ZigLeg
 
     zig_pwt = 110
     zig_duration = 10
-    zig_angle = 4
+    zig_angle = 45
 }

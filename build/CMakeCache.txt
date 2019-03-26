@@ -17,6 +17,9 @@
 ARCHIVE_OUTPUT_DIRECTORY:PATH=/home/shane/moos-ivp-shane/lib
 
 //Dependencies for the target
+BHV_Polygon_LIB_DEPENDS:STATIC=general;helmivp;general;behaviors;general;ivpbuild;general;logic;general;ivpcore;general;bhvutil;general;mbutil;general;geometry;general;m;
+
+//Dependencies for the target
 BHV_Pulse_LIB_DEPENDS:STATIC=general;helmivp;general;behaviors;general;ivpbuild;general;logic;general;ivpcore;general;bhvutil;general;mbutil;general;geometry;general;m;
 
 //Dependencies for the target

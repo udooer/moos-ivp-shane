@@ -111,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/rule:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f CMakeFiles/Makefile2 src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/rule
+.PHONY : src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/rule
+
+# Convenience name for target.
+BHV_Polygon: src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/rule
+
+.PHONY : BHV_Polygon
+
+# fast build rule for target.
+BHV_Polygon/fast:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build
+.PHONY : BHV_Polygon/fast
+
+# Convenience name for target.
 src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/rule:
 	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f CMakeFiles/Makefile2 src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/rule
 .PHONY : src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/rule
@@ -154,6 +169,33 @@ BHV_Pulse: src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/rule
 BHV_Pulse/fast:
 	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/build
 .PHONY : BHV_Pulse/fast
+
+BHV_Polygon.o: BHV_Polygon.cpp.o
+
+.PHONY : BHV_Polygon.o
+
+# target to build an object file
+BHV_Polygon.cpp.o:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/BHV_Polygon.cpp.o
+.PHONY : BHV_Polygon.cpp.o
+
+BHV_Polygon.i: BHV_Polygon.cpp.i
+
+.PHONY : BHV_Polygon.i
+
+# target to preprocess a source file
+BHV_Polygon.cpp.i:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/BHV_Polygon.cpp.i
+.PHONY : BHV_Polygon.cpp.i
+
+BHV_Polygon.s: BHV_Polygon.cpp.s
+
+.PHONY : BHV_Polygon.s
+
+# target to generate assembly for a file
+BHV_Polygon.cpp.s:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/BHV_Polygon.cpp.s
+.PHONY : BHV_Polygon.cpp.s
 
 BHV_Pulse.o: BHV_Pulse.cpp.o
 
@@ -243,10 +285,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... BHV_Polygon"
 	@echo "... edit_cache"
 	@echo "... BHV_ZigLeg"
 	@echo "... BHV_example"
 	@echo "... BHV_Pulse"
+	@echo "... BHV_Polygon.o"
+	@echo "... BHV_Polygon.i"
+	@echo "... BHV_Polygon.s"
 	@echo "... BHV_Pulse.o"
 	@echo "... BHV_Pulse.i"
 	@echo "... BHV_Pulse.s"

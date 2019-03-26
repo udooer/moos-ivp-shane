@@ -6,6 +6,7 @@
 /home/shane/moos-ivp-shane/build/src/lib_behaviors-test/CMakeFiles/BHV_SimpleWaypoint.dir
 /home/shane/moos-ivp-shane/build/src/lib_behaviors-test/CMakeFiles/edit_cache.dir
 /home/shane/moos-ivp-shane/build/src/lib_behaviors-shane/CMakeFiles/rebuild_cache.dir
+/home/shane/moos-ivp-shane/build/src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir
 /home/shane/moos-ivp-shane/build/src/lib_behaviors-shane/CMakeFiles/edit_cache.dir
 /home/shane/moos-ivp-shane/build/src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir
 /home/shane/moos-ivp-shane/build/src/lib_behaviors-shane/CMakeFiles/BHV_example.dir
