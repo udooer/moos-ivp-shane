@@ -1,0 +1,63 @@
+ServerHost = localhost
+ServerPort = $(VPORT)
+Simulator  = true
+
+// Community name IS the vehicle name
+Community  = $(VNAME)
+
+#include plug_origin_warp.moos
+  
+//------------------------------------------------------------
+Processconfig = ANTLER
+{
+  MSBetweenLaunches = 100
+   
+  Run = MOOSDB           @ NewConsole = false
+  Run = uProcessWatch    @ NewConsole = false
+  Run = pShare           @ NewConsole = false
+  Run = uSimMarine       @ NewConsole = false
+  Run = pLogger          @ NewConsole = false
+  Run = pNodeReporter    @ NewConsole = false
+  Run = pMarinePID       @ NewConsole = false
+  Run = pHelmIvP         @ NewConsole = false
+  Run = pHostInfo        @ NewConsole = false
+  Run = uFldNodeBroker   @ NewConsole = false
+  Run = uFldMessageHandler @ NewConsole = false
+}
+
+//-------------------------------------------------
+// uFldMessageHandler config block
+Processconfig = uFldMessageHandler
+{
+    AppTick = 2
+    CommsTick = 2
+
+    strict_addressing = false
+}
+
+//-------------------------------------------------
+// uFldNodeBroker config block
+Processconfig = uFldNodeBroker
+{
+    AppTick   = 1
+    CommsTick = 1
+
+    TRY_SHORE_HOST = pshare_route=localhost:$(SHORE_LISTEN)
+
+    BRIDGE = src=VIEW_POLYGON
+    BRIDGE = src=VIEW_CIRCLE
+    BRIDGE = src=VIEW_POINT
+    BRIDGE = src=VIEW_SEGLIST
+    BRIDGE = src=APPCAST
+    BRIDGE = src=NODE_REPORT_LOCAL,  alias=NODE_REPORT
+    BRIDGE = src=NODE_MESSAGE_LOCAL, alias=NODE_MESSAGE
+}
+#include plug_pShare.moos
+#include plug_pHostInfo.moos
+#include plug_uSimMarine.moos
+#include plug_pHelmIvP.moos
+#include plug_pMarinePID.moos
+#include plug_pLogger.moos
+#include plug_pNodeReporter.moos
+#include plug_uProcessWatch.moos
+
