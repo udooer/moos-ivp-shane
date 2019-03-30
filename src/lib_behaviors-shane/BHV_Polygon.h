@@ -32,6 +32,7 @@ protected: // Local Utility functions
   void postViewPoint();
   std::vector<double> getDiscretex();
   std::vector<double> getDiscretey();
+  void update(std::string);
   IvPFunction* buildFunctionWithZAIC();
 protected: // Configuration parameters
   std::string m_path;
@@ -52,6 +53,10 @@ protected: // Configuration parameters
   std::vector<double> x_point;
   std::vector<double> y_point;
   int m_index;
+  std::string m_string_now;
+  bool m_ifupdate;
+  std::string m_node;
+  std::string m_dest_node;
 
 protected: // State variables
   double m_osx;

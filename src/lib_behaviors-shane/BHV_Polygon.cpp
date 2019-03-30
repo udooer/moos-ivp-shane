@@ -45,6 +45,10 @@ BHV_Polygon::BHV_Polygon(IvPDomain domain) :
   y_point.clear();
   m_index = 0;
   point.clear();
+  m_string_now ="";
+  m_ifupdate = false;
+  m_node = "";
+  m_dest_node = "";
 
   
   // Default values for behavior state variables
@@ -53,6 +57,7 @@ BHV_Polygon::BHV_Polygon(IvPDomain domain) :
   
   // Add any variables this behavior needs to subscribe for
   addInfoVars("NAV_X, NAV_Y");
+  addInfoVars("SHARE_POS");
 }
 
 //---------------------------------------------------------------
@@ -76,6 +81,8 @@ bool BHV_Polygon::setParam(string param, string val)
   else if (param == "path") {
     m_path = val;
     decode();
+    x_point = getDiscretex();
+    y_point = getDiscretey();   
     return true;
   }
 //  else if ((param == "resolution") && (double_val > 0) && (isNumber(val))){
@@ -88,6 +95,14 @@ bool BHV_Polygon::setParam(string param, string val)
   }
   else if ((param == "radius") && (double_val > 0) && (isNumber(val))){
     m_arrival_radius = double_val;
+    return true;
+  }
+  else if (param == "node_name") {
+    m_node = val;
+    return true;
+  }
+  else if (param == "dest_name") {
+    m_dest_node = val;
     return true;
   }
 
@@ -161,6 +176,17 @@ void BHV_Polygon::onIdleToRunState()
 
 void BHV_Polygon::onRunToIdleState()
 {
+    bool ok1, ok2;
+    m_osx = getBufferDoubleVal("NAV_X", ok1);
+    m_osy = getBufferDoubleVal("NAV_Y", ok2);
+    stringstream ss;
+    string s;
+    ss<<"src_node="<<m_node<<",dest_node="<<m_dest_node<<",var_name=SHARE_POS,string_val=\"x="<<m_osx<<",y="<<m_osy<<"\"";
+    ss>>s;ss.clear();
+    if(ok1 && ok2)
+        postRepeatableMessage("NODE_MESSAGE_LOCAL", s);
+    else 
+        postWMessage("no X/Y info in info_buffer");
 }
 
 //---------------------------------------------------------------
@@ -206,7 +232,8 @@ IvPFunction* BHV_Polygon::buildFunctionWithZAIC()
 //   Purpose: Invoked each iteration when run conditions have been met.
 
 IvPFunction* BHV_Polygon::onRunState()
-{
+{ 
+  postViewPoint();
   bool ok1, ok2;
   m_osx = getBufferDoubleVal("NAV_X", ok1);
   m_osy = getBufferDoubleVal("NAV_Y", ok2);
@@ -214,33 +241,30 @@ IvPFunction* BHV_Polygon::onRunState()
       postWMessage("No ownship X/Y info in info_buffer.");
       return(0);
   }
-  // Part 1: Build the IvP function
-  IvPFunction *ipf = 0;
-  switch (m_char){
-    case 'c':
-    case 's':{
-        postMessage("M_CASE", "c or s");
-        x_point = getDiscretex();
-        y_point = getDiscretey();
-        m_char = 'w';
-        break;
-    }
-    case 'w':{
-        postMessage("M_CASE", "w");
-        ipf = buildFunctionWithZAIC();
-        break;
-    }   
+  bool updateok;
+  string s = getBufferStringVal("SHARE_POS", updateok);
+  if(s != m_string_now && s != ""){
+      m_string_now = s;
+      update(s);
+      m_ifupdate = true;
+      postMessage("SHARE_POS", "");
   }
-  postViewPoint();
+
+  IvPFunction *ipf = 0;
+  ipf = buildFunctionWithZAIC();
   double dist;
   dist = sqrt(pow((m_osx-x_point.at(m_index)), 2)+pow((m_osy-y_point.at(m_index)), 2));
   postMessage("DIST", dist);
-  if(dist<m_arrival_radius)
+  if(dist<m_arrival_radius && !m_ifupdate)
       if(m_index == x_point.size()-1)
           m_index = 0;
       else
           m_index++;
-
+  if(dist<m_arrival_radius && m_ifupdate){
+      x_point.erase(x_point.begin()+m_index);
+      y_point.erase(y_point.begin()+m_index);
+      m_ifupdate = false;
+  }
 
 
   // Part N: Prior to returning the IvP function, apply the priority wt
@@ -357,4 +381,21 @@ void BHV_Polygon::postViewPoint()
         point.set_label(s);
         postMessage("VIEW_POINT", point.get_spec("active=true"));
     }
+}
+
+void BHV_Polygon::update(string s)
+{
+    string x = tokStringParse(s, "x", ',', '=');
+    string y = tokStringParse(s, "y", ',', '=');
+    double xx;
+    double yy;
+    stringstream ss;
+    ss<<x;ss>>xx;ss.clear();
+    ss<<y;ss>>yy;ss.clear();
+    vector<double>::iterator it = x_point.begin();
+    advance(it, m_index);
+    x_point.insert(it, xx);
+    it = y_point.begin();
+    advance(it, m_index);
+    y_point.insert(it, yy);
 }
