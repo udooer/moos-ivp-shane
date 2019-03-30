@@ -1,0 +1,135 @@
+//--------    FILE: alpha.bhv   -------------
+
+initialize   DEPLOY = false
+initialize   RETURN = false
+initialize   LEFT = $(LEFT)
+initialize   RIGHT = $(RIGHT)
+	
+//----------------------------------------------
+//Behavior = BHV_Waypoint
+//{ 
+//  name      = waypt_survey
+//  pwt       = 100
+//  condition = RETURN = false
+//  condition = DEPLOY = true
+//  endflag   = RETURN = true
+//
+//  updates    = WPT_UPDATE
+//  perpetual  = true
+//
+//                lead = 8
+//         lead_damper = 1
+//       lead_to_start = true
+//               speed = 12   // meters per second
+//        capture_line = true
+//      capture_radius = 5.0
+//         slip_radius = 15.0
+//	efficiency_measure = all
+//
+//             polygon = 60,-40 : 60,-160 : 150,-160 : 180,-100 : 150,-40
+//
+//               order = normal
+//             repeat  = 1
+//
+//    visual_hints = nextpt_color=yellow
+//    visual_hints = nextpt_vertex_size=8
+//    visual_hints = nextpt_lcolor=gray70
+//    visual_hints = vertex_color=dodger_blue, edge_color=white
+//    visual_hints = vertex_size=5, edge_size=1
+//}
+
+Behavior=BHV_Polygon
+{
+    name = pattern_survey_left
+    pwt = 100
+
+    condition = DEPLOY=true
+    condition = RETURN=false
+    condition = LEFT=true
+    
+    node_name = $(VNAME)   
+    dest_name = $(DEST_NODE) 
+    speed = 2
+    radius = 5
+
+    path = polygon=circle, center_x=$(CENTER_X), center_y=$(CENTER_Y), radius=$(RADIUS)
+//    path = polygon=sinewave, start_x=40, start_y=-30, omega=0.02, amplitude=10
+//    path = polygon=circle, center_x=30, center_y=-50, radius=20
+//    path = polygon=sinewave, start_x=$(START_X), start_y=$(START_Y), omega=$(OMEGA), amplitude=$(AMPLITUDE)
+
+}
+
+Behavior=BHV_Polygon
+{
+    name = pattern_survey_right
+    pwt = 100
+
+    condition = DEPLOY=true
+    condition = RETURN=false
+    condition = RIGHT=true
+    
+    node_name = $(VNAME)    
+    dest_name = $(DEST_NODE)
+    speed = 2
+    radius = 5
+
+//    path = polygon=circle, center_x=30, center_y=-50, radius=20
+    path = polygon=sinewave, start_x=$(START_X), start_y=$(START_Y), omega=$(OMEGA), amplitude=$(AMPLITUDE)
+}
+//----------------------------------------------
+Behavior=BHV_Waypoint
+{
+  name       = waypt_return
+  pwt        = 100
+  condition  = RETURN = true
+  condition  = DEPLOY = true
+  perpetual  = true
+  updates    = RETURN_UPDATE
+  endflag    = RETURN = false
+  endflag    = DEPLOY = false
+  endflag    = MISSION = complete
+	
+           speed = 2.0
+  capture_radius = 2.0
+     slip_radius = 8.0
+          points = 0,-20
+ }
+
+Behavior = BHV_Timer
+{
+  // General Behavior Parameters
+  // ---------------------------
+  name         = bhv_timer_left            // default
+  condition    = DEPLOY=true    // example
+  condition    = LEFT=true
+  condition    = RETURN=false
+  duration     = $(TIMER)                  // example
+  duration_idle_decay = false
+  perpetual = true
+  endflag      = RIGHT=true          // example
+  endflag      = LEFT=false
+  updates      = TIMER_UPDATES        // example
+
+  // Parameters specific to this behavior
+  // ------------------------------------
+  // None
+}
+Behavior = BHV_Timer
+{
+  // General Behavior Parameters
+  // ---------------------------
+  name         = bhv_timer_right            // default
+  condition    = DEPLOY=true    // example
+  condition    = RIGHT=true
+  condition    = RETURN=false
+  duration     = $(TIMER)                  // example
+  duration_idle_decay = false
+  perpetual = true
+  endflag      = RIGHT=false          // example
+  endflag      = LEFT=true
+  updates      = TIMER_UPDATES        // example
+
+  // Parameters specific to this behavior
+  // ------------------------------------
+  // None
+}
