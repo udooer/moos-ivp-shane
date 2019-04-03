@@ -47,3 +47,6 @@
 /home/shane/moos-ivp-shane/build/src/pGenPath/CMakeFiles/rebuild_cache.dir
 /home/shane/moos-ivp-shane/build/src/pGenPath/CMakeFiles/pGenPath.dir
 /home/shane/moos-ivp-shane/build/src/pGenPath/CMakeFiles/edit_cache.dir
+/home/shane/moos-ivp-shane/build/src/pController/CMakeFiles/rebuild_cache.dir
+/home/shane/moos-ivp-shane/build/src/pController/CMakeFiles/pController.dir
+/home/shane/moos-ivp-shane/build/src/pController/CMakeFiles/edit_cache.dir

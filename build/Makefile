@@ -331,6 +331,19 @@ pGenPath/fast:
 	$(MAKE) -f src/pGenPath/CMakeFiles/pGenPath.dir/build.make src/pGenPath/CMakeFiles/pGenPath.dir/build
 .PHONY : pGenPath/fast
 
+#=============================================================================
+# Target rules for targets named pController
+
+# Build rule for target.
+pController: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pController
+.PHONY : pController
+
+# fast build rule for target.
+pController/fast:
+	$(MAKE) -f src/pController/CMakeFiles/pController.dir/build.make src/pController/CMakeFiles/pController.dir/build
+.PHONY : pController/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -356,6 +369,7 @@ help:
 	@echo "... pChirp"
 	@echo "... pPointAssign"
 	@echo "... pGenPath"
+	@echo "... pController"
 .PHONY : help
 
 
