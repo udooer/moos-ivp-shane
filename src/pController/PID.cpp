@@ -24,7 +24,7 @@ double PID::getError(double heading){
 }
 void PID::setHeading(double set)
 {
-	if( (set<360) && (set>0) )
+	if( (set<360) && (set>=0) )
 		m_set_heading = set;
 	else
 		std::cout<<"error input(wrong desired heading)!!!\n";
@@ -54,6 +54,8 @@ double PID::controller(double error)
 		output = m_min;
 	else if(output > m_max)
 		output = m_max;
+    std::cout<< "error: "<< error;
+    std::cout<< "output: "<< output;
 	return output;
 }
 void PID::setConfig(double kp, double ki, double kd, int max, int min){

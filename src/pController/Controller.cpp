@@ -20,6 +20,8 @@ Controller::Controller()
     m_kp = 0;
     m_ki = 0;
     m_kd = 0;
+    m_max = 3;
+    m_min = -3;
 
     m_desired_heading = 0;
     m_my_heading = 0;
@@ -90,7 +92,7 @@ bool Controller::Iterate()
   // Do your thing here!
   clock_t start = clock();
   if(m_first_exe)
-    m_pid.setConfig(m_kp, m_ki, m_kd, 100000, 0);
+    m_pid.setConfig(m_kp, m_ki, m_kd, m_max, m_min);
   m_pid.setHeading(m_desired_heading);
 
 
@@ -146,6 +148,14 @@ bool Controller::OnStartUp()
       m_kd = atof(value.c_str());
       handled = true;
     }
+    else if (param == "min"){
+      m_min = atof(value.c_str());
+      handled = true;
+    }
+    else if (param == "max"){
+      m_max = atof(value.c_str());
+      handled = true;
+    }
 
 
     if(!handled)
@@ -183,6 +193,8 @@ bool Controller::buildReport()
   actab << "Alpha | Bravo | Charlie | Delta";
   actab.addHeaderLines();
   actab << "one" << "two" << "three" << "four";
+  actab << "my heading: "<< m_my_heading << '\n';
+  actab << "desired heading: " << m_desired_heading << '\n';
   m_msgs << actab.getFormattedString();
 
   return(true);

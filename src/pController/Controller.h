@@ -35,6 +35,8 @@ class Controller : public AppCastingMOOSApp
    double m_kp;
    double m_ki;
    double m_kd;
+   double m_min;
+   double m_max;
 
  private: // State variables
    double m_desired_heading;

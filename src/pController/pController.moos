@@ -1,9 +1,24 @@
 //------------------------------------------------
 // pController config block
-
+ProcessConfig = ANTLER
+{
+    MSBetweenLaunches = 200
+    Run = MOOSDB @NewConsole = false
+    Run = pController @NewConsole = false
+    Run = uXMS @NewConsole = true
+}
 ProcessConfig = pController
 {
    AppTick   = 4
    CommsTick = 4
+   kp = 10
+   ki = 0.5
+   kd = 0.2
 }
-
+ProcessConfig = uXMS
+{
+    AppTick = 4
+    CommsTick = 4
+    history_var = OUTPUT_VOLTAGE
+    var = DESIRED_HEADING, OUTPUT_VOLTAGE
+}
