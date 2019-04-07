@@ -54,8 +54,8 @@ double PID::controller(double error)
 		output = m_min;
 	else if(output > m_max)
 		output = m_max;
-    std::cout<< "error: "<< error;
-    std::cout<< "output: "<< output;
+    std::cout<< "error: "<< error << '\n';
+    std::cout<< "output: "<< output << '\n';
 	return output;
 }
 void PID::setConfig(double kp, double ki, double kd, int max, int min){

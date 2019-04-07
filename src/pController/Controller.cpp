@@ -193,8 +193,8 @@ bool Controller::buildReport()
   actab << "Alpha | Bravo | Charlie | Delta";
   actab.addHeaderLines();
   actab << "one" << "two" << "three" << "four";
-  actab << "my heading: "<< m_my_heading << '\n';
-  actab << "desired heading: " << m_desired_heading << '\n';
+  m_msgs << "my heading: "<< m_my_heading << '\n';
+  m_msgs << "desired heading: " << m_desired_heading << '\n';
   m_msgs << actab.getFormattedString();
 
   return(true);
