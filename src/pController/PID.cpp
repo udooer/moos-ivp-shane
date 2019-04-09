@@ -31,11 +31,20 @@ void PID::setHeading(double set)
 }
 double PID::controller(double error)
 {
+    if(m_saturation == "down" && error < 0)
+        m_clamp = true;
+    else if(m_saturation == "up" && error > 0)
+        m_clamp = true;
+    else
+        m_clamp = false;
+
 	//proportional term 
 	double p = m_kp * error;
 
-	//integral term 
-	m_I_error += error;
+	//integral term
+    if(!m_clamp){ 
+	    m_I_error += error;
+    }
 	double i = m_ki * m_I_error; 
 
 	//derivative term
@@ -50,10 +59,16 @@ double PID::controller(double error)
 
 	//output voltage 
 	double output = p + i + d;
-	if(output < m_min)
+	if(output < m_min){
 		output = m_min;
-	else if(output > m_max)
+        m_saturation = "down";
+    }
+	else if(output > m_max){
 		output = m_max;
+        m_saturation = "up";
+    }
+    else
+        m_saturation = "false";
     std::cout<< "error: "<< error << '\n';
     std::cout<< "output: "<< output << '\n';
 	return output;

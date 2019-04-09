@@ -20,7 +20,9 @@ class PID
 		double m_min{2};
 		double m_I_error{0};
 		double m_last_error{0};
-		bool m_first_exe{true};
-	
+        bool m_first_exe{true};
+
+        std::string m_saturation{"false"};
+        bool m_clamp{false};	
 };
 #endif
