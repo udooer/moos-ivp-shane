@@ -192,11 +192,12 @@ bool AngleDecision::buildReport()
 void AngleDecision::GetData(string a)
 {
 	struct Data block;
-	block.theta = stod(tokStringParse(a , "theta" , ',' , '=' ));
-	block.x1    = stod(tokStringParse(a , "x1" , ',' , '=' ));
-	block.y1    = stod(tokStringParse(a , "y1" , ',' , '=' ));
-	block.x2    = stod(tokStringParse(a , "x2" , ',' , '=' ));
-	block.y2    = stod(tokStringParse(a , "y2" , ',' , '=' ));
+    stringstream ss;string s;
+	s = tokStringParse(a , "theta" , ',' , '=' );ss<<s;ss>>block.theta;ss.clear();
+	s = tokStringParse(a , "x1" , ',' , '=' );ss<<s;ss>>block.x1;ss.clear();
+	s = tokStringParse(a , "y1" , ',' , '=' );ss<<s;ss>>block.y1;ss.clear();
+	s = tokStringParse(a , "x2" , ',' , '=' );ss<<s;ss>>block.x2;ss.clear();
+	s = tokStringParse(a , "y2" , ',' , '=' );ss<<s;ss>>block.y2;ss.clear();
 	block.dis   = 0.5*sqrt(pow(block.x1-block.x2,2)+pow(block.y1-block.y2,2));
 	angle_point.push_back(block); 
 	Notify("CHECK", block.dis);

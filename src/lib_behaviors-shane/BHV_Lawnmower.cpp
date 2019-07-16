@@ -267,11 +267,12 @@ IvPFunction *BHV_Lawnmower::buildFunctionWithZAIC()
 
 void BHV_Lawnmower::setting_params(string msg)
 {
-      m_name        =      tokStringParse(msg , "name" , ',' , '=' );
-      m_theta       = stod(tokStringParse(msg , "theta" , ',' , '=' ));
-      m_start_x     = stod(tokStringParse(msg , "x" , ',' , '=' ));
-      m_start_y     = stod(tokStringParse(msg , "y" , ',' , '=' ));
-      m_distance    = stod(tokStringParse(msg , "dis" , ',' , '=' ));
+      stringstream ss;string s;
+      m_name = tokStringParse(msg , "name" , ',' , '=' );
+      s = tokStringParse(msg , "theta" , ',' , '=' );ss<<s;ss>>m_theta;ss.clear();
+      s = tokStringParse(msg , "x" , ',' , '=' );ss<<s;ss>>m_start_x;ss.clear();
+      s = tokStringParse(msg , "y" , ',' , '=' );ss<<s;ss>>m_start_y;ss.clear();
+      s = tokStringParse(msg , "dis" , ',' , '=' );ss<<s;ss>>m_distance;ss.clear();
       postMessage("GOD_DAMN", "true");
 }
 //---------------------------------------------------------------
