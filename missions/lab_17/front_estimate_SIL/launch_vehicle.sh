@@ -51,7 +51,7 @@ for ARGI; do
     elif [ "${ARGI}" = "--adaptive" -o "${ARGI}" = "-a" ] ; then
         ADAPTIVE="true"
         UNDEFINED_ARG=""
-    elif [ "${ARGI}" = "--adaptive" -o "${ARGI}" = "-a" ] ; then
+    elif [ ${ARGI} = "-a" ] ; then
         SIM="yes"
 
     else 
@@ -85,7 +85,8 @@ nsplug meta_vehicle.moos targ_$VNAME.moos -f WARP=$TIME_WARP  \
    VNAME=$VNAME      START_POS=$START_POS                    \
    VPORT="9001"       SHARE_LISTEN="9301"                      \
    VTYPE=UUV          COOL_FAC=$COOL_FAC  COOL_STEPS=$COOL_STEPS\
-   CONCURRENT=$CONCURRENT  ADAPTIVE=$ADAPTIVE SHORE_IP=$SHORE_IP
+   CONCURRENT=$CONCURRENT  ADAPTIVE=$ADAPTIVE SHORE_IP=$SHORE_IP\
+   SIM=$SIM
 
 nsplug meta_vehicle.bhv targ_$VNAME.bhv -f VNAME=$VNAME      \
     START_POS=$START_POS SURVEY_X=$SURVEY_X SURVEY_Y=$SURVEY_Y \
