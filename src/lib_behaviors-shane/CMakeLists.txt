@@ -87,6 +87,35 @@ ENDMACRO(ADD_BHV)
     ${SYSTEM_LIBS} )
 
 ##--------------------------------------------------------
+## BHV_PolygonV2
+##--------------------------------------------------------
+  ADD_LIBRARY(BHV_PolygonV2 SHARED BHV_PolygonV2.cpp)
+  TARGET_LINK_LIBRARIES(BHV_PolygonV2 
+    helmivp
+    behaviors 
+    ivpbuild 
+    logic 
+    ivpcore 
+    bhvutil 
+    mbutil 
+    geometry 
+    ${SYSTEM_LIBS} )
+##--------------------------------------------------------
+## BHV_PolygonV2
+##--------------------------------------------------------
+  ADD_LIBRARY(BHV_Lawnmower SHARED BHV_Lawnmower.cpp)
+  TARGET_LINK_LIBRARIES(BHV_Lawnmower
+    helmivp
+    behaviors
+    ivpbuild
+    logic
+    ivpcore
+    bhvutil
+    mbutil
+    geometry
+    ${SYSTEM_LIBS} )
+
+##--------------------------------------------------------
 ##                                      BHV_SimpleWaypoint
 ##--------------------------------------------------------
 #ADD_LIBRARY(BHV_SimpleWaypoint SHARED 

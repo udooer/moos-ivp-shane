@@ -1,0 +1,20 @@
+ProcessConfig = iM200
+{
+  AppTick        = 10
+  CommsTick      = 10
+
+  IP_ADDRESS     = localhost // Address of front-seat, default is 'localhost    '
+  PORT_NUMBER    = 29500     // Port number at IP address, default is 29500
+  GPS_PREFIX     = NAV_      // Prepended to GPS position messages.
+  DIRECT_THRUST  = false     // Default is false.
+                             // When true, vehicle is in direct-thrust mode.
+                             // When false, vehicle is in rudder-thrust mode    .
+  HEADING_OFFSET = 0.0       // Offset to add to published heading
+  PUBLISH_RAW    = false     // When true, publish all messages from
+                             // front seat to M200_RAW_NMEA
+  MAX_RUDDER     = 50.0      // Rudder value will be capped to this, +/-
+  MAX_THRUST     = 100.0     // Thrust value to each motor will be
+                             // capped to this value, +/-
+  PUBLISH_THRUST = false     // When true, publishes M200_THRUST_L and _R
+}
+

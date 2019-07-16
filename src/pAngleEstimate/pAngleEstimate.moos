@@ -1,0 +1,9 @@
+//------------------------------------------------
+// pAngleEstimate config block
+
+ProcessConfig = pAngleEstimate
+{
+   AppTick   = 4
+   CommsTick = 4
+}
+

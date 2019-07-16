@@ -17,6 +17,15 @@
 ARCHIVE_OUTPUT_DIRECTORY:PATH=/home/shane/moos-ivp-shane/lib
 
 //Dependencies for the target
+BHV_ExchangeData_LIB_DEPENDS:STATIC=general;helmivp;general;behaviors;general;ivpbuild;general;logic;general;ivpcore;general;bhvutil;general;mbutil;general;geometry;general;m;
+
+//Dependencies for the target
+BHV_Lawnmower_LIB_DEPENDS:STATIC=general;helmivp;general;behaviors;general;ivpbuild;general;logic;general;ivpcore;general;bhvutil;general;mbutil;general;geometry;general;m;
+
+//Dependencies for the target
+BHV_PolygonV2_LIB_DEPENDS:STATIC=general;helmivp;general;behaviors;general;ivpbuild;general;logic;general;ivpcore;general;bhvutil;general;mbutil;general;geometry;general;m;
+
+//Dependencies for the target
 BHV_Polygon_LIB_DEPENDS:STATIC=general;helmivp;general;behaviors;general;ivpbuild;general;logic;general;ivpcore;general;bhvutil;general;mbutil;general;geometry;general;m;
 
 //Dependencies for the target
@@ -320,7 +329,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=17
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=20
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

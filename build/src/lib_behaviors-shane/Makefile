@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/shane/moos-ivp-shane/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,34 +111,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/rule:
-	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f CMakeFiles/Makefile2 src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/rule
-.PHONY : src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/rule
+src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/rule:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f CMakeFiles/Makefile2 src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/rule
+.PHONY : src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/rule
 
 # Convenience name for target.
-BHV_Polygon: src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/rule
+BHV_Pulse: src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/rule
 
-.PHONY : BHV_Polygon
+.PHONY : BHV_Pulse
 
 # fast build rule for target.
-BHV_Polygon/fast:
-	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build
-.PHONY : BHV_Polygon/fast
-
-# Convenience name for target.
-src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/rule:
-	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f CMakeFiles/Makefile2 src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/rule
-.PHONY : src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/rule
-
-# Convenience name for target.
-BHV_ZigLeg: src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/rule
-
-.PHONY : BHV_ZigLeg
-
-# fast build rule for target.
-BHV_ZigLeg/fast:
-	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/build
-.PHONY : BHV_ZigLeg/fast
+BHV_Pulse/fast:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/build
+.PHONY : BHV_Pulse/fast
 
 # Convenience name for target.
 src/lib_behaviors-shane/CMakeFiles/BHV_example.dir/rule:
@@ -156,19 +141,91 @@ BHV_example/fast:
 .PHONY : BHV_example/fast
 
 # Convenience name for target.
-src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/rule:
-	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f CMakeFiles/Makefile2 src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/rule
-.PHONY : src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/rule
+src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/rule:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f CMakeFiles/Makefile2 src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/rule
+.PHONY : src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/rule
 
 # Convenience name for target.
-BHV_Pulse: src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/rule
+BHV_ZigLeg: src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/rule
 
-.PHONY : BHV_Pulse
+.PHONY : BHV_ZigLeg
 
 # fast build rule for target.
-BHV_Pulse/fast:
-	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/build
-.PHONY : BHV_Pulse/fast
+BHV_ZigLeg/fast:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/build
+.PHONY : BHV_ZigLeg/fast
+
+# Convenience name for target.
+src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/rule:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f CMakeFiles/Makefile2 src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/rule
+.PHONY : src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/rule
+
+# Convenience name for target.
+BHV_Polygon: src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/rule
+
+.PHONY : BHV_Polygon
+
+# fast build rule for target.
+BHV_Polygon/fast:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build
+.PHONY : BHV_Polygon/fast
+
+# Convenience name for target.
+src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/rule:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f CMakeFiles/Makefile2 src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/rule
+.PHONY : src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/rule
+
+# Convenience name for target.
+BHV_PolygonV2: src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/rule
+
+.PHONY : BHV_PolygonV2
+
+# fast build rule for target.
+BHV_PolygonV2/fast:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/build
+.PHONY : BHV_PolygonV2/fast
+
+# Convenience name for target.
+src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/rule:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f CMakeFiles/Makefile2 src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/rule
+.PHONY : src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/rule
+
+# Convenience name for target.
+BHV_Lawnmower: src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/rule
+
+.PHONY : BHV_Lawnmower
+
+# fast build rule for target.
+BHV_Lawnmower/fast:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/build
+.PHONY : BHV_Lawnmower/fast
+
+BHV_Lawnmower.o: BHV_Lawnmower.cpp.o
+
+.PHONY : BHV_Lawnmower.o
+
+# target to build an object file
+BHV_Lawnmower.cpp.o:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/BHV_Lawnmower.cpp.o
+.PHONY : BHV_Lawnmower.cpp.o
+
+BHV_Lawnmower.i: BHV_Lawnmower.cpp.i
+
+.PHONY : BHV_Lawnmower.i
+
+# target to preprocess a source file
+BHV_Lawnmower.cpp.i:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/BHV_Lawnmower.cpp.i
+.PHONY : BHV_Lawnmower.cpp.i
+
+BHV_Lawnmower.s: BHV_Lawnmower.cpp.s
+
+.PHONY : BHV_Lawnmower.s
+
+# target to generate assembly for a file
+BHV_Lawnmower.cpp.s:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/BHV_Lawnmower.cpp.s
+.PHONY : BHV_Lawnmower.cpp.s
 
 BHV_Polygon.o: BHV_Polygon.cpp.o
 
@@ -196,6 +253,33 @@ BHV_Polygon.s: BHV_Polygon.cpp.s
 BHV_Polygon.cpp.s:
 	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/BHV_Polygon.cpp.s
 .PHONY : BHV_Polygon.cpp.s
+
+BHV_PolygonV2.o: BHV_PolygonV2.cpp.o
+
+.PHONY : BHV_PolygonV2.o
+
+# target to build an object file
+BHV_PolygonV2.cpp.o:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/BHV_PolygonV2.cpp.o
+.PHONY : BHV_PolygonV2.cpp.o
+
+BHV_PolygonV2.i: BHV_PolygonV2.cpp.i
+
+.PHONY : BHV_PolygonV2.i
+
+# target to preprocess a source file
+BHV_PolygonV2.cpp.i:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/BHV_PolygonV2.cpp.i
+.PHONY : BHV_PolygonV2.cpp.i
+
+BHV_PolygonV2.s: BHV_PolygonV2.cpp.s
+
+.PHONY : BHV_PolygonV2.s
+
+# target to generate assembly for a file
+BHV_PolygonV2.cpp.s:
+	cd /home/shane/moos-ivp-shane/build && $(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/BHV_PolygonV2.cpp.s
+.PHONY : BHV_PolygonV2.cpp.s
 
 BHV_Pulse.o: BHV_Pulse.cpp.o
 
@@ -284,15 +368,23 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... BHV_Polygon"
 	@echo "... edit_cache"
-	@echo "... BHV_ZigLeg"
-	@echo "... BHV_example"
 	@echo "... BHV_Pulse"
+	@echo "... BHV_example"
+	@echo "... BHV_ZigLeg"
+	@echo "... BHV_Polygon"
+	@echo "... rebuild_cache"
+	@echo "... BHV_PolygonV2"
+	@echo "... BHV_Lawnmower"
+	@echo "... BHV_Lawnmower.o"
+	@echo "... BHV_Lawnmower.i"
+	@echo "... BHV_Lawnmower.s"
 	@echo "... BHV_Polygon.o"
 	@echo "... BHV_Polygon.i"
 	@echo "... BHV_Polygon.s"
+	@echo "... BHV_PolygonV2.o"
+	@echo "... BHV_PolygonV2.i"
+	@echo "... BHV_PolygonV2.s"
 	@echo "... BHV_Pulse.o"
 	@echo "... BHV_Pulse.i"
 	@echo "... BHV_Pulse.s"

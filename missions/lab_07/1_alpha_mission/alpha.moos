@@ -30,6 +30,17 @@ ProcessConfig = ANTLER
   Run = pMarineViewer	  @ NewConsole = false
   Run = uProcessWatch	  @ NewConsole = false
   Run = pNodeReporter	  @ NewConsole = false
+  Run = uXMS            @ NewConsole = true
+}
+
+//------------------------------------------
+// uXMS config block
+ProcessConfig = uXMS
+{
+  AppTick = 4
+  CommsTick = 4
+  
+  history_var = VIEW_POINT
 }
 
 //------------------------------------------

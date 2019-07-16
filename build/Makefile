@@ -124,30 +124,17 @@ BHV_SimpleWaypoint/fast:
 .PHONY : BHV_SimpleWaypoint/fast
 
 #=============================================================================
-# Target rules for targets named BHV_Polygon
+# Target rules for targets named BHV_Pulse
 
 # Build rule for target.
-BHV_Polygon: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 BHV_Polygon
-.PHONY : BHV_Polygon
+BHV_Pulse: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BHV_Pulse
+.PHONY : BHV_Pulse
 
 # fast build rule for target.
-BHV_Polygon/fast:
-	$(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build
-.PHONY : BHV_Polygon/fast
-
-#=============================================================================
-# Target rules for targets named BHV_ZigLeg
-
-# Build rule for target.
-BHV_ZigLeg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 BHV_ZigLeg
-.PHONY : BHV_ZigLeg
-
-# fast build rule for target.
-BHV_ZigLeg/fast:
-	$(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/build
-.PHONY : BHV_ZigLeg/fast
+BHV_Pulse/fast:
+	$(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/build
+.PHONY : BHV_Pulse/fast
 
 #=============================================================================
 # Target rules for targets named BHV_example
@@ -163,17 +150,56 @@ BHV_example/fast:
 .PHONY : BHV_example/fast
 
 #=============================================================================
-# Target rules for targets named BHV_Pulse
+# Target rules for targets named BHV_ZigLeg
 
 # Build rule for target.
-BHV_Pulse: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 BHV_Pulse
-.PHONY : BHV_Pulse
+BHV_ZigLeg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BHV_ZigLeg
+.PHONY : BHV_ZigLeg
 
 # fast build rule for target.
-BHV_Pulse/fast:
-	$(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/build
-.PHONY : BHV_Pulse/fast
+BHV_ZigLeg/fast:
+	$(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/build
+.PHONY : BHV_ZigLeg/fast
+
+#=============================================================================
+# Target rules for targets named BHV_Polygon
+
+# Build rule for target.
+BHV_Polygon: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BHV_Polygon
+.PHONY : BHV_Polygon
+
+# fast build rule for target.
+BHV_Polygon/fast:
+	$(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/build
+.PHONY : BHV_Polygon/fast
+
+#=============================================================================
+# Target rules for targets named BHV_PolygonV2
+
+# Build rule for target.
+BHV_PolygonV2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BHV_PolygonV2
+.PHONY : BHV_PolygonV2
+
+# fast build rule for target.
+BHV_PolygonV2/fast:
+	$(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/build
+.PHONY : BHV_PolygonV2/fast
+
+#=============================================================================
+# Target rules for targets named BHV_Lawnmower
+
+# Build rule for target.
+BHV_Lawnmower: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BHV_Lawnmower
+.PHONY : BHV_Lawnmower
+
+# fast build rule for target.
+BHV_Lawnmower/fast:
+	$(MAKE) -f src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/build.make src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/build
+.PHONY : BHV_Lawnmower/fast
 
 #=============================================================================
 # Target rules for targets named pXRelayTest
@@ -344,6 +370,45 @@ pController/fast:
 	$(MAKE) -f src/pController/CMakeFiles/pController.dir/build.make src/pController/CMakeFiles/pController.dir/build
 .PHONY : pController/fast
 
+#=============================================================================
+# Target rules for targets named uFldHazardMgr
+
+# Build rule for target.
+uFldHazardMgr: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uFldHazardMgr
+.PHONY : uFldHazardMgr
+
+# fast build rule for target.
+uFldHazardMgr/fast:
+	$(MAKE) -f src/uFldHazardMgrX/CMakeFiles/uFldHazardMgr.dir/build.make src/uFldHazardMgrX/CMakeFiles/uFldHazardMgr.dir/build
+.PHONY : uFldHazardMgr/fast
+
+#=============================================================================
+# Target rules for targets named pAngleEstimate
+
+# Build rule for target.
+pAngleEstimate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pAngleEstimate
+.PHONY : pAngleEstimate
+
+# fast build rule for target.
+pAngleEstimate/fast:
+	$(MAKE) -f src/pAngleEstimate/CMakeFiles/pAngleEstimate.dir/build.make src/pAngleEstimate/CMakeFiles/pAngleEstimate.dir/build
+.PHONY : pAngleEstimate/fast
+
+#=============================================================================
+# Target rules for targets named pAngleDecision
+
+# Build rule for target.
+pAngleDecision: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pAngleDecision
+.PHONY : pAngleDecision
+
+# fast build rule for target.
+pAngleDecision/fast:
+	$(MAKE) -f src/pAngleDecision/CMakeFiles/pAngleDecision.dir/build.make src/pAngleDecision/CMakeFiles/pAngleDecision.dir/build
+.PHONY : pAngleDecision/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -353,10 +418,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... BHV_SimpleWaypoint"
-	@echo "... BHV_Polygon"
-	@echo "... BHV_ZigLeg"
-	@echo "... BHV_example"
 	@echo "... BHV_Pulse"
+	@echo "... BHV_example"
+	@echo "... BHV_ZigLeg"
+	@echo "... BHV_Polygon"
+	@echo "... BHV_PolygonV2"
+	@echo "... BHV_Lawnmower"
 	@echo "... pXRelayTest"
 	@echo "... pExampleApp"
 	@echo "... pOdometry"
@@ -370,6 +437,9 @@ help:
 	@echo "... pPointAssign"
 	@echo "... pGenPath"
 	@echo "... pController"
+	@echo "... uFldHazardMgr"
+	@echo "... pAngleEstimate"
+	@echo "... pAngleDecision"
 .PHONY : help
 
 

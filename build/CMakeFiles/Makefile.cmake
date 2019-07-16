@@ -14,6 +14,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../src/CMakeLists.txt"
   "../src/lib_behaviors-shane/CMakeLists.txt"
   "../src/lib_behaviors-test/CMakeLists.txt"
+  "../src/pAngleDecision/CMakeLists.txt"
+  "../src/pAngleEstimate/CMakeLists.txt"
   "../src/pChirp/CMakeLists.txt"
   "../src/pController/CMakeLists.txt"
   "../src/pExampleApp/CMakeLists.txt"
@@ -27,6 +29,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../src/test/pTest/CMakeLists.txt"
   "../src/test/pshoresideVehicle/CMakeLists.txt"
   "../src/test/pvehicle/CMakeLists.txt"
+  "../src/uFldHazardMgrX/CMakeLists.txt"
   "/home/shane/moos-ivp/build/MOOS/MOOSCore/MOOSConfig.cmake"
   "/home/shane/moos-ivp/build/MOOS/MOOSCore/MOOSConfigVersion.cmake"
   "/home/shane/moos-ivp/build/MOOS/MOOSCore/UseMOOS.cmake"
@@ -75,15 +78,20 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/pPointAssign/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/pGenPath/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/pController/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/uFldHazardMgrX/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/pAngleEstimate/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/pAngleDecision/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/lib_behaviors-test/CMakeFiles/BHV_SimpleWaypoint.dir/DependInfo.cmake"
-  "src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/DependInfo.cmake"
-  "src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/DependInfo.cmake"
-  "src/lib_behaviors-shane/CMakeFiles/BHV_example.dir/DependInfo.cmake"
   "src/lib_behaviors-shane/CMakeFiles/BHV_Pulse.dir/DependInfo.cmake"
+  "src/lib_behaviors-shane/CMakeFiles/BHV_example.dir/DependInfo.cmake"
+  "src/lib_behaviors-shane/CMakeFiles/BHV_ZigLeg.dir/DependInfo.cmake"
+  "src/lib_behaviors-shane/CMakeFiles/BHV_Polygon.dir/DependInfo.cmake"
+  "src/lib_behaviors-shane/CMakeFiles/BHV_PolygonV2.dir/DependInfo.cmake"
+  "src/lib_behaviors-shane/CMakeFiles/BHV_Lawnmower.dir/DependInfo.cmake"
   "src/pXRelayTest/CMakeFiles/pXRelayTest.dir/DependInfo.cmake"
   "src/pExampleApp/CMakeFiles/pExampleApp.dir/DependInfo.cmake"
   "src/pOdometry/CMakeFiles/pOdometry.dir/DependInfo.cmake"
@@ -97,4 +105,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/pPointAssign/CMakeFiles/pPointAssign.dir/DependInfo.cmake"
   "src/pGenPath/CMakeFiles/pGenPath.dir/DependInfo.cmake"
   "src/pController/CMakeFiles/pController.dir/DependInfo.cmake"
+  "src/uFldHazardMgrX/CMakeFiles/uFldHazardMgr.dir/DependInfo.cmake"
+  "src/pAngleEstimate/CMakeFiles/pAngleEstimate.dir/DependInfo.cmake"
+  "src/pAngleDecision/CMakeFiles/pAngleDecision.dir/DependInfo.cmake"
   )
