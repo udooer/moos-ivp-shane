@@ -2,7 +2,7 @@
 #-------------------------------------------------------
 #  Part 1: Check for and handle command-line arguments
 #-------------------------------------------------------
-SHORE_IP="192.168.1.217"
+SHORE_IP="10.1.10.143"
 TIME_WARP=1
 JUST_MAKE="no"
 VNAME="archie"
@@ -51,7 +51,7 @@ for ARGI; do
     elif [ "${ARGI}" = "--adaptive" -o "${ARGI}" = "-a" ] ; then
         ADAPTIVE="true"
         UNDEFINED_ARG=""
-    elif [ ${ARGI} = "-a" ] ; then
+    elif [ ${ARGI} = "-s" ] ; then
         SIM="yes"
 
     else 
@@ -63,19 +63,23 @@ done
 #-------------------------------------------------------
 #  Part 2: Create the .moos and .bhv files. 
 #-------------------------------------------------------
-if [ ${VNAME} = "ALPHA" ] ; then
+if [ ${VNAME} = "alpha" ] ; then
     START_POS="0,0"
     CLOCK="false"
     EXCHANGE="20,-50"
     CENTER_X="39"
     CENTER_Y="-108"
+    VPORT="9001"
+    SHARE_LISTEN="9301"
 
-elif [ ${VNAME} = "BRAVO" ] ; then
+elif [ ${VNAME} = "bravo" ] ; then
     START_POS="9,5"
     CLOCK="false"
     EXCHANGE="45,-18"
     CENTER_X="85"
     CENTER_Y="-95"
+    VPORT="9002"
+    SHARE_LISTEN="9302"
 fi
 
 
@@ -83,8 +87,8 @@ fi
 #start vehicle:                                                                                                                                                                                                                         
 nsplug meta_vehicle.moos targ_$VNAME.moos -f WARP=$TIME_WARP  \
    VNAME=$VNAME      START_POS=$START_POS                    \
-   VPORT="9001"       SHARE_LISTEN="9301"                      \
-   VTYPE=UUV          COOL_FAC=$COOL_FAC  COOL_STEPS=$COOL_STEPS\
+   VPORT=$VPORT       SHARE_LISTEN=$SHARE_LISTEN              \
+   VTYPE=KAYAK          COOL_FAC=$COOL_FAC  COOL_STEPS=$COOL_STEPS\
    CONCURRENT=$CONCURRENT  ADAPTIVE=$ADAPTIVE SHORE_IP=$SHORE_IP\
    SIM=$SIM
 
