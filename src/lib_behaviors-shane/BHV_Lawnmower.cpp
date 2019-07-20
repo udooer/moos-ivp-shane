@@ -241,7 +241,7 @@ IvPFunction *BHV_Lawnmower::buildFunctionWithZAIC()
   zaic_peak.setSummitDelta(0);
 
   ZAIC_PEAK  spd_zaic(m_domain, "speed");
-  spd_zaic.setSummit(2.5);
+  spd_zaic.setSummit(3);
   spd_zaic.setPeakWidth(0.5);
   spd_zaic.setBaseWidth(1.0);
   spd_zaic.setSummitDelta(0.8);  

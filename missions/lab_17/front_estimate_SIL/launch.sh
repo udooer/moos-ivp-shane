@@ -2,7 +2,7 @@
 #-------------------------------------------------------
 #  Part 1: Check for and handle command-line arguments
 #-------------------------------------------------------
-SHORE_IP="10.42.0.1"
+SHORE_IP=localhost
 SIM="yes"
 TIME_WARP=1
 JUST_MAKE="no"

@@ -73,10 +73,10 @@ Behavior = BHV_PolygonV2
   perpetual = true
 
   desired_speed = 4
-  polygon = path=circle, center_x=$(CENTER_X), center_y=$(CENTER_Y), radius=85, pts=10 
-  arrival_radius = 3
+  polygon = path=circle, center_x=$(CENTER_X), center_y=$(CENTER_Y), radius=70, pts=10 
+  arrival_radius = 10
   clockwise = $(CLOCK)
-  repeat = 3
+  repeat = 1
 }
 
 //----------------------------------------------
@@ -202,7 +202,7 @@ Behavior = BHV_Timer
   // ---------------------------
   name         = bhv_timer            // default
   condition    = DEPLOY=true    // example
-  duration     = 1140                 // example
+  duration     = 1000                 // example
 //  idleflag     = WAITING=false        // example
 //  runflag      = WAITING=true         // example
 //  runflag      = WAITED=false         // example
